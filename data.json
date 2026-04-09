@@ -1,0 +1,2346 @@
+{
+  "meta": {
+    "tradition": "Japanese Martial Arts",
+    "period": "712 CE – 2007",
+    "region": "Japan",
+    "sports": [
+      "sumo",
+      "jujutsu",
+      "judo",
+      "aikido"
+    ],
+    "image_dir": "images/",
+    "influences": [
+      {
+        "from": "yoshin_ryu",
+        "to": "kodokan_founding",
+        "label": "via Tenjin Shin'yō-ryū"
+      },
+      {
+        "from": "jikishin_ryu",
+        "to": "kodokan_founding",
+        "label": "via Tenjin Shin'yō-ryū"
+      },
+      {
+        "from": "tenjin_shinyo_ryu",
+        "to": "kodokan_founding",
+        "label": "atemi + ne waza"
+      },
+      {
+        "from": "kito_ryu",
+        "to": "kodokan_founding",
+        "label": "throwing + kuzushi"
+      },
+      {
+        "from": "sekiguchi_ryu",
+        "to": "kodokan_founding",
+        "label": "ne waza influence"
+      },
+      {
+        "from": "fusen_ryu_challenge",
+        "to": "kodokan_founding",
+        "label": "ne waza correction"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "kojiki_wrestling",
+      "type": "literary",
+      "subtype": "mythology",
+      "title": "Kojiki — Takemikazuchi vs. Takeminakata",
+      "date": 712,
+      "date_display": "712 CE (events mythological)",
+      "origin": "Japan (Imperial court)",
+      "author": "Ō no Yasumaro (compiler)",
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": "https://www.sacred-texts.com/shi/kj/index.htm",
+      "passage_japanese": "建御名方神、千引の石を手末に掲げて来て言しく「誰ぞ我が国に来て、忍び忍びに如此物言ふ。然らば力競べ為む」",
+      "passage_translation": "Takeminakata bore a heavy boulder on his fingertips, came and said: 'Who has come to my country, speaking thus secretly? Come, let us have a contest of strength.' When he seized Takemikazuchi's arm, it turned to an icicle, then to a sword blade. But Takemikazuchi grasped Takeminakata's arm, crushed it like a reed, and threw it aside.",
+      "translator": "Basil Hall Chamberlain (1882, public domain)",
+      "description": "The Kojiki, Japan's oldest extant chronicle (712 CE), records the divine wrestling match between Takemikazuchi and Takeminakata as part of the kuni-yuzuri (transfer of the land) myth. Possession of the Japanese islands was decided by a wrestling contest between gods. This is not sport — it is cosmic sovereignty decided through physical contest. The defeated Takeminakata fled to Suwa in Shinano province and surrendered, vowing never to leave. This myth establishes wrestling as the divine method of deciding territorial sovereignty in the Japanese cosmological tradition.",
+      "techniques_shown": [
+        "grappling",
+        "throwing"
+      ],
+      "terms": [
+        "sumo",
+        "kuni_yuzuri"
+      ],
+      "evidence": {
+        "proves": [
+          "Wrestling was the mythological method for deciding sovereignty in the Japanese tradition",
+          "The concept of physical contest as divine judgment predates historical sumo"
+        ],
+        "cannot_prove": [
+          "Any historical wrestling practice — this is mythology",
+          "Whether the myth reflects actual combat practices of any era"
+        ],
+        "reliability": "Compiled in 712 CE from oral traditions of unknown age. Sacred text of Shinto, not a historical record. The wrestling episode serves a cosmological function — it explains why the heavenly gods rule Japan."
+      },
+      "name_japanese": "古事記",
+      "lane": "event"
+    },
+    {
+      "id": "nihon_shoki_nomi",
+      "type": "literary",
+      "subtype": "chronicle",
+      "title": "Nihon Shoki — Nomi no Sukune vs. Taima no Kehaya",
+      "date": 720,
+      "date_display": "720 CE (events dated 23 BCE internally)",
+      "origin": "Japan (Imperial court)",
+      "author": "Prince Toneri & Ō no Yasumaro (compilers)",
+      "museum": null,
+      "accession": null,
+      "image": "nomi_sukune_yoshitoshi.webp",
+      "source_url": "https://en.wikisource.org/wiki/Nihongi/Book_VI",
+      "passage_japanese": null,
+      "passage_translation": "The Emperor asked his attendants, saying: 'Is there anyone who can match the strength of Kuyehaya?' A minister replied: 'There is a man of great strength called Nomi no Sukune in the land of Izumo.' Nomi no Sukune was sent for. The two men faced each other and kicked simultaneously. Nomi no Sukune broke with a kick the ribs of Kuyehaya and also kicked and broke his loins and thus killed him. The land of Taima no Kuyehaya was seized and was all given to Nomi no Sukune.",
+      "translator": "W.G. Aston (1896, public domain)",
+      "description": "The Nihon Shoki (720 CE), Japan's first official court history, records the first documented match between mortals. Under Emperor Suinin (dated 23 BCE in the chronicle's own chronology), the boastful Taima no Kehaya was challenged by Nomi no Sukune of Izumo. The match was fatal — Sukune broke Kehaya's ribs and loins with kicks, killing him. Sukune received Kehaya's lands as reward and later served the Emperor. He became the legendary ancestor of sumo wrestlers. The location 'Koshi-ore-da' (field of broken loins) supposedly commemorated the event. Like Pausanias writing about Arrhichion, this text was compiled ~740 years after the events it describes.",
+      "techniques_shown": [
+        "kicking",
+        "grappling"
+      ],
+      "terms": [
+        "sumo",
+        "sechie_zumo"
+      ],
+      "evidence": {
+        "proves": [
+          "Wrestling matches with lethal stakes were part of the early Japanese court narrative",
+          "Nomi no Sukune was the legendary progenitor of sumo"
+        ],
+        "cannot_prove": [
+          "Whether this match occurred historically",
+          "The actual date — the 23 BCE internal dating is not independently verified",
+          "What techniques were actually used"
+        ],
+        "reliability": "Compiled 720 CE, roughly 740 years after the purported events. Court chronicle mixing history and legend. The text establishes an origin myth for sumo, not a verified historical record."
+      },
+      "name_japanese": "日本書紀",
+      "lane": "event",
+      "force_side": "right"
+    },
+    {
+      "id": "sechie_zumo",
+      "type": "documentary",
+      "subtype": "court_record",
+      "title": "Sechie-zumō — Imperial Court Sumo Tournaments",
+      "date": 726,
+      "date_display": "726 CE – 12th century",
+      "origin": "Japan (Imperial court, Nara/Heian periods)",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Sechie-zumo (festival sumo) was the formal sumo tournament held at the Japanese imperial court. The first recorded sechie-zumo took place in 726 CE under Emperor Shōmu during the Nara period. It was institutionalized during the Heian period (794–1185) as an annual ceremony. Wrestlers were selected from the provinces and competed as members of the left or right imperial guard. The events served simultaneous religious (harvest divination), political (provincial prestige), and entertainment functions. Modern sumo preserves many ritual elements from this era: salt-tossing for ring purification, chikara-mizu (power water), and the design of the dohyō itself.",
+      "techniques_shown": [
+        "grappling",
+        "throwing"
+      ],
+      "terms": [
+        "sumo",
+        "sechie_zumo",
+        "dohyo",
+        "chikara_mizu"
+      ],
+      "evidence": {
+        "proves": [
+          "Sumo was institutionalized at the imperial court by the 8th century",
+          "The sport served religious and political functions beyond entertainment",
+          "Ritual elements visible in modern sumo trace to this era"
+        ],
+        "cannot_prove": [
+          "The specific rules or techniques used in 8th-century sumo",
+          "How closely court sumo resembled modern sumo"
+        ],
+        "reliability": "Court records from multiple periods. The institutional framework is well-attested, though individual match details are sparse."
+      },
+      "name_japanese": "節会相撲",
+      "lane": "event"
+    },
+    {
+      "id": "takenouchi_founding",
+      "type": "literary",
+      "subtype": "densho",
+      "title": "Takenouchi-ryū — First Documented Jujutsu School",
+      "date": 1532,
+      "date_display": "1532 (first year of Tenbun)",
+      "origin": "Mimasaka Province, Japan (modern Okayama)",
+      "author": "Takenouchi school lineage",
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": "When you meet the enemy, in that instant, life and death are decided.",
+      "translator": null,
+      "description": "The founding document of Takenouchi-ryū records how Takenouchi Chūnagon Daijō Nakatsukasadaiyū Hisamori, lord of Ichinose Castle, retired to the mountains near Sannomiya shrine to train. He encountered a yamabushi (mountain ascetic) who defeated him in combat, broke his bokken into two daggers, and taught him kogusoku (armed grappling) and rope-binding techniques. This founding legend establishes Takenouchi-ryū as the oldest documented jujutsu school. The curriculum encompassed jūjutsu, bōjutsu, kenjutsu, iaijutsu, naginatajutsu, tessenjutsu, hojōjutsu, and sakkatsuhō. Together with Yōshin-ryū and Ryōi Shintō-ryū, it became one of the three most influential jūjutsu schools of the Edo period. Fourteen headmasters are documented; the current (14th) is Takenouchi Tōichirō Hisamune.",
+      "techniques_shown": [
+        "kogusoku",
+        "grappling",
+        "joint_locks",
+        "rope_binding"
+      ],
+      "terms": [
+        "jujutsu",
+        "kogusoku",
+        "densho",
+        "koryu",
+        "kata",
+        "kansetsu_waza"
+      ],
+      "evidence": {
+        "proves": [
+          "Systematic jujutsu instruction existed by 1532",
+          "Empty-hand combat was conceptualized as a complete art, not just a battlefield supplement",
+          "Transmission occurred through densho (written scrolls)"
+        ],
+        "cannot_prove": [
+          "The literal truth of the yamabushi encounter",
+          "The exact original curriculum — it evolved over centuries"
+        ],
+        "reliability": "Internal school document. Founding legends in koryu traditions typically contain mythological elements (divine or supernatural teachers). The date and location are generally accepted by martial arts historians."
+      },
+      "name_japanese": "竹内流",
+      "lane": "school",
+      "active_period": {
+        "start": 1532,
+        "end": null,
+        "extant": true
+      },
+      "practitioners": "Dozens — active in Okayama, 4 international dōjō",
+      "period_display": "1532 – present"
+    },
+    {
+      "id": "katanagari_1588",
+      "type": "documentary",
+      "subtype": "edict",
+      "title": "Katanagari — Hideyoshi's Sword Hunt",
+      "date": 1588,
+      "date_display": "1588",
+      "origin": "Japan (Toyotomi administration)",
+      "author": "Toyotomi Hideyoshi",
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": "https://afe.easia.columbia.edu/ps/japan/tokugawa_edicts_swords.pdf",
+      "passage_japanese": null,
+      "passage_translation": "The people of the various provinces are strictly forbidden to have in their possession any swords, short swords, bows, spears, firearms, or other types of weapons.",
+      "translator": "Columbia University Asia for Educators (public domain translation)",
+      "description": "Hideyoshi's katanagari (sword hunt) of 1588 confiscated weapons from all non-samurai classes. One district surrendered roughly 1,100 long swords, 1,500 short swords, 500 guns, and 700 knives. The primary goal was political — preventing rōnin uprisings and enforcing the class distinction between samurai and commoners. The indirect effect on martial arts development: disarmament of the general population created conditions where unarmed combat systems became relevant beyond battlefield supplement. Takenouchi-ryū predates the sword hunt by 56 years, but the edict accelerated the broader proliferation of civilian jujutsu schools during the Edo period, when over 700 koryu schools were documented.",
+      "techniques_shown": [],
+      "terms": [
+        "katanagari",
+        "jujutsu",
+        "koryu"
+      ],
+      "evidence": {
+        "proves": [
+          "Systematic weapon confiscation occurred in 1588",
+          "The samurai-commoner class distinction was enforced through arms control"
+        ],
+        "cannot_prove": [
+          "A direct causal link between disarmament and jujutsu proliferation — this is a plausible inference, not documented",
+          "The exact number of weapons confiscated nationwide"
+        ],
+        "reliability": "Primary government document. The edict itself is well-attested. The connection to jujutsu development is a reasonable scholarly inference, not explicitly stated in the source."
+      },
+      "name_japanese": "刀狩",
+      "lane": "event"
+    },
+    {
+      "id": "sekiguchi_ryu",
+      "type": "literary",
+      "subtype": "school_record",
+      "title": "Sekiguchi-ryū — Ground Grappling Pioneer",
+      "date": 1640,
+      "date_display": "Founded c. 1640s",
+      "origin": "Japan (early Edo period)",
+      "author": "Sekiguchi Jushin Minamoto no Masayoshi (founder)",
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Sekiguchi-ryū (関口流) was one of the four major jujutsu schools of the Edo period, founded by Sekiguchi Jushin. It was notable for its extensive ne waza (ground fighting) curriculum — one of the richest in the koryu world. Some techniques from the Sekiguchi-ryū ground catalog found their way into the Kodokan groundwork system indirectly, through the classical schools Kano surveyed and cataloged when compiling his comprehensive judo curriculum. The school's emphasis on ground control and submission positions distinguishes it from the throwing-focused Kitō-ryū and the striking-focused Tenjin Shin'yō-ryū.",
+      "techniques_shown": [
+        "ne_waza",
+        "kansetsu_waza",
+        "kogusoku"
+      ],
+      "terms": [
+        "jujutsu",
+        "ne_waza",
+        "koryu",
+        "kansetsu_waza"
+      ],
+      "evidence": {
+        "proves": [
+          "Ground fighting systems existed in koryu well before the Fusen-ryū challenge",
+          "Multiple schools contributed ne waza elements to the broader martial arts ecosystem"
+        ],
+        "cannot_prove": [
+          "Direct technical lineage from Sekiguchi-ryū to Kodokan",
+          "The exact curriculum of the original school"
+        ],
+        "reliability": "School records and lineage documents. The school's existence and ne waza emphasis are well-attested; specific technique attributions to the Kodokan are indirect."
+      },
+      "name_japanese": "関口流",
+      "lane": "school",
+      "active_period": {
+        "start": 1640,
+        "end": null,
+        "extant": true
+      },
+      "practitioners": "Active but small — dozens to hundreds",
+      "period_display": "c. 1640s – present"
+    },
+    {
+      "id": "yoshin_ryu",
+      "type": "literary",
+      "subtype": "school_record",
+      "title": "Yōshin-ryū — The Yielding Willow School",
+      "date": 1630,
+      "date_display": "Founded c. 1630s",
+      "origin": "Japan (early Edo period)",
+      "author": "Akiyama Shirobei Yoshitoki (founder)",
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": "Observe the willow — its branches yield to the weight of snow, but spring back unbroken. The rigid oak resists and shatters.",
+      "translator": "Traditional school maxim",
+      "description": "Yōshin-ryū (楊心流, Willow Heart School) was founded by Akiyama Shirobei Yoshitoki, reportedly after observing willow branches bending under snow without breaking. The school emphasized the principle of jū (yielding) — using an opponent's force against them rather than meeting strength with strength. This principle became the philosophical cornerstone of all subsequent jujutsu development. Yōshin-ryū was one of the two parent schools (alongside Shin no Shintō-ryū) that Iso Mataemon amalgamated into Tenjin Shin'yō-ryū in the 1830s, which became Kano's first school. The yielding principle directly informed Kano's seiryoku zen'yō (maximum efficiency, minimum effort).",
+      "techniques_shown": [
+        "atemi_waza",
+        "kansetsu_waza",
+        "nage_waza"
+      ],
+      "terms": [
+        "jujutsu",
+        "koryu",
+        "atemi_waza",
+        "kansetsu_waza",
+        "nage_waza"
+      ],
+      "evidence": {
+        "proves": [
+          "The yielding principle (jū) was articulated as a foundational concept by the early Edo period",
+          "Yōshin-ryū contributed directly to Tenjin Shin'yō-ryū, which trained Kano"
+        ],
+        "cannot_prove": [
+          "The literal truth of the willow observation legend",
+          "The exact original curriculum"
+        ],
+        "reliability": "School records and oral tradition. The founding legend is characteristic of koryu origin stories; the school's historical existence and influence on Tenjin Shin'yō-ryū are well-documented."
+      },
+      "name_japanese": "楊心流",
+      "lane": "school",
+      "active_period": {
+        "start": 1630,
+        "end": 1830,
+        "extant": false
+      },
+      "period_display": "c. 1630s – c. 1830s (absorbed into Tenjin Shin'yō-ryū)"
+    },
+    {
+      "id": "jikishin_ryu",
+      "type": "literary",
+      "subtype": "school_record",
+      "title": "Shin no Shintō-ryū — Direct Heart School",
+      "date": 1700,
+      "date_display": "Founded c. early 18th century",
+      "origin": "Japan (Edo period)",
+      "author": "Yamamoto Tamizaemon (founder)",
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Shin no Shintō-ryū (真之新当流, also written 直心流 Jikishin-ryū) was the second parent school of Tenjin Shin'yō-ryū. While Yōshin-ryū emphasized atemi (striking), Shin no Shintō-ryū contributed grappling and throwing elements. Iso Mataemon Masatari studied both schools extensively — reportedly training throughout Japan and never losing — before synthesizing them into Tenjin Shin'yō-ryū in the 1830s. The school's techniques, filtered through Tenjin Shin'yō-ryū and then through Kano, became part of the Kodokan's kata curriculum. This two-generation transmission chain (Shin no Shintō-ryū → Tenjin Shin'yō-ryū → Kodokan) illustrates how koryu knowledge was progressively synthesized rather than invented from nothing.",
+      "techniques_shown": [
+        "nage_waza",
+        "kansetsu_waza",
+        "ne_waza"
+      ],
+      "terms": [
+        "jujutsu",
+        "koryu",
+        "nage_waza",
+        "kansetsu_waza",
+        "ne_waza"
+      ],
+      "evidence": {
+        "proves": [
+          "Multiple koryu traditions fed into Tenjin Shin'yō-ryū",
+          "Kano's judo inherited from at least four distinct school lineages"
+        ],
+        "cannot_prove": [
+          "The exact techniques contributed by this school versus Yōshin-ryū",
+          "Whether the synthesis was faithful to the originals"
+        ],
+        "reliability": "School records. The school's existence and role as co-parent of Tenjin Shin'yō-ryū are documented in Tenjin Shin'yō-ryū's own records."
+      },
+      "name_japanese": "直心流",
+      "lane": "school",
+      "active_period": {
+        "start": 1700,
+        "end": 1830,
+        "extant": false
+      },
+      "period_display": "c. 1700 – c. 1830s (absorbed into Tenjin Shin'yō-ryū)"
+    },
+    {
+      "id": "tenjin_shinyo_ryu",
+      "type": "literary",
+      "subtype": "school_record",
+      "title": "Tenjin Shin'yō-ryū — Kano's First School",
+      "date": 1830,
+      "date_display": "Founded c. 1830s",
+      "origin": "Japan (Edo period)",
+      "author": "Iso Mataemon Ryūkansai Minamoto no Masatari (founder)",
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Tenjin Shin'yō-ryū (Divine True Willow School) was an amalgamation of Yōshin-ryū and Shin no Shintō-ryū, founded by Iso Mataemon Masatari (1787–1863). It became one of the two largest koryu schools of the late Edo period, known for atemi waza (strikes to vital points) and ne waza (ground techniques). Kano Jigoro studied under two Tenjin Shin'yō masters: Fukuda Hachinosuke (1877–1879, died in office) and Iso Masatomo, 3rd-generation headmaster (1879–1881, also died). Two successive teacher deaths within two years forced Kano to Kitō-ryū and shaped his institutional thinking. The school's atemi, choking, and ne waza provided the technical base preserved in Kodokan kata (Kime-no-kata, Katame-no-kata), even though these elements were excluded from competitive randori.",
+      "techniques_shown": [
+        "atemi_waza",
+        "ne_waza",
+        "shime_waza",
+        "kansetsu_waza"
+      ],
+      "terms": [
+        "jujutsu",
+        "atemi_waza",
+        "ne_waza",
+        "kata",
+        "koryu",
+        "shime_waza",
+        "kansetsu_waza"
+      ],
+      "evidence": {
+        "proves": [
+          "The school's curriculum included both striking and ground techniques",
+          "Kano's first martial arts education emphasized atemi and ne waza",
+          "Koryu transmission was fragile — dependent on individual masters"
+        ],
+        "cannot_prove": [
+          "The exact curriculum Kano received — details vary by source",
+          "Whether the ne waza content was unique to this school or common across koryu"
+        ],
+        "reliability": "School records supplemented by Kano's own writings. The broad outline is well-established; specific technique attributions are less certain."
+      },
+      "name_japanese": "天神真楊流",
+      "lane": "school",
+      "active_period": {
+        "start": 1830,
+        "end": 1900,
+        "extant": false
+      },
+      "period_display": "c. 1830s – c. 1900s (eclipsed by Kodokan)"
+    },
+    {
+      "id": "kito_ryu",
+      "type": "literary",
+      "subtype": "school_record",
+      "title": "Kitō-ryū — Source of Kodokan Throwing",
+      "date": 1650,
+      "date_display": "Founded mid-17th century",
+      "origin": "Japan (Edo period)",
+      "author": "Fukuno Shichirōemon (founder)",
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": "This is right. I am afraid I have nothing more to teach you.",
+      "translator": "From Kano's account of Iikubo Tsunetoshi's response",
+      "description": "Kitō-ryū (School of Rising and Falling) was founded in the mid-17th century by Fukuno Shichirōemon. Renowned for nage waza (throwing) and the principles of ki (rising) and tō (falling) — disrupting an opponent's balance through dynamic techniques. Kano began studying under Iikubo Tsunetoshi (Kōnen) in 1881. The decisive moment: Kano explained to Iikubo that throws should be applied after first breaking the opponent's posture (kuzushi). Iikubo replied: 'This is right. I am afraid I have nothing more to teach you.' Kano received menkyo (teaching license) in October 1883 and later menkyo kaiden (full transmission). The word 'judo' itself came from Kitō-ryū, which was internally called 'Kitō-ryū judo.' Kano reframed dō (the way) as ongoing self-improvement. Several Kitō-ryū kata were adopted directly into the Kodokan curriculum.",
+      "techniques_shown": [
+        "nage_waza",
+        "kuzushi"
+      ],
+      "terms": [
+        "jujutsu",
+        "judo",
+        "nage_waza",
+        "kuzushi",
+        "kata",
+        "menkyo_kaiden",
+        "koryu"
+      ],
+      "evidence": {
+        "proves": [
+          "The kuzushi principle originated in Kitō-ryū",
+          "The term 'judo' predates Kano — it was used within Kitō-ryū",
+          "Kano received full transmission in the school"
+        ],
+        "cannot_prove": [
+          "The exact moment of the kuzushi 'breakthrough' — this is Kano's own narrative",
+          "Whether kuzushi was entirely absent from other schools"
+        ],
+        "reliability": "Kano's own account, supplemented by Kodokan records. The story of Iikubo's response is widely cited but comes primarily from Kano himself."
+      },
+      "name_japanese": "起倒流",
+      "lane": "school",
+      "active_period": {
+        "start": 1650,
+        "end": 1920,
+        "extant": false
+      },
+      "period_display": "c. 1650 – c. 1920s (absorbed into Kodokan)"
+    },
+    {
+      "id": "kodokan_founding",
+      "type": "documentary",
+      "subtype": "institutional",
+      "title": "Kodokan Judo — Founded 1882",
+      "date": 1882,
+      "date_display": "May/June 1882",
+      "origin": "Tokyo, Japan (Eishō-ji temple, Shitaya ward)",
+      "author": "Kano Jigoro",
+      "museum": null,
+      "accession": null,
+      "image": "kano_jigoro_1892.webp",
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": "Judo is the way of the highest or most efficient use of both physical and mental energy.",
+      "translator": "Kano Jigoro (1915 definition)",
+      "description": "In May or June 1882, Kano Jigoro (1860–1938) founded the Kodokan at Eishō-ji, a Buddhist temple in Shitaya ward, Tokyo. He began with twelve mats and fewer than a dozen students, with his Kitō-ryū teacher Iikubo attending three days a week. Kano synthesized Tenjin Shin'yō-ryū (atemi, ne waza) and Kitō-ryū (throwing, kuzushi) into a new system built on two innovations: the randori method (live sparring against resisting opponents as daily practice) and a philosophical framework — seiryoku zen'yō (maximum efficiency, minimum effort) and jita kyōei (mutual welfare and benefit). By 1911, the Kodokan had over 1,000 dan-graded members. Kano trained at the institution his entire life; he died aboard the Hikawa Maru on May 4, 1938, returning from an IOC meeting in Cairo.",
+      "techniques_shown": [
+        "nage_waza",
+        "ne_waza",
+        "randori"
+      ],
+      "terms": [
+        "judo",
+        "randori",
+        "kata",
+        "kuzushi",
+        "dojo",
+        "seiryoku_zenyo",
+        "jita_kyoei",
+        "ne_waza",
+        "nage_waza"
+      ],
+      "evidence": {
+        "proves": [
+          "The Kodokan was founded in 1882 at a temple in Tokyo",
+          "Kano synthesized multiple koryu traditions into a unified system",
+          "Randori distinguished Kodokan judo from classical schools"
+        ],
+        "cannot_prove": [
+          "Whether the founding date was May or June — sources disagree",
+          "The exact curriculum at founding — it evolved rapidly"
+        ],
+        "reliability": "Well-documented through Kodokan records, Kano's own writings, and independent accounts. The founding facts are among the most solidly attested in martial arts history."
+      },
+      "name_japanese": "講道館",
+      "lane": "school",
+      "active_period": {
+        "start": 1882,
+        "end": null,
+        "extant": true
+      },
+      "practitioners": "~125,000 registered in Japan; millions worldwide",
+      "period_display": "1882 – present"
+    },
+    {
+      "id": "police_tournament_1886",
+      "type": "documentary",
+      "subtype": "competition",
+      "title": "Keishichō Bujutsu Taikai",
+      "date": 1886,
+      "date_display": "1886",
+      "origin": "Tokyo, Japan",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "The decisive event in judo's rise to dominance. Organized by Michitsune Mishima, prefect of the Tokyo Metropolitan Police (1885–1888), pitting Kodokan judoka against Totsuka-ha Yōshin-ryū, the largest remaining classical school. The Kodokan won 13 of 15 bouts with 2 draws (some sources claim 15 victories). Yokoyama Sakujiro's 55-minute bout with Nakamura Hansuke remains the longest judo match on record. Yoshiaki Yamashita defeated Taro Terushima with seoi-nage. The police adopted Kodokan judo as their official system. The victory transformed judo from an obscure school to Japan's dominant martial art. Classical ryu had broader technique catalogs; Kodokan students executed fewer techniques with far greater reliability under competitive pressure. Depth-under-pressure beat breadth.",
+      "techniques_shown": [
+        "nage_waza",
+        "randori",
+        "seoi_nage"
+      ],
+      "terms": [
+        "judo",
+        "randori",
+        "nage_waza"
+      ],
+      "evidence": {
+        "proves": [
+          "The Kodokan defeated the leading classical school in police-sponsored competition",
+          "Judo's adoption by the police followed this tournament",
+          "Randori-trained fighters outperformed kata-only trained fighters"
+        ],
+        "cannot_prove": [
+          "Exact match results — sources disagree on whether it was 13-0-2 or 15-0-0",
+          "Whether the tournament was truly representative of all classical schools"
+        ],
+        "reliability": "Multiple sources agree on the Kodokan victory. Primary documentation from neutral observers is scarce; most accounts come from Kodokan sources. The Totsuka school's perspective is largely unrecorded."
+      },
+      "name_japanese": "警視庁武術大会",
+      "lane": "event"
+    },
+    {
+      "id": "fusen_ryu_challenge",
+      "type": "documentary",
+      "subtype": "competition",
+      "title": "Fusen-ryū — The Ne Waza Shock",
+      "date": 1891,
+      "date_display": "1891–1905",
+      "origin": "Tokyo, Japan",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Mataemon Tanabe (1869–1942), master of Fusen-ryū, inflicted the only defeats in Kodokan challenge-match history. In January 1891, Tanabe defeated 3rd-dan judoka Takisaburo Tobari: he reversed an osoto-makikomi attempt, pinned with kami-shiho-gatame, then choked Tobari unconscious with juji-jime. In spring 1892, Tobari returned with improved skills but made the mistake of voluntarily engaging on the ground. Tanabe patiently exhausted him and choked him again. The strategic insight: identify the phase where the opponent is weakest, take the fight there. The Kodokan had almost no ground game before 1900. Kano's response was institutional genius — he invited Tanabe to teach ne waza to the Kodokan. A ne waza explosion followed (1900–1925), producing 'the ne-waza of the Kansai region.' Fusen-ryū subsequently faded into obscurity, absorbed by the institution it had defeated.",
+      "techniques_shown": [
+        "ne_waza",
+        "juji_jime",
+        "kami_shiho_gatame",
+        "osoto_makikomi"
+      ],
+      "terms": [
+        "jujutsu",
+        "ne_waza",
+        "shime_waza",
+        "randori",
+        "judo"
+      ],
+      "evidence": {
+        "proves": [
+          "The Kodokan was vulnerable to ground grappling before 1900",
+          "Fusen-ryū's ground strategy defeated randori-trained judoka",
+          "Kano absorbed external innovations rather than fighting them"
+        ],
+        "cannot_prove": [
+          "Exact match records — details vary by source",
+          "Whether Tanabe's strategy was preplanned or evolved during competition"
+        ],
+        "reliability": "Multiple accounts agree on the broad narrative. Specific details (dates, exact techniques) vary. The institutional consequence — ne waza integration into Kodokan — is well-documented."
+      },
+      "name_japanese": "不遷流",
+      "lane": "school",
+      "active_period": {
+        "start": 1800,
+        "end": 1910,
+        "extant": false
+      },
+      "period_display": "c. 1800s – c. 1910s (absorbed by Kodokan)"
+    },
+    {
+      "id": "kano_grant_demonstration",
+      "type": "documentary",
+      "subtype": "event",
+      "title": "Jūjutsu Demonstration for President Grant",
+      "date": 1879,
+      "date_display": "5 August 1879",
+      "origin": "Tokyo, Japan",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": "kano_jigoro_age28.webp",
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "On August 5, 1879, the young Kano Jigoro demonstrated jūjutsu for former U.S. President Ulysses S. Grant at the residence of Shibusawa Eiichi. This was three years before the Kodokan's founding, while Kano was still a student of Tenjin Shin'yō-ryū. The event marks one of the earliest documented demonstrations of Japanese martial arts for a Western head of state. Nine years later, on April 18, 1888, Kano delivered his first major English-language lecture: 'Jiujitsu: The Old Samurai Art of Fighting without Weapons' to the Asiatic Society of Japan.",
+      "techniques_shown": [
+        "jujutsu"
+      ],
+      "terms": [
+        "jujutsu",
+        "judo"
+      ],
+      "evidence": {
+        "proves": [
+          "Kano was demonstrating jujutsu publicly before founding the Kodokan",
+          "Western interest in Japanese martial arts existed by 1879"
+        ],
+        "cannot_prove": [
+          "What specific techniques were demonstrated",
+          "Grant's reaction or assessment"
+        ],
+        "reliability": "Documented in multiple Kano biographies and Kodokan records. The date and context are well-established."
+      },
+      "name_japanese": "柔術演武",
+      "lane": "event"
+    },
+    {
+      "id": "daitoryu_scrolls",
+      "type": "literary",
+      "subtype": "densho",
+      "title": "Daitō-ryū Aiki-jūjutsu",
+      "date": 1899,
+      "date_display": "1899–1922",
+      "origin": "Japan (Hokkaido, then Ayabe)",
+      "author": "Takeda Sokaku",
+      "museum": null,
+      "accession": null,
+      "image": "takeda_sokaku.webp",
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": "When one hand is grabbed by two hands, push that hand forward, apply Aiki, turn to back, throw over your back.",
+      "translator": "From Sagawa Nenokichi's notes, c. 1913",
+      "description": "Takeda Sokaku (1859–1943) began teaching Daito-ryu Jujutsu in 1899, creating two foundational scrolls: the hiden mokuroku (88 written + 30 unwritten = 118 techniques) and hiden okugi no koto (36 techniques). The concept of 'aiki' was originally negative in Edo-period usage (collision of attacking impulses); Sokaku reinterpreted it positively. Sagawa Nenokichi's notes (c. 1913) contain the first documented use of 'Aiki' as a technical term, written phonetically (アイキ). In August 1922, Ueshiba Morihei received the first certificate explicitly including 'Aiki no Jutsu 30 kajo' — the previously unwritten techniques. Sokaku's eimeiroku (enrollment records) show the critical naming shift: Ueshiba's 1922 entry marks the first written appearance of 'Daito-ryu Aikijujutsu,' previously always recorded as 'Daito-ryu Jujutsu.'",
+      "techniques_shown": [
+        "aiki",
+        "joint_locks",
+        "throwing"
+      ],
+      "terms": [
+        "aiki",
+        "jujutsu",
+        "densho",
+        "menkyo_kaiden",
+        "koryu",
+        "aikido",
+        "kansetsu_waza"
+      ],
+      "evidence": {
+        "proves": [
+          "Systematic Daito-ryu instruction began in 1899",
+          "The concept of 'aiki' was added to the art's name in 1922",
+          "Ueshiba was the first person to receive the Aikijujutsu certificate"
+        ],
+        "cannot_prove": [
+          "The claimed ancient lineage back to Minamoto no Yoshimitsu — no pre-Sokaku records exist",
+          "What techniques Sokaku actually learned vs. developed himself"
+        ],
+        "reliability": "Sokaku's eimeiroku (student records) are primary documents. Guillaume Erard's research provides the most detailed English-language analysis. The claimed pre-Sokaku lineage is unverifiable."
+      },
+      "name_japanese": "大東流",
+      "lane": "school",
+      "active_period": {
+        "start": 1899,
+        "end": null,
+        "extant": true
+      },
+      "practitioners": "Several thousand — multiple branches worldwide",
+      "period_display": "1899 – present"
+    },
+    {
+      "id": "ueshiba_aikido",
+      "type": "documentary",
+      "subtype": "institutional",
+      "title": "Aikidō — From Daitō-ryū to Modern Practice",
+      "date": 1922,
+      "date_display": "1915–1942",
+      "origin": "Japan (Hokkaido → Ayabe → Tokyo)",
+      "author": "Ueshiba Morihei",
+      "museum": null,
+      "accession": null,
+      "image": "ueshiba_morihei_1922.webp",
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Ueshiba Morihei (1883–1969) met Takeda Sokaku in March 1915 and enrolled in Daito-ryu. He received the hiden mokuroku and hiden okugi no koto scrolls in 1916. In fall 1920, he established the Ueshiba Juku dojo in Ayabe with the Ōmoto-kyō religious community. In 1922, he was appointed kyoju dairi (teaching representative) — the first in the newly named Daito-ryu Aikijujutsu. Through the 1920s–1930s, Ueshiba taught Daito-ryu; his early students' documents bear the Daito-ryu name. He began diverging in the late 1920s, influenced by Ōmoto-kyō spirituality. His official Daito-ryu association ended in 1937. In 1942, the name 'aikido' was officially adopted under the Dai Nippon Butoku Kai reorganization. The trajectory represents a martial system with genuine grappling roots (Daito-ryu joint locks and throws) that moved progressively toward harmonious movement and spiritual development — away from adversarial stress-testing.",
+      "techniques_shown": [
+        "aiki",
+        "joint_locks",
+        "throwing"
+      ],
+      "terms": [
+        "aiki",
+        "aikido",
+        "jujutsu",
+        "densho",
+        "koryu",
+        "dojo"
+      ],
+      "evidence": {
+        "proves": [
+          "Aikido derives directly from Daito-ryu Aiki-jujutsu",
+          "The transition was gradual (1920s–1942), not sudden",
+          "Ueshiba's early teaching was explicitly Daito-ryu"
+        ],
+        "cannot_prove": [
+          "Exactly when Ueshiba's technique diverged from Takeda's",
+          "The relative influence of Ōmoto-kyō versus technical evolution"
+        ],
+        "reliability": "Well-documented through Takeda's eimeiroku, Ueshiba's own certificates, and multiple student accounts. The broad timeline is uncontested; the nature of the divergence is debated within aikido scholarship."
+      },
+      "name_japanese": "合気道",
+      "lane": "school",
+      "active_period": {
+        "start": 1922,
+        "end": null,
+        "extant": true
+      },
+      "practitioners": "~1.6 million worldwide; declining in Japan",
+      "period_display": "1922 – present"
+    },
+    {
+      "id": "maeda_mitsuyo",
+      "type": "documentary",
+      "subtype": "biographical",
+      "title": "Maeda Mitsuyo — 'Conde Koma' and the Export of Judo",
+      "date": 1897,
+      "date_display": "1897–1941",
+      "origin": "Japan → Europe → Brazil",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": "kano_mifune.webp",
+      "source_url": "https://www.ndl.go.jp/brasil/e/column/kodekoma.html",
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Maeda Mitsuyo (1878–1941) entered the Kodokan in 1897 and achieved 2nd dan within two years. Sent abroad to promote judo, he toured Europe — competing in catch wrestling matches without the gi in England, Belgium, and Spain, earning the nickname 'Conde Koma' (Count Combat). He absorbed catch wrestling techniques: half-nelson, hammer-lock, no-gi control positions, and leg attacks. A photograph documents him applying catch wrestling positions foreign to the Kodokan syllabus. He arrived in Brazil in September 1914 (documented in the Correio Paulistano newspaper). He founded his first academy in 1921. He engaged in over 1,000 challenge matches, reportedly never losing in judo-style competition. On November 27, 1941, the Kodokan promoted him to 7th dan; he died the next day. What he transmitted to Carlos Gracie was already a hybrid: Kodokan judo + Fusen-ryū ne waza + catch wrestling.",
+      "techniques_shown": [
+        "nage_waza",
+        "ne_waza",
+        "catch_wrestling"
+      ],
+      "terms": [
+        "judo",
+        "ne_waza",
+        "randori"
+      ],
+      "evidence": {
+        "proves": [
+          "Maeda competed in multiple combat styles across continents",
+          "He integrated non-judo techniques into his fighting system",
+          "He arrived in Brazil by 1914"
+        ],
+        "cannot_prove": [
+          "The exact 1,000-match record — this is likely promotional",
+          "What specific curriculum he taught Carlos Gracie"
+        ],
+        "reliability": "Newspaper records (Correio Paulistano) confirm the Brazil dates. The European career is attested by multiple sources. Match records are likely inflated but the broad career is well-documented. National Diet Library article provides primary Brazilian sources."
+      },
+      "name_japanese": "前田光世",
+      "lane": "person"
+    },
+    {
+      "id": "olympics_1964",
+      "type": "documentary",
+      "subtype": "event",
+      "title": "Judo at the Tokyo Olympics",
+      "date": 1964,
+      "date_display": "1964",
+      "origin": "Tokyo, Japan (Nippon Budokan)",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Judo's Olympic debut in its home country. Approved at the 1960 IOC Session in Rome following decades of effort begun by Kano himself. Four weight classes, men only. The competition was held at the Nippon Budokan, purpose-built for the event. Japan won the first three weight classes, but the open-weight gold went to Dutchman Anton Geesink — a shock that demonstrated judo had genuinely become a global sport, not merely a Japanese cultural export. Judo became a permanent Olympic fixture from 1972. This marks the endpoint of the trajectory: from Kano's 12-mat temple dojo in 1882 to the world's largest sporting stage in 82 years.",
+      "techniques_shown": [
+        "nage_waza",
+        "ne_waza",
+        "randori"
+      ],
+      "terms": [
+        "judo",
+        "randori"
+      ],
+      "evidence": {
+        "proves": [
+          "Judo achieved Olympic recognition by 1964",
+          "Non-Japanese athletes could compete at the highest level",
+          "The sport had globalized within Kano's institutional framework"
+        ],
+        "cannot_prove": [
+          "Whether Olympic judo reflects Kano's original vision — he died in 1938",
+          "Whether sport optimization improved or degraded the art"
+        ],
+        "reliability": "IOC and IJF records. Fully documented event."
+      },
+      "name_japanese": "東京五輪",
+      "lane": "event"
+    },
+    {
+      "id": "kuniyoshi_sumo_triptych",
+      "type": "material",
+      "subtype": "woodblock_print",
+      "title": "Kuniyoshi Sumo Triptych",
+      "date": 1849,
+      "date_display": "1847–52",
+      "origin": "Japan (Edo period)",
+      "author": "Utagawa Kuniyoshi (1797–1861)",
+      "museum": "Metropolitan Museum of Art",
+      "accession": "TR.266.9a-c.2025",
+      "image": "kuniyoshi_sumo_met.webp",
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Triptych woodblock print (nishiki-e) by Utagawa Kuniyoshi depicting sumo wrestlers Kagamiiwa Hamanosuke and Koyanagi Tsunekichi in competition, with judge Sakaigawa Namiemon and referee Shikimori Kiichirō. The composition captures both the physical contest and the institutional framework: wrestlers are shown in active engagement while officials supervise. Sumo wrestlers were celebrities in Edo Japan, and prints like this served as both art and popular media — equivalent to modern sports photography. The three-panel format allows a panoramic view of the entire event context.",
+      "techniques_shown": [
+        "grappling",
+        "throwing"
+      ],
+      "terms": [
+        "sumo",
+        "dohyo"
+      ],
+      "evidence": {
+        "proves": [
+          "Sumo was a major popular entertainment in the late Edo period",
+          "Matches were officiated by judges and referees",
+          "Wrestlers were popular subjects for premium artistic treatment"
+        ],
+        "cannot_prove": [
+          "Specific techniques being employed",
+          "Whether this depicts an actual historical match"
+        ],
+        "reliability": "Contemporary with the period depicted. Kuniyoshi was one of the last great ukiyo-e masters. The print may depict real wrestlers (named in the image) or idealized compositions."
+      },
+      "name_japanese": "相撲錦絵",
+      "lane": "artifact"
+    },
+    {
+      "id": "kunisada_sumo_1854",
+      "type": "material",
+      "subtype": "woodblock_print",
+      "title": "Kunisada Sumo Triptych",
+      "date": 1854,
+      "date_display": "1854",
+      "origin": "Japan (late Edo period)",
+      "author": "Utagawa Kunisada (1786–1865)",
+      "museum": null,
+      "accession": null,
+      "image": "kunisada_sumo_1854.webp",
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Triptych woodblock print by Utagawa Kunisada depicting sumo wrestlers Mutsugamine and Unryu in a bout, with judge Oitekaze and referee Kimura present. Like the Kuniyoshi triptych, this shows the full ceremonial and competitive context of late Edo sumo. Kunisada was the most commercially successful ukiyo-e artist of his era, and sumo prints were among his most popular subjects. The print documents sumo at the threshold of the Meiji Restoration — the last years before modernization transformed Japanese society.",
+      "techniques_shown": [
+        "grappling",
+        "throwing"
+      ],
+      "terms": [
+        "sumo",
+        "dohyo"
+      ],
+      "evidence": {
+        "proves": [
+          "Sumo maintained its institutional framework and popularity through the end of the Edo period",
+          "Multiple major artists produced sumo prints, confirming the sport's commercial appeal"
+        ],
+        "cannot_prove": [
+          "Whether the depicted match actually occurred",
+          "Technical details of the wrestlers' styles"
+        ],
+        "reliability": "Contemporary print by the era's most successful commercial artist. Names and positions may be accurate for known wrestlers of the period."
+      },
+      "name_japanese": "相撲錦絵",
+      "lane": "artifact"
+    },
+    {
+      "id": "yoshitoshi_nomi_sukune",
+      "type": "material",
+      "subtype": "woodblock_print",
+      "title": "Yoshitoshi — Nomi no Sukune vs. Taima no Kehaya",
+      "date": 1885,
+      "date_display": "c. 1883–1886",
+      "origin": "Japan (Meiji period)",
+      "author": "Tsukioka Yoshitoshi (1839–1892)",
+      "museum": "National Diet Library of Japan",
+      "accession": "NDL-DC 1302751",
+      "image": "nomi_sukune_yoshitoshi.webp",
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Part of Yoshitoshi's Musha Burui (Unmatched Warriors) series, this print depicts the legendary wrestling match between Nomi no Sukune and Taima no Kehaya, recorded in the Nihon Shoki. Yoshitoshi, considered the last great master of ukiyo-e, renders the scene with dramatic intensity — both figures are shown in active grappling engagement, the moment before the fatal outcome. The print represents the Meiji-era reception of Japan's martial mythology: published during the period when Kano was founding the Kodokan, it shows continued cultural investment in the warrior tradition even as modernization transformed Japanese society.",
+      "techniques_shown": [
+        "grappling",
+        "kicking"
+      ],
+      "terms": [
+        "sumo"
+      ],
+      "evidence": {
+        "proves": [
+          "The Nomi no Sukune legend remained culturally significant in the Meiji era",
+          "Martial arts mythology was a commercially viable subject for print artists",
+          "The legend was interpreted as a grappling encounter, not purely a kicking match (despite the Nihon Shoki text emphasizing kicks)"
+        ],
+        "cannot_prove": [
+          "What the original match (if historical) looked like",
+          "Whether Yoshitoshi's interpretation reflects any actual sumo technique"
+        ],
+        "reliability": "Artistic interpretation of a mythological event, created roughly 2,600 years after the purported events. Value is as evidence of cultural reception, not historical documentation."
+      },
+      "name_japanese": "野見宿禰",
+      "lane": "artifact"
+    },
+    {
+      "id": "yagyu_shingan_ryu",
+      "type": "literary",
+      "subtype": "school_record",
+      "name_japanese": "柳生心眼流",
+      "title": "Yagyū Shingan-ryū — Unarmed and Weapons System",
+      "date": 1600,
+      "date_display": "Founded c. 1600",
+      "origin": "Japan (Sendai domain)",
+      "author": "Takenaga Hayato (founder)",
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Yagyū Shingan-ryū (柳生心眼流) is a comprehensive martial system founded c. 1600, encompassing both armed and unarmed combat. Despite its name, it has no direct lineage connection to the Yagyū Shinkage-ryū sword school. The school's curriculum includes jujutsu, bōjutsu, kenjutsu, and battlefield techniques. It was particularly influential in the Sendai domain (modern Miyagi Prefecture) and represents the northern martial tradition. Kano surveyed and cataloged this and other classical schools when compiling his Kodokan curriculum, incorporating elements indirectly.",
+      "techniques_shown": [
+        "nage_waza",
+        "atemi_waza",
+        "kansetsu_waza",
+        "kogusoku"
+      ],
+      "terms": [
+        "jujutsu",
+        "koryu",
+        "nage_waza",
+        "atemi_waza",
+        "kansetsu_waza"
+      ],
+      "evidence": {
+        "proves": [
+          "Comprehensive unarmed-and-weapons systems existed by 1600",
+          "Regional martial traditions developed independently across Japan"
+        ],
+        "cannot_prove": [
+          "Direct connection to the Yagyū sword lineage",
+          "Specific techniques transmitted to other schools"
+        ],
+        "reliability": "School records and lineage documents. The school continues to be practiced today in northern Japan."
+      },
+      "lane": "school",
+      "active_period": {
+        "start": 1600,
+        "end": null,
+        "extant": true
+      },
+      "practitioners": "Small — active in northern Japan (Miyagi)",
+      "period_display": "c. 1600 – present"
+    },
+    {
+      "id": "ryoi_shinto_ryu",
+      "type": "literary",
+      "subtype": "school_record",
+      "name_japanese": "良移心当流",
+      "title": "Ryōi Shintō-ryū — One of the Three Great Schools",
+      "date": 1620,
+      "date_display": "Founded c. 1620s",
+      "origin": "Japan (Edo period)",
+      "author": "Fukuno Shichirōemon Masakatsu (founder)",
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Ryōi Shintō-ryū (良移心当流) was one of the three most important jujutsu schools of the Edo period, alongside Takenouchi-ryū and Yōshin-ryū. Founded by Fukuno Shichirōemon — the same figure credited with founding Kitō-ryū — it emphasizes the principle of 'good transfer of spirit.' The school influenced numerous derivative traditions and contributed to the broader ecosystem of Edo-period jujutsu. Its ranking among the 'three great schools' reflects its institutional reach and the number of branch schools it generated.",
+      "techniques_shown": [
+        "nage_waza",
+        "kansetsu_waza",
+        "atemi_waza"
+      ],
+      "terms": [
+        "jujutsu",
+        "koryu",
+        "nage_waza",
+        "kansetsu_waza"
+      ],
+      "evidence": {
+        "proves": [
+          "Three major jujutsu schools dominated the Edo period",
+          "Fukuno Shichirōemon is credited with founding multiple martial lineages"
+        ],
+        "cannot_prove": [
+          "The exact relationship between Ryōi Shintō-ryū and Kitō-ryū founding",
+          "Which techniques were unique to this school"
+        ],
+        "reliability": "Referenced in multiple Edo-period martial arts catalogs. The 'three great schools' classification is widely cited."
+      },
+      "lane": "school",
+      "active_period": {
+        "start": 1620,
+        "end": 1868,
+        "extant": false
+      },
+      "period_display": "c. 1620s – c. 1870s"
+    },
+    {
+      "id": "sosuishi_ryu",
+      "type": "literary",
+      "subtype": "school_record",
+      "name_japanese": "双水執流",
+      "title": "Sōsuishi-ryū — Comprehensive Jujutsu",
+      "date": 1650,
+      "date_display": "Founded c. 1650",
+      "origin": "Japan (Kyushu, Fukuoka domain)",
+      "author": "Fugatami Hannosuke Masayoshi (founder)",
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Sōsuishi-ryū (双水執流) is a comprehensive jujutsu school from Kyushu, incorporating kumi-uchi (grappling in armor), kogusoku (short weapon grappling), and extensive ne waza. One of the schools influenced by Takenouchi-ryū, it developed an independent curriculum emphasizing practical battlefield application. The school is notable for preserving techniques from multiple eras — armor grappling from the Sengoku period alongside civilian self-defense methods from the Edo period. It remains an active koryu tradition today.",
+      "techniques_shown": [
+        "ne_waza",
+        "kogusoku",
+        "nage_waza",
+        "kansetsu_waza"
+      ],
+      "terms": [
+        "jujutsu",
+        "koryu",
+        "ne_waza",
+        "kogusoku",
+        "nage_waza"
+      ],
+      "evidence": {
+        "proves": [
+          "Kyushu developed independent jujutsu traditions",
+          "Takenouchi-ryū's influence spread to derivative schools across Japan"
+        ],
+        "cannot_prove": [
+          "The exact techniques borrowed from Takenouchi-ryū",
+          "The school's original vs. evolved curriculum"
+        ],
+        "reliability": "Active school with continuous lineage. Historical claims supported by school documents and the broader Kyushu martial arts record."
+      },
+      "lane": "school",
+      "active_period": {
+        "start": 1650,
+        "end": null,
+        "extant": true
+      },
+      "practitioners": "Small — active in Kyushu and internationally",
+      "period_display": "c. 1650 – present"
+    },
+    {
+      "id": "hontai_yoshin_ryu",
+      "type": "literary",
+      "subtype": "school_record",
+      "name_japanese": "本體楊心流",
+      "title": "Hontai Yōshin-ryū — True Willow Heart School",
+      "date": 1660,
+      "date_display": "Founded c. 1660s",
+      "origin": "Japan (Edo period)",
+      "author": "Takagi Oriemon Shigetoshi (founder)",
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Hontai Yōshin-ryū (本體楊心流) is a comprehensive jujutsu school founded by Takagi Oriemon Shigetoshi. Distinguished from the earlier Yōshin-ryū, it developed an extensive curriculum including jujutsu, bōjutsu, hanbo (half-staff), kodachi (short sword), and iaijutsu. The school was influenced by both Takenouchi-ryū and Yōshin-ryū traditions. Its jujutsu techniques emphasize short-range combat and rapid joint-locking sequences. The school remains active internationally with authorized dōjō in Europe and Japan.",
+      "techniques_shown": [
+        "kansetsu_waza",
+        "nage_waza",
+        "atemi_waza",
+        "kogusoku"
+      ],
+      "terms": [
+        "jujutsu",
+        "koryu",
+        "kansetsu_waza",
+        "nage_waza",
+        "atemi_waza"
+      ],
+      "evidence": {
+        "proves": [
+          "Multiple 'Yōshin' traditions developed independently",
+          "Koryu schools typically encompassed both armed and unarmed techniques"
+        ],
+        "cannot_prove": [
+          "Direct lineage from the original Yōshin-ryū",
+          "Which techniques were original vs. borrowed"
+        ],
+        "reliability": "Active school with documented lineage. International presence provides independent verification of continued transmission."
+      },
+      "lane": "school",
+      "active_period": {
+        "start": 1660,
+        "end": null,
+        "extant": true
+      },
+      "practitioners": "Small — dōjō in Japan and Europe",
+      "period_display": "c. 1660s – present"
+    },
+    {
+      "id": "kano_jigoro_birth",
+      "type": "documentary",
+      "subtype": "biographical",
+      "lane": "person",
+      "name_japanese": "嘉納治五郎",
+      "title": "Kanō Jigorō — Founder of Judo",
+      "date": 1860,
+      "date_display": "1860–1938",
+      "origin": "Mikage, Settsu Province (modern Hyogo)",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": "kano_jigoro_portrait.webp",
+      "source_url": null,
+      "passage_japanese": "柔道とは、心身の力を最も有効に使用する道である",
+      "passage_translation": "Judo is the way of the highest or most efficient use of both physical and mental energy.",
+      "translator": "Kano Jigoro (1915)",
+      "description": "Kano Jigoro (1860–1938) synthesized multiple jujutsu traditions into Kodokan judo. Studied Tenjin Shin'yō-ryū under Fukuda Hachinosuke (1877–79) and Iso Masatomo (1879–81), then Kitō-ryū under Iikubo Tsunetoshi (1881+). Founded the Kodokan in 1882 with 12 mats. His innovations: randori (live sparring) as daily practice, the kuzushi principle formalized, dangerous techniques preserved in kata but excluded from sparring. By 1911 the Kodokan had 1,000+ dan-graded members. Kano served on the IOC from 1909, championing judo's Olympic inclusion. He died aboard the Hikawa Maru in 1938, 26 years before judo's Olympic debut.",
+      "techniques_shown": [
+        "nage_waza",
+        "ne_waza",
+        "randori"
+      ],
+      "terms": [
+        "judo",
+        "randori",
+        "kuzushi",
+        "seiryoku_zenyo",
+        "jita_kyoei"
+      ],
+      "evidence": {
+        "proves": [
+          "One individual synthesized a global martial art from classical sources",
+          "Institutional design mattered as much as technical innovation"
+        ],
+        "cannot_prove": [
+          "Whether Kano's vision has been faithfully preserved in modern sport judo"
+        ],
+        "reliability": "The most thoroughly documented figure in martial arts history. Multiple primary sources: own writings, Kodokan records, IOC archives, newspaper accounts."
+      }
+    },
+    {
+      "id": "takeda_sokaku_bio",
+      "type": "documentary",
+      "subtype": "biographical",
+      "lane": "person",
+      "name_japanese": "武田惣角",
+      "title": "Takeda Sōkaku — Reviver of Daito-ryu",
+      "date": 1859,
+      "date_display": "1859–1943",
+      "origin": "Aizu domain (modern Fukushima)",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": "takeda_sokaku.webp",
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": "I am not going to teach you Aiki, but I will teach you Jujutsu.",
+      "translator": "Takeda Sokaku to early student Sato Sadami",
+      "description": "Takeda Sokaku (1859–1943) revived Daito-ryu and introduced the concept of 'aiki' as a martial technique. Trained in Onoha Itto-ryu kenjutsu from age 10, received menkyo at 17. After Hoshina Chikanori advised him to teach jujutsu rather than swordsmanship (1898), he began teaching Daito-ryu Jujutsu in 1899. He had approximately 30,000 students during his lifetime. He taught aiki selectively — many students received only the jujutsu curriculum. His most famous student, Ueshiba Morihei, went on to found aikido. Takeda's eimeiroku (enrollment records) are a critical primary source for reconstructing the art's evolution.",
+      "techniques_shown": [
+        "aiki",
+        "joint_locks",
+        "throwing"
+      ],
+      "terms": [
+        "aiki",
+        "jujutsu",
+        "densho",
+        "menkyo_kaiden",
+        "koryu"
+      ],
+      "evidence": {
+        "proves": [
+          "Takeda personally taught roughly 30,000 students",
+          "The 'aiki' concept was added gradually, not present from the start"
+        ],
+        "cannot_prove": [
+          "The claimed ancient lineage back to Minamoto no Yoshimitsu",
+          "What techniques Takeda inherited versus developed"
+        ],
+        "reliability": "Eimeiroku (enrollment records) are primary documents. The pre-Takeda history is unverifiable."
+      }
+    },
+    {
+      "id": "mifune_kyuzo",
+      "type": "documentary",
+      "subtype": "biographical",
+      "lane": "person",
+      "name_japanese": "三船久蔵",
+      "title": "Mifune Kyūzō — 'The God of Judo'",
+      "date": 1883,
+      "date_display": "1883–1965",
+      "origin": "Kuji, Iwate Prefecture",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": "kano_mifune.webp",
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Mifune Kyuzo (1883–1965) is widely considered the greatest judo technician in history. Standing only 5'2\" and weighing 100 lbs when he entered the Kodokan, he relied on extraordinary timing and the principle of kuzushi rather than strength. He reached 10th dan — the highest rank achievable — and was known as 'the God of Judo.' His famous 'air throw' (kuki nage) demonstrated how complete mastery of balance-breaking could make throwing appear effortless. Film footage of Mifune practicing randori in his 70s remains among the most studied judo video material.",
+      "techniques_shown": [
+        "nage_waza",
+        "kuzushi",
+        "randori"
+      ],
+      "terms": [
+        "judo",
+        "randori",
+        "kuzushi",
+        "nage_waza"
+      ],
+      "evidence": {
+        "proves": [
+          "Technical mastery could overcome significant size disadvantage",
+          "Kuzushi principle worked at the highest competitive level"
+        ],
+        "cannot_prove": [
+          "Whether his techniques are replicable by average practitioners"
+        ],
+        "reliability": "Extensively documented through film, photographs, and Kodokan records. Multiple independent witnesses across decades."
+      }
+    },
+    {
+      "id": "tanabe_mataemon",
+      "type": "documentary",
+      "subtype": "biographical",
+      "lane": "person",
+      "name_japanese": "田辺又右衛門",
+      "title": "Tanabe Mataemon — The Man Who Beat the Kodokan",
+      "date": 1869,
+      "date_display": "1869–1942",
+      "origin": "Japan",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Mataemon Tanabe (1869–1942), master of Fusen-ryū, inflicted the only defeats in Kodokan challenge-match history. His strategy was precise: identify that the Kodokan had no ground game, sit to the ground, and win via submission. In January 1891 he defeated 3rd-dan Takisaburo Tobari by reversing an osoto-makikomi and choking him unconscious with juji-jime. In the 1892 rematch, he patiently exhausted Tobari and choked him again. Kano's response: invite Tanabe to teach ne waza at the Kodokan. Tanabe's tactical insight — force the fight to the phase where your opponent is weakest — runs through Maeda's career and the Gracie system decades later.",
+      "techniques_shown": [
+        "ne_waza",
+        "shime_waza",
+        "kansetsu_waza"
+      ],
+      "terms": [
+        "jujutsu",
+        "ne_waza",
+        "shime_waza",
+        "koryu"
+      ],
+      "evidence": {
+        "proves": [
+          "Ground fighting could defeat the Kodokan's standing system",
+          "Strategic phase selection is a repeating principle in martial arts history"
+        ],
+        "cannot_prove": [
+          "Exact match details — accounts vary by source"
+        ],
+        "reliability": "Multiple accounts agree on the broad narrative. Specific details vary."
+      }
+    },
+    {
+      "id": "ueshiba_morihei_bio",
+      "type": "documentary",
+      "subtype": "biographical",
+      "lane": "person",
+      "name_japanese": "植芝盛平",
+      "title": "Ueshiba Morihei — Founder of Aikido",
+      "date": 1883,
+      "date_display": "1883–1969",
+      "origin": "Tanabe, Wakayama Prefecture",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": "ueshiba_morihei_1939.webp",
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Ueshiba Morihei (1883–1969) founded aikido from Daito-ryu Aiki-jujutsu. He met Takeda Sokaku in March 1915 and became his most prominent student, receiving kyoju dairi (teaching representative) status in 1922. Influenced by the Ōmoto-kyō religious movement, Ueshiba gradually transformed a combat-effective joint-locking and throwing art into a practice emphasizing harmonious movement and spiritual development. The name 'aikido' was officially adopted in 1942. His trajectory represents a martial system with genuine grappling roots that moved away from adversarial stress-testing — a philosophically important divergence in the history of Japanese martial arts.",
+      "techniques_shown": [
+        "aiki",
+        "joint_locks",
+        "throwing"
+      ],
+      "terms": [
+        "aikido",
+        "aiki",
+        "jujutsu",
+        "koryu"
+      ],
+      "evidence": {
+        "proves": [
+          "Aikido derives directly from Daito-ryu",
+          "The transition was gradual, not sudden"
+        ],
+        "cannot_prove": [
+          "When exactly technique diverged from Takeda's teaching"
+        ],
+        "reliability": "Well-documented through certificates, student accounts, and Takeda's eimeiroku."
+      }
+    },
+    {
+      "id": "ryukyu_chinese_kempo",
+      "type": "literary",
+      "subtype": "cultural_exchange",
+      "lane": "event",
+      "name_japanese": "琉球唐手",
+      "title": "Ryūkyū Tōde — Chinese Martial Arts Reach Okinawa",
+      "date": 1392,
+      "date_display": "1392 onward",
+      "origin": "Ryukyu Kingdom / Fujian, China",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "In 1392, a group known as the 'Thirty-Six Families' from Fujian province settled in Kume village near Naha, bringing Chinese kempō (拳法, fist method). Okinawan nobility also traveled to China to study at the Ryukyu establishment in Fujian. The indigenous fighting art te (手, hand) blended with Chinese techniques to become tōde (唐手, T'ang hand) — later renamed karate (空手, empty hand). King Shō Shin's weapons ban in 1477 further accelerated unarmed combat development. This is the origin thread of all karate traditions, which later crossed to mainland Japan when Funakoshi Gichin demonstrated at the Kodokan in 1922 at Kano's invitation.",
+      "techniques_shown": [
+        "atemi_waza",
+        "kicking"
+      ],
+      "terms": [
+        "koryu"
+      ],
+      "evidence": {
+        "proves": [
+          "Chinese martial arts were transmitted to Okinawa via the Fujian connection",
+          "Weapons bans accelerated unarmed combat development — same pattern as Hideyoshi's katanagari"
+        ],
+        "cannot_prove": [
+          "Exact techniques transmitted",
+          "Whether the Thirty-Six Families story is literal or legendary"
+        ],
+        "reliability": "The Kume village settlement is historically documented. The martial arts transmission is attested by Okinawan oral tradition and consistent with known trade routes."
+      }
+    },
+    {
+      "id": "funakoshi_kodokan_1922",
+      "type": "documentary",
+      "subtype": "event",
+      "lane": "event",
+      "name_japanese": "空手演武",
+      "title": "Funakoshi Gichin — Karate Demonstration at the Kodokan",
+      "date": 1922,
+      "date_display": "1922",
+      "origin": "Tokyo, Japan (Kodokan)",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "In May 1922, Kano Jigoro authorized a karate exhibition by Gichin Funakoshi at the Kodokan, inviting him from Okinawa to demonstrate Kusanku and Naihanchi kata for over 200 university and Ministry of Education viewers. Kano urged Funakoshi to stay in Tokyo and teach. This event marks karate's formal expansion from Okinawa to mainland Japan — enabled by the institutional authority of the Kodokan's founder. Funakoshi remained and established Shotokan karate. Kano later visited Okinawa in 1927 to survey karate expertise directly.",
+      "techniques_shown": [
+        "atemi_waza",
+        "kicking"
+      ],
+      "terms": [
+        "judo",
+        "koryu"
+      ],
+      "evidence": {
+        "proves": [
+          "Kano actively promoted cross-martial-arts exchange",
+          "Karate's mainland expansion was facilitated by judo's institutional network"
+        ],
+        "cannot_prove": [
+          "Kano's private assessment of karate's technical value"
+        ],
+        "reliability": "Well-documented in both Kodokan and Shotokan histories. Multiple independent accounts confirm the date and circumstances."
+      }
+    },
+    {
+      "id": "western_influence_meiji",
+      "type": "documentary",
+      "subtype": "cultural_exchange",
+      "lane": "event",
+      "name_japanese": "洋式武術",
+      "title": "Western Martial Influence — Fencing and Boxing in Meiji Japan",
+      "date": 1873,
+      "date_display": "1870s–1900s",
+      "origin": "Japan (Meiji era)",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "The Meiji Restoration (1868) brought rapid Westernization, including European fencing and boxing. The military adopted French-style fencing drills; Western boxing exhibitions drew public attention. This created a crisis for traditional martial arts — initially suppressed in favor of modern military methods. The response was reformulation: koryu bujutsu became gendai budō, with competitive and educational frameworks modeled partly on Western sporting concepts. Sakakibara Kenkichi's commercial gekiken (public sword-fighting) exhibitions preserved popular interest. The Dai Nippon Butoku Kai (1895) was founded explicitly to systematize and preserve Japanese martial arts against Western cultural pressure.",
+      "techniques_shown": [],
+      "terms": [],
+      "evidence": {
+        "proves": [
+          "Western sporting models influenced the modernization of Japanese martial arts",
+          "The koryu-to-budō transition was partly a response to Western cultural pressure"
+        ],
+        "cannot_prove": [
+          "Specific technical borrowings from Western fencing or boxing",
+          "Whether modernization improved or degraded traditional arts"
+        ],
+        "reliability": "Well-documented in Meiji-era government and military records. Denis Gainty's 'Martial Arts and the Body Politic in Meiji Japan' provides scholarly analysis."
+      }
+    },
+    {
+      "id": "santel_kodokan_1921",
+      "type": "documentary",
+      "subtype": "competition",
+      "lane": "event",
+      "name_japanese": "サンテル来日",
+      "title": "Ad Santel vs. Kodokan — Catch Wrestling Crosses the Pacific",
+      "date": 1921,
+      "date_display": "February 1921",
+      "origin": "Tokyo, Japan (Yasukuni Shrine)",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": "https://www.tandfonline.com/doi/full/10.1080/09523367.2024.2358044",
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "In February 1921, American catch wrestlers Ad Santel and Henry Weber traveled to Japan and challenged Kodokan judoka at Yasukuni Shrine, drawing 20,000–25,000 spectators. Kano refused to sanction the event and threatened expulsion, but six judoka accepted, including 5th-dan Hikoo Shoji and Reijiro Nakata. Bouts were contested under neutral rules: judogi jackets required, all holds permitted. Santel defeated Nakata by TKO via headlock; his match with Shoji was a 60-minute draw that left Shoji so battered Santel helped him off the mat. The expelled judoka followed Santel to the US — Shoji became a freestyle wrestling pioneer. This was arguably the first major no-gi cross-style challenge on Japanese soil.",
+      "techniques_shown": [
+        "catch_wrestling",
+        "ne_waza",
+        "kansetsu_waza"
+      ],
+      "terms": [
+        "judo",
+        "ne_waza"
+      ],
+      "evidence": {
+        "proves": [
+          "Catch wrestling challenged Kodokan judo directly on Japanese soil by 1921",
+          "Cross-style competition predates the Gracie challenge era by 70 years",
+          "Kano opposed open competition but couldn't prevent it"
+        ],
+        "cannot_prove": [
+          "Exact match details — newspaper accounts vary",
+          "Whether this was truly the first 'no-gi' influence"
+        ],
+        "reliability": "Academic article by Grégory Sion (International Journal of the History of Sport, 2024) provides detailed primary source analysis. Newspaper accounts from 1921 survive."
+      }
+    },
+    {
+      "id": "gotch_japan",
+      "type": "documentary",
+      "subtype": "biographical",
+      "lane": "person",
+      "name_japanese": "カール・ゴッチ",
+      "title": "Karl Gotch — 'God of Wrestling' in Japan",
+      "date": 1972,
+      "date_display": "1924–2007 (active in Japan from 1972)",
+      "origin": "Belgium → Japan",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Belgian-born catch wrestler Karl Gotch (1924–2007) became the 'God of Wrestling' in Japan. In January 1972, Antonio Inoki recruited Gotch to help found New Japan Pro-Wrestling (NJPW) on the condition he serve as trainer. Gotch wrestled the main event of NJPW's first show (March 6, 1972), defeating Inoki. Throughout the 1970s he taught catch wrestling — slams, submissions, joint locks — to Inoki, Tatsumi Fujinami, Yoshiaki Fujiwara, Satoru Sayama, and Akira Maeda. These students became the founders of shoot-style wrestling and MMA in Japan. Gotch's catch wrestling lineage runs directly through to Shooto, Pancrase, and Pride FC.",
+      "techniques_shown": [
+        "catch_wrestling",
+        "ne_waza",
+        "kansetsu_waza"
+      ],
+      "terms": [
+        "ne_waza"
+      ],
+      "evidence": {
+        "proves": [
+          "Catch wrestling was systematically transmitted to Japanese pro wrestlers in the 1970s",
+          "Gotch directly trained the founders of shoot-style wrestling",
+          "The NJPW founding date and Gotch's role are well-documented"
+        ],
+        "cannot_prove": [
+          "The exact proportion of Gotch's techniques vs. other influences in each student's style"
+        ],
+        "reliability": "NJPW records, match footage, and multiple student testimonials. The training lineage is undisputed."
+      }
+    },
+    {
+      "id": "uwf_1984",
+      "type": "documentary",
+      "subtype": "institutional",
+      "lane": "school",
+      "name_japanese": "UWF",
+      "title": "Universal Wrestling Federation — Birth of Shoot Style",
+      "date": 1984,
+      "date_display": "1984–1990",
+      "origin": "Japan",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "The Universal Wrestling Federation (UWF), founded in 1984 by wrestlers who left NJPW, pioneered shoot-style wrestling — professional wrestling stripped of theatrical elements, emphasizing legitimate submissions and strikes. Key figures: Satoru Sayama, Yoshiaki Fujiwara, Kazuo Yamazaki, Akira Maeda. All were Karl Gotch students who wanted real fighting. The UWF disbanded due to internal conflicts but its wrestlers founded the promotions that created Japanese MMA: Sayama founded Shooto (1985), Funaki and Suzuki founded Pancrase (1993), Maeda founded RINGS (1991). The UWF is the direct institutional ancestor of Japanese MMA.",
+      "techniques_shown": [
+        "catch_wrestling",
+        "ne_waza",
+        "kansetsu_waza",
+        "atemi_waza"
+      ],
+      "terms": [
+        "ne_waza"
+      ],
+      "active_period": {
+        "start": 1984,
+        "end": 1990,
+        "extant": false
+      },
+      "period_display": "1984–1990 (spawned Shooto, Pancrase, RINGS)",
+      "evidence": {
+        "proves": [
+          "Shoot-style wrestling emerged from catch wrestling training at NJPW",
+          "The UWF spawned three major combat sports organizations",
+          "Japanese MMA has a direct lineage from Karl Gotch through the UWF"
+        ],
+        "cannot_prove": [
+          "Whether early UWF matches were fully unscripted",
+          "The exact moment 'shoot style' became 'real fighting'"
+        ],
+        "reliability": "Well-documented through match footage, promotion records, and participant interviews."
+      }
+    },
+    {
+      "id": "shooto",
+      "type": "documentary",
+      "subtype": "institutional",
+      "lane": "school",
+      "name_japanese": "修斗",
+      "title": "Shooto — First Systematic MMA",
+      "date": 1985,
+      "date_display": "1985 – present",
+      "origin": "Japan",
+      "author": "Satoru Sayama (founder)",
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Shooto was founded in 1985 by Satoru Sayama (the original Tiger Mask), a student of both Antonio Inoki and Karl Gotch. Sayama's goal was creating a realistic fighting system that combined striking, throwing, and submission grappling — arguably the first intentionally designed MMA system. First professional event in 1989. Shooto predates the UFC (1993) by four years. The system explicitly integrated catch wrestling submissions, judo throws, and karate striking into a unified competitive framework with weight classes and timed rounds.",
+      "techniques_shown": [
+        "catch_wrestling",
+        "ne_waza",
+        "nage_waza",
+        "atemi_waza"
+      ],
+      "terms": [
+        "ne_waza",
+        "nage_waza"
+      ],
+      "active_period": {
+        "start": 1985,
+        "end": null,
+        "extant": true
+      },
+      "period_display": "1985 – present",
+      "practitioners": "Active — professional and amateur events in Japan and internationally",
+      "evidence": {
+        "proves": [
+          "Systematic MMA existed in Japan before the UFC",
+          "Catch wrestling + judo + karate was the synthesis formula"
+        ],
+        "cannot_prove": [
+          "Whether Shooto or vale tudo deserves the 'first MMA' title"
+        ],
+        "reliability": "Event records and match footage from 1989 onward."
+      }
+    },
+    {
+      "id": "pancrase",
+      "type": "documentary",
+      "subtype": "institutional",
+      "lane": "school",
+      "name_japanese": "パンクラス",
+      "title": "Pancrase — Real Fights, Named After Pankration",
+      "date": 1993,
+      "date_display": "1993 – present",
+      "origin": "Japan",
+      "author": "Masakatsu Funaki & Minoru Suzuki (founders)",
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Pancrase was founded in 1993 by Masakatsu Funaki and Minoru Suzuki, both former UWF wrestlers dissatisfied with the theatrical direction of their predecessors. Named after ancient Greek pankration, Pancrase promoted fully unscripted fights with open-palm strikes (closed fists prohibited initially), submissions, and no gi. Bas Rutten, Frank Shamrock, and Ken Shamrock all competed in Pancrase, creating a direct bridge between Japanese shoot wrestling and American MMA. Pancrase's first event preceded UFC 1 by three weeks.",
+      "techniques_shown": [
+        "catch_wrestling",
+        "ne_waza",
+        "kansetsu_waza",
+        "atemi_waza"
+      ],
+      "terms": [
+        "ne_waza"
+      ],
+      "active_period": {
+        "start": 1993,
+        "end": null,
+        "extant": true
+      },
+      "period_display": "1993 – present",
+      "practitioners": "Active — professional MMA promotion in Japan",
+      "evidence": {
+        "proves": [
+          "Japanese MMA and American MMA developed simultaneously, not sequentially",
+          "The ancient Greek name was deliberately chosen — historical awareness in the founders"
+        ],
+        "cannot_prove": [
+          "Whether early Pancrase matches were all fully unscripted"
+        ],
+        "reliability": "Match footage and promotion records. The Shamrock connection to UFC is independently documented."
+      }
+    },
+    {
+      "id": "pride_fc",
+      "type": "documentary",
+      "subtype": "institutional",
+      "lane": "school",
+      "name_japanese": "PRIDE",
+      "title": "Pride Fighting Championships — MMA's Golden Age in Japan",
+      "date": 1997,
+      "date_display": "1997–2007",
+      "origin": "Tokyo, Japan",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Pride Fighting Championships launched October 11, 1997 at the Tokyo Dome, drawing 47,000 fans for its debut: Nobuhiko Takada (pro wrestler from the UWF lineage) vs. Rickson Gracie (BJJ). This event crystallized the full circle: Japanese martial arts exported via Maeda → developed in Brazil as BJJ → returned to Japan to fight against Japanese shoot wrestlers descended from the same lineage through Gotch. Pride became the world's premier MMA promotion, featuring fighters from judo, BJJ, wrestling, karate, and catch wrestling. Acquired by UFC parent Zuffa in 2007.",
+      "techniques_shown": [
+        "ne_waza",
+        "nage_waza",
+        "atemi_waza"
+      ],
+      "terms": [
+        "ne_waza",
+        "judo"
+      ],
+      "active_period": {
+        "start": 1997,
+        "end": 2007,
+        "extant": false
+      },
+      "period_display": "1997–2007 (acquired by UFC/Zuffa)",
+      "evidence": {
+        "proves": [
+          "MMA reached mainstream scale in Japan by 1997",
+          "The Gracie-vs-Japanese-wrestler narrative drove the promotion's founding",
+          "The full grappling lineage circle closed: Japan → Brazil → Japan"
+        ],
+        "cannot_prove": [
+          "Whether Pride or UFC was the more important promotion historically"
+        ],
+        "reliability": "Extensively documented through broadcast footage, attendance records, and participant accounts."
+      }
+    },
+    {
+      "id": "karate",
+      "type": "documentary",
+      "subtype": "institutional",
+      "lane": "school",
+      "name_japanese": "唐手→空手",
+      "title": "Karate — From 唐手 'Chinese Hand' to 空手 'Empty Hand'",
+      "date": 1477,
+      "date_display": "c. 1400s as 唐手 tōde; renamed 空手 karate 1930s",
+      "origin": "Okinawa → Tokyo, Japan",
+      "author": "Funakoshi Gichin (mainland pioneer)",
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": "唐手 → 空手。「唐」は中国を意味し、「空」は仏教の空の概念に由来する",
+      "passage_translation": "唐手 (tōde, 'Chinese hand') → 空手 (karate, 'empty hand'). The character 唐 means 'China/T'ang'; 空 derives from the Buddhist concept of emptiness (kū/śūnyatā). Funakoshi's renaming was both political and philosophical.",
+      "translator": null,
+      "description": "Karate originated in the Ryukyu Kingdom as tōde (唐手, 'Chinese hand' or 'T'ang hand') — a blend of indigenous Okinawan te (手) and Chinese kempō transmitted via Fujian traders from the 14th century. Weapons bans under King Shō Shin (1477) and the Satsuma clan invasion (1609) accelerated unarmed combat development. The art was practiced in secrecy for centuries. In 1922, Funakoshi Gichin demonstrated kata at the Kodokan at Kano's invitation, launching the art on the Japanese mainland. Originally written as 唐手 ('Chinese hand'), Funakoshi changed the kanji to 空手 ('empty hand') in the 1930s — aligning with Japanese budō culture and removing direct references to China during a period of rising nationalism. The rebranding was strategic: 空 (empty) carried Zen connotations that resonated with the Japanese martial establishment, while 唐 (T'ang/Chinese) had become politically uncomfortable. Major styles: Shōtōkan, Gōjū-ryū, Shitō-ryū, Wadō-ryū. Olympic sport since 2021 (Tokyo). While primarily a striking art, karate contextualizes the broader Japanese martial ecosystem alongside grappling traditions.",
+      "techniques_shown": [
+        "atemi_waza",
+        "kicking"
+      ],
+      "terms": [
+        "koryu"
+      ],
+      "active_period": {
+        "start": 1477,
+        "end": null,
+        "extant": true
+      },
+      "period_display": "c. 1400s as tōde (唐手) – present as karate (空手)",
+      "practitioners": "~130,000 registered in Japan (JKF); ~50 million worldwide (estimated)",
+      "evidence": {
+        "proves": [
+          "Kano actively facilitated cross-art exchange by hosting the 1922 demonstration",
+          "Karate's mainland expansion was enabled by judo's institutional network",
+          "Striking and grappling traditions developed in parallel across Japanese martial history"
+        ],
+        "cannot_prove": [
+          "The exact curriculum of pre-modern Okinawan tōde",
+          "Whether Funakoshi's Shōtōkan accurately represents historical Okinawan practice"
+        ],
+        "reliability": "Well-documented from 1922 onward. Pre-modern Okinawan history relies heavily on oral tradition."
+      }
+    }
+  ],
+  "lexicon": [
+    {
+      "id": "sumo",
+      "japanese": "相撲",
+      "romaji": "sumō",
+      "literal": "mutual striking",
+      "definition": "Japan's oldest documented martial art. Originated in Shinto ritual, institutionalized at the imperial court by the 8th century, and evolved into the professional sport practiced today. Wrestlers compete in a circular ring (dohyō), winning by forcing the opponent out or making any body part other than the soles of the feet touch the ground.",
+      "category": "sport",
+      "sources": [
+        "kojiki_wrestling",
+        "nihon_shoki_nomi",
+        "sechie_zumo",
+        "kuniyoshi_sumo_triptych",
+        "kunisada_sumo_1854",
+        "yoshitoshi_nomi_sukune"
+      ],
+      "modern_parallel": "Sumo (unchanged)"
+    },
+    {
+      "id": "jujutsu",
+      "japanese": "柔術",
+      "romaji": "jūjutsu",
+      "literal": "gentle/flexible art",
+      "definition": "Umbrella term for Japanese unarmed combat systems emphasizing throws, joint locks, pins, and chokes. Over 700 schools documented during the Edo period. The term contrasts with kenjutsu (sword art) — jū (flexibility/yielding) as the core principle against armed or larger opponents.",
+      "category": "art",
+      "sources": [
+        "takenouchi_founding",
+        "tenjin_shinyo_ryu",
+        "kito_ryu",
+        "katanagari_1588",
+        "kano_grant_demonstration",
+        "daitoryu_scrolls",
+        "fusen_ryu_challenge",
+        "ueshiba_aikido",
+        "sekiguchi_ryu",
+        "yoshin_ryu",
+        "jikishin_ryu",
+        "yagyu_shingan_ryu",
+        "ryoi_shinto_ryu",
+        "sosuishi_ryu",
+        "hontai_yoshin_ryu",
+        "takeda_sokaku_bio",
+        "tanabe_mataemon",
+        "ueshiba_morihei_bio"
+      ],
+      "modern_parallel": "Brazilian Jiu-Jitsu, various jujutsu styles"
+    },
+    {
+      "id": "judo",
+      "japanese": "柔道",
+      "romaji": "jūdō",
+      "literal": "gentle/flexible way",
+      "definition": "Kano Jigoro's 1882 systematization of jujutsu into an educational framework. Distinguished from jujutsu by: the randori method (live sparring as daily practice), a philosophical framework (seiryoku zen'yō, jita kyōei), and institutional structure. The term 'judo' predates Kano — Kitō-ryū used it internally — but Kano reframed dō (the way) as ongoing self-improvement.",
+      "category": "art",
+      "sources": [
+        "kodokan_founding",
+        "police_tournament_1886",
+        "fusen_ryu_challenge",
+        "kito_ryu",
+        "maeda_mitsuyo",
+        "olympics_1964",
+        "kano_grant_demonstration",
+        "kano_jigoro_birth",
+        "mifune_kyuzo",
+        "funakoshi_kodokan_1922",
+        "santel_kodokan_1921",
+        "pride_fc"
+      ],
+      "modern_parallel": "Olympic Judo"
+    },
+    {
+      "id": "aikido",
+      "japanese": "合気道",
+      "romaji": "aikidō",
+      "literal": "way of harmonious spirit",
+      "definition": "Martial art founded by Ueshiba Morihei, derived from Daito-ryu Aiki-jujutsu with influence from Ōmoto-kyō spirituality. Emphasizes circular movement, joint locks, and throws that redirect an attacker's force. The name was officially adopted in 1942 under the Dai Nippon Butoku Kai. Represents a martial system with genuine grappling roots that moved away from adversarial stress-testing.",
+      "category": "art",
+      "sources": [
+        "ueshiba_aikido",
+        "daitoryu_scrolls",
+        "ueshiba_morihei_bio"
+      ],
+      "modern_parallel": "Aikido (unchanged)"
+    },
+    {
+      "id": "aiki",
+      "japanese": "合気",
+      "romaji": "aiki",
+      "literal": "harmonious/matching spirit",
+      "definition": "Originally negative in Edo-period martial arts usage — describing the unfavorable 'collision of attacking impulses' in both kenjutsu and jujutsu. Referenced in densho of Itto-ryu, Kito-ryu, and Tenshin Shinyo-ryu. Reinterpreted positively by Takeda Sokaku as a technique for controlling opponents. First documented as a technical term in Sagawa Nenokichi's notes (c. 1913). The 1892 publication 'Budo Hiketsu: Aiki no Jutsu' defined it as 'the highest level mystery of Japanese Budo.'",
+      "category": "concept",
+      "sources": [
+        "daitoryu_scrolls",
+        "ueshiba_aikido",
+        "takeda_sokaku_bio",
+        "ueshiba_morihei_bio"
+      ],
+      "modern_parallel": "Aiki in Daito-ryu and Aikido"
+    },
+    {
+      "id": "randori",
+      "japanese": "乱取り",
+      "romaji": "randori",
+      "literal": "free taking / free practice",
+      "definition": "Live sparring against a resisting opponent. Kano's most important methodological innovation. Classical ryu trained exclusively with kata (prearranged forms). Kano made daily live-resistance sparring the backbone of practice. Dangerous techniques were removed from randori but preserved in kata, enabling daily full-speed training. The 1886 police tournament proved its effectiveness: randori-trained judoka defeated kata-only trained classical stylists.",
+      "category": "training_method",
+      "sources": [
+        "kodokan_founding",
+        "police_tournament_1886",
+        "fusen_ryu_challenge",
+        "maeda_mitsuyo",
+        "olympics_1964",
+        "kano_jigoro_birth",
+        "mifune_kyuzo"
+      ],
+      "modern_parallel": "Sparring, rolling (BJJ), live rounds (wrestling)"
+    },
+    {
+      "id": "kata",
+      "japanese": "形 / 型",
+      "romaji": "kata",
+      "literal": "form / pattern",
+      "definition": "Prearranged technique sequences practiced against a compliant partner. The exclusive training method of classical jujutsu schools before Kano introduced randori. In the Kodokan system, kata preserves dangerous techniques excluded from randori (atemi, certain joint locks) and serves as a repository of classical knowledge. Kime-no-kata preserves Tenjin Shin'yō-ryū atemi; Kitō-ryū kata were adopted directly.",
+      "category": "training_method",
+      "sources": [
+        "tenjin_shinyo_ryu",
+        "kito_ryu",
+        "kodokan_founding",
+        "takenouchi_founding"
+      ],
+      "modern_parallel": "Drills, forms, technique demonstration"
+    },
+    {
+      "id": "kuzushi",
+      "japanese": "崩し",
+      "romaji": "kuzushi",
+      "literal": "breaking / crumbling",
+      "definition": "The principle of disrupting an opponent's balance before executing a technique. Originated in Kitō-ryū. Kano's breakthrough insight: he told Iikubo that throws should follow balance-breaking. Iikubo replied: 'I have nothing more to teach you.' Kuzushi became the structural core of Kodokan judo — every throw begins with destabilizing the opponent's base.",
+      "category": "principle",
+      "sources": [
+        "kito_ryu",
+        "kodokan_founding",
+        "kano_jigoro_birth",
+        "mifune_kyuzo"
+      ],
+      "modern_parallel": "Off-balancing in any grappling art"
+    },
+    {
+      "id": "ne_waza",
+      "japanese": "寝技",
+      "romaji": "ne waza",
+      "literal": "lying/sleeping technique",
+      "definition": "Ground grappling techniques: pins, chokes, joint locks applied on the ground. The Kodokan's critical weakness before 1900 — exposed by Fusen-ryū's challenge victories. After Tanabe's defeats of Kodokan judoka, Kano invited him to teach ne waza, triggering a 25-year ground-technique revolution. Ne waza was present in Tenjin Shin'yō-ryū (Kano's first school) but had been de-emphasized in early Kodokan randori.",
+      "category": "technique_category",
+      "sources": [
+        "fusen_ryu_challenge",
+        "tenjin_shinyo_ryu",
+        "kodokan_founding",
+        "maeda_mitsuyo",
+        "sekiguchi_ryu",
+        "jikishin_ryu",
+        "sosuishi_ryu",
+        "tanabe_mataemon",
+        "santel_kodokan_1921",
+        "gotch_japan",
+        "uwf_1984",
+        "shooto",
+        "pancrase",
+        "pride_fc"
+      ],
+      "modern_parallel": "Ground game in BJJ, MMA"
+    },
+    {
+      "id": "nage_waza",
+      "japanese": "投技",
+      "romaji": "nage waza",
+      "literal": "throwing technique",
+      "definition": "Standing throwing techniques. The primary technical contribution of Kitō-ryū to the Kodokan system. Combined with the kuzushi principle, throws became the signature technique category of judo. The Kodokan's dominance in the 1886 police tournament was largely achieved through superior throwing under pressure.",
+      "category": "technique_category",
+      "sources": [
+        "kito_ryu",
+        "kodokan_founding",
+        "police_tournament_1886",
+        "yoshin_ryu",
+        "jikishin_ryu",
+        "yagyu_shingan_ryu",
+        "ryoi_shinto_ryu",
+        "sosuishi_ryu",
+        "hontai_yoshin_ryu",
+        "mifune_kyuzo",
+        "shooto"
+      ],
+      "modern_parallel": "Throws/takedowns in judo, wrestling"
+    },
+    {
+      "id": "atemi_waza",
+      "japanese": "当身技",
+      "romaji": "atemi waza",
+      "literal": "body-striking technique",
+      "definition": "Strikes to vital points. A core component of Tenjin Shin'yō-ryū, Kano's first school. Preserved in Kodokan kata (especially Kime-no-kata) but excluded from randori competition for safety. The exclusion of atemi from competitive judo was a deliberate design choice — enabling daily high-intensity sparring that would be impossible if strikes were permitted.",
+      "category": "technique_category",
+      "sources": [
+        "tenjin_shinyo_ryu",
+        "yoshin_ryu",
+        "yagyu_shingan_ryu",
+        "hontai_yoshin_ryu"
+      ],
+      "modern_parallel": "Striking in MMA, karate"
+    },
+    {
+      "id": "shime_waza",
+      "japanese": "絞技",
+      "romaji": "shime waza",
+      "literal": "constriction/strangling technique",
+      "definition": "Choking and strangling techniques. Juji-jime (cross choke) was the technique Tanabe used to defeat Kodokan judoka in the Fusen-ryū challenge matches. Choking techniques were part of the Tenjin Shin'yō-ryū curriculum that Kano studied, but their application in ne waza was underdeveloped in the early Kodokan.",
+      "category": "technique_category",
+      "sources": [
+        "fusen_ryu_challenge",
+        "tenjin_shinyo_ryu",
+        "tanabe_mataemon"
+      ],
+      "modern_parallel": "Chokes/strangles in BJJ, MMA"
+    },
+    {
+      "id": "kansetsu_waza",
+      "japanese": "関節技",
+      "romaji": "kansetsu waza",
+      "literal": "joint technique",
+      "definition": "Joint lock techniques targeting elbows, wrists, shoulders, and other joints. Present across most koryu jujutsu schools and central to Daito-ryu's curriculum. In competitive judo, only elbow locks are permitted; other joint attacks are preserved in kata.",
+      "category": "technique_category",
+      "sources": [
+        "tenjin_shinyo_ryu",
+        "daitoryu_scrolls",
+        "takenouchi_founding",
+        "sekiguchi_ryu",
+        "yoshin_ryu",
+        "jikishin_ryu",
+        "yagyu_shingan_ryu",
+        "ryoi_shinto_ryu",
+        "hontai_yoshin_ryu"
+      ],
+      "modern_parallel": "Joint locks, submissions in BJJ/MMA"
+    },
+    {
+      "id": "kogusoku",
+      "japanese": "小具足",
+      "romaji": "kogusoku",
+      "literal": "small armor",
+      "definition": "Armed grappling techniques in light armor, using short weapons (daggers, jutte). The original form taught by Takenouchi-ryū's founding legend — the yamabushi broke Hisamori's bokken into two daggers and taught this art. Represents the battlefield origin of jujutsu: combat with weapons at close quarters where swords were impractical.",
+      "category": "technique_category",
+      "sources": [
+        "takenouchi_founding",
+        "sosuishi_ryu"
+      ],
+      "modern_parallel": "Close-quarters combat, knife defense"
+    },
+    {
+      "id": "densho",
+      "japanese": "伝書",
+      "romaji": "densho",
+      "literal": "transmission document",
+      "definition": "Secret teaching scrolls of a koryu school. The primary method of preserving and transmitting martial knowledge before modern publishing. Initially restricted to family members and select disciples. Takenouchi-ryū and Daito-ryu both transmitted through densho systems. The scrolls typically contained technique names, principles, and sometimes illustrations — but required oral instruction to interpret.",
+      "category": "document_type",
+      "sources": [
+        "takenouchi_founding",
+        "daitoryu_scrolls",
+        "ueshiba_aikido",
+        "takeda_sokaku_bio"
+      ],
+      "modern_parallel": "Curriculum, syllabus, instructional manuals"
+    },
+    {
+      "id": "menkyo_kaiden",
+      "japanese": "免許皆伝",
+      "romaji": "menkyo kaiden",
+      "literal": "license of full transmission",
+      "definition": "The highest level of certification in a koryu school — complete mastery of the entire curriculum. Kano received menkyo kaiden in Kitō-ryū from Iikubo Tsunetoshi. Ueshiba received kyoju dairi (teaching representative) status in Daito-ryu from Takeda Sokaku. These certifications represented not just technical skill but authorization to transmit the school's teachings.",
+      "category": "rank",
+      "sources": [
+        "kito_ryu",
+        "daitoryu_scrolls",
+        "takeda_sokaku_bio"
+      ],
+      "modern_parallel": "Black belt (approximate), master instructor certification"
+    },
+    {
+      "id": "koryu",
+      "japanese": "古流",
+      "romaji": "koryū",
+      "literal": "old flow / old school",
+      "definition": "Pre-Meiji traditional martial arts schools. Over 700 koryu jujutsu schools were documented during the Edo period. Characterized by: family or lineage-based transmission, densho (secret scrolls), kata-only training, and comprehensive curricula covering multiple weapon types. The founding of the Kodokan (1882) and the subsequent dominance of judo effectively ended the koryu era, though some schools survive today.",
+      "category": "classification",
+      "sources": [
+        "takenouchi_founding",
+        "tenjin_shinyo_ryu",
+        "kito_ryu",
+        "katanagari_1588",
+        "daitoryu_scrolls",
+        "ueshiba_aikido",
+        "sekiguchi_ryu",
+        "yoshin_ryu",
+        "jikishin_ryu",
+        "yagyu_shingan_ryu",
+        "ryoi_shinto_ryu",
+        "sosuishi_ryu",
+        "hontai_yoshin_ryu",
+        "takeda_sokaku_bio",
+        "tanabe_mataemon",
+        "ueshiba_morihei_bio",
+        "ryukyu_chinese_kempo",
+        "funakoshi_kodokan_1922",
+        "karate"
+      ],
+      "modern_parallel": "Traditional/classical martial arts"
+    },
+    {
+      "id": "dohyo",
+      "japanese": "土俵",
+      "romaji": "dohyō",
+      "literal": "raised clay platform",
+      "definition": "The sumo ring — a circular area 4.55 meters in diameter, made of clay with straw bale markers, raised on a platform. The design traces to the sechie-zumo court tournaments of the Nara and Heian periods. The ring boundary creates a unique competitive dynamic: wrestlers can win by pushing the opponent out, not just by takedown or submission.",
+      "category": "equipment",
+      "sources": [
+        "sechie_zumo",
+        "kuniyoshi_sumo_triptych",
+        "kunisada_sumo_1854"
+      ],
+      "modern_parallel": "Competition mat, ring, octagon"
+    },
+    {
+      "id": "dojo",
+      "japanese": "道場",
+      "romaji": "dōjō",
+      "literal": "place of the way",
+      "definition": "Training hall. Originally a Buddhist term for a place of meditation. Adopted by martial arts schools during the Edo period. Kano's founding of the Kodokan at Eishō-ji temple — literally a Buddhist temple — reflects this etymological connection. The dojo represents the institutional infrastructure that enables systematic transmission of martial knowledge.",
+      "category": "institution",
+      "sources": [
+        "kodokan_founding",
+        "ueshiba_aikido"
+      ],
+      "modern_parallel": "Gym, academy, training facility"
+    },
+    {
+      "id": "seiryoku_zenyo",
+      "japanese": "精力善用",
+      "romaji": "seiryoku zen'yō",
+      "literal": "maximum efficient use of energy",
+      "definition": "Kano's core philosophical principle: 'maximum efficiency, minimum effort.' Applied not just to technique but to all aspects of life. This was Kano's answer to the question of what unified the diverse techniques he had inherited — the common principle underlying all effective judo technique was the most efficient use of physical and mental energy.",
+      "category": "philosophy",
+      "sources": [
+        "kodokan_founding",
+        "kano_jigoro_birth"
+      ],
+      "modern_parallel": "Efficiency principle in any combat sport"
+    },
+    {
+      "id": "jita_kyoei",
+      "japanese": "自他共栄",
+      "romaji": "jita kyōei",
+      "literal": "mutual welfare and benefit",
+      "definition": "Kano's second core principle: training partners benefit mutually from practice. Judo requires a training partner — you cannot practice alone. Therefore, the relationship between practitioners must be one of mutual development, not exploitation. This principle extended Kano's vision of judo beyond sport into a moral educational framework.",
+      "category": "philosophy",
+      "sources": [
+        "kodokan_founding",
+        "kano_jigoro_birth"
+      ],
+      "modern_parallel": "Training partnership ethics in any martial art"
+    },
+    {
+      "id": "katanagari",
+      "japanese": "刀狩",
+      "romaji": "katanagari",
+      "literal": "sword hunting",
+      "definition": "Weapon confiscation edicts, most famously Hideyoshi's 1588 order prohibiting non-samurai from possessing weapons. Created conditions favoring the development of unarmed combat systems beyond their original battlefield role. The Takenouchi-ryū predates the sword hunt by 56 years, but the edict accelerated the broader proliferation of jujutsu schools.",
+      "category": "historical_event",
+      "sources": [
+        "katanagari_1588"
+      ],
+      "modern_parallel": "Disarmament, gun control (conceptual parallel)"
+    },
+    {
+      "id": "sechie_zumo",
+      "japanese": "節会相撲",
+      "romaji": "sechie-zumō",
+      "literal": "festival sumo",
+      "definition": "Imperial court sumo tournaments held from the Nara period (first recorded 726 CE) through the Heian period. Wrestlers were selected from provinces and competed as left or right imperial guard. The events combined religious divination (foretelling harvest), political display (provincial prestige), and entertainment. Modern sumo preserves many ritual elements from sechie-zumo.",
+      "category": "event",
+      "sources": [
+        "sechie_zumo",
+        "nihon_shoki_nomi"
+      ],
+      "modern_parallel": "National sports tournaments"
+    },
+    {
+      "id": "chikara_mizu",
+      "japanese": "力水",
+      "romaji": "chikara-mizu",
+      "literal": "power water",
+      "definition": "Ritual mouth-rinsing with water before a sumo bout. One of several Shinto-derived purification rituals preserved in modern sumo, alongside salt-tossing (ring purification) and the shiko (foot-stamping to drive away evil spirits). These rituals trace to the sechie-zumo court ceremonies.",
+      "category": "ritual",
+      "sources": [
+        "sechie_zumo"
+      ],
+      "modern_parallel": "No direct parallel in modern combat sports"
+    },
+    {
+      "id": "kuni_yuzuri",
+      "japanese": "国譲り",
+      "romaji": "kuni-yuzuri",
+      "literal": "transfer/cession of the land",
+      "definition": "The Kojiki myth in which the heavenly gods demand that the earthly gods surrender control of Japan. Takeminakata refused and challenged Takemikazuchi to a wrestling match — and lost. The myth establishes wrestling as the divine method of deciding territorial sovereignty in the Japanese cosmological tradition.",
+      "category": "mythology",
+      "sources": [
+        "kojiki_wrestling"
+      ],
+      "modern_parallel": "No direct parallel — mythological concept"
+    }
+  ],
+  "centerpiece": {
+    "event": "The Kano Synthesis: how one man absorbed multiple jujutsu traditions, a methodological revolution, and a strategic defeat into the most successful martial arts institution in history. From Eishō-ji temple (12 mats, 1882) to the Tokyo Olympics (1964) in 82 years.",
+    "accounts": [
+      {
+        "id": "tenjin_shinyo_ryu",
+        "author": "Tenjin Shin'yō-ryū lineage",
+        "work": "Transmitted via Fukuda Hachinosuke (1877–79) and Iso Masatomo (1879–81)",
+        "date": 1877,
+        "date_display": "1877–1881",
+        "mode": "Kano's first martial arts education. Two masters who both died within four years. Contributed atemi, ne waza, and choking techniques. The fragility of lineage-dependent transmission shaped Kano's drive to build a durable institution."
+      },
+      {
+        "id": "kito_ryu",
+        "author": "Kitō-ryū lineage",
+        "work": "Transmitted via Iikubo Tsunetoshi (1881–83+)",
+        "date": 1881,
+        "date_display": "1881 onward",
+        "mode": "The throwing architecture and kuzushi principle. Kano received menkyo kaiden. The word 'judo' came from this school. Iikubo's response to Kano's kuzushi insight — 'I have nothing more to teach you' — marks the transition from student to synthesizer."
+      },
+      {
+        "id": "fusen_ryu_challenge",
+        "author": "Fusen-ryū via Mataemon Tanabe",
+        "work": "Challenge matches 1891–1905",
+        "date": 1891,
+        "date_display": "1891–1905",
+        "mode": "The only defeat in Kodokan challenge history. Tanabe's ground strategy exposed the Kodokan's critical weakness. Kano's response was institutional absorption, not competitive revenge. The ne waza explosion that followed (1900–1925) filled the gap."
+      },
+      {
+        "id": "kodokan_founding",
+        "author": "Kano Jigoro",
+        "work": "Own writings and lectures (1882–1938)",
+        "date": 1882,
+        "date_display": "1882–1938",
+        "mode": "Primary voice. The synthesizer's own account: seiryoku zen'yō as the unifying principle, three aspects of training (physical, martial, moral), randori as the methodological core. The decision to exclude dangerous techniques from sparring but preserve them in kata."
+      },
+      {
+        "id": "maeda_mitsuyo",
+        "author": "Maeda Mitsuyo's career",
+        "work": "European/Brazilian competition and teaching (1904–1941)",
+        "date": 1904,
+        "date_display": "1904–1941",
+        "mode": "The export pathway. Maeda carried Kodokan judo + Fusen-ryū ne waza + absorbed catch wrestling. What he transmitted was already hybrid. The system that produced BJJ was not pure judo — it was the full synthesis, including the Fusen-ryū correction."
+      }
+    ],
+    "technique_slots": [
+      {
+        "slot": "Technical contribution",
+        "tenjin_shinyo_ryu": "Atemi waza (strikes), ne waza (ground technique), shime waza (chokes). The striking and ground-control base.",
+        "kito_ryu": "Nage waza (throwing). Kuzushi (balance-breaking) as structural principle. The throwing architecture.",
+        "fusen_ryu_challenge": "Ne waza as a complete fighting strategy, not just supplementary technique. The insight that ground dominance could defeat standing dominance.",
+        "kodokan_founding": "The synthesis itself — selecting, combining, and systematizing elements from multiple schools into a unified curriculum with randori as the testing ground.",
+        "maeda_mitsuyo": "No-gi control positions, catch wrestling takedown entries, leg attack awareness. Broadened the submission arsenal beyond gi-based techniques."
+      },
+      {
+        "slot": "Training methodology",
+        "tenjin_shinyo_ryu": "Kata only. Prearranged forms against compliant partners. No live resistance training.",
+        "kito_ryu": "Kata plus some randori. Iikubo was 'fond of randori' — unusual for a koryu master. This may have influenced Kano's innovation.",
+        "fusen_ryu_challenge": "Adversarial challenge matches — the ultimate live resistance test. Tanabe's preparation was specifically tactical: identify weakness, design counter.",
+        "kodokan_founding": "Randori as daily backbone. Dangerous techniques excluded from sparring but preserved in kata. This safety solution enabled high-frequency, high-intensity training that classical schools could not sustain.",
+        "maeda_mitsuyo": "Challenge matches across styles and continents. 1,000+ fights. Empirical testing under full commitment — identical methodology to Tanabe and later vale tudo."
+      },
+      {
+        "slot": "Kuzushi principle",
+        "tenjin_shinyo_ryu": "Not emphasized. Atemi-first approach — striking to create openings rather than balance-breaking.",
+        "kito_ryu": "The source school. 'Ki' (rising) and 'tō' (falling) — the principle that effective throwing requires first disrupting the opponent's base. Kano's breakthrough insight formalized this.",
+        "fusen_ryu_challenge": "Applied differently: Tanabe 'broke the balance' of the entire strategic framework by forcing the fight to a phase where the Kodokan had no answer.",
+        "kodokan_founding": "Central organizing principle. Every throw begins with kuzushi. Kano generalized it from a throwing concept into a universal principle of efficient force application.",
+        "maeda_mitsuyo": "Extended to mixed-rule environments. Balance-breaking through clinch entries, takedowns, and positional transitions across standing and ground phases."
+      },
+      {
+        "slot": "Ne waza integration",
+        "tenjin_shinyo_ryu": "Present in the curriculum — ne waza content was 'richer than most ryu of the era.' But Kano initially excluded it from randori competition.",
+        "kito_ryu": "Minimal ne waza. Throwing-focused school. The absence reinforced the Kodokan's early blind spot on the ground.",
+        "fusen_ryu_challenge": "The corrective event. Tanabe proved that ne waza could defeat the Kodokan's standing game. Kano's institutional response: absorb the innovation by hiring the victor to teach.",
+        "kodokan_founding": "Post-1900: ne waza explosion. 'The ne-waza of the Kansai region' emerged. Ground techniques integrated into Kodokan curriculum and eventually into competitive randori rules.",
+        "maeda_mitsuyo": "Full ne waza integration. Ground fighting was central to Maeda's challenge-match approach. This emphasis passed to the Gracies and became BJJ's defining characteristic."
+      },
+      {
+        "slot": "Philosophical framework",
+        "tenjin_shinyo_ryu": "Classical bujutsu mindset: technique acquisition as the goal. No explicit philosophical overlay beyond martial effectiveness.",
+        "kito_ryu": "'Judo' as internal name — dō (the way) rather than jutsu (technique). This planted the seed for Kano's reframing of martial training as self-development.",
+        "fusen_ryu_challenge": "No philosophical framework — pure tactical pragmatism. Win by exploiting the opponent's structural weakness.",
+        "kodokan_founding": "Seiryoku zen'yō (maximum efficiency). Jita kyōei (mutual benefit). Three aspects: rentai-hō, shōbu-hō, shushin-hō. The philosophical framework that elevated judo from combat technique to educational system.",
+        "maeda_mitsuyo": "Pragmatic competition philosophy. Test everything empirically. The philosophical dimension was stripped away in favor of 'what works in a fight' — which ironically validated Kano's randori principle more than his philosophy."
+      },
+      {
+        "slot": "Institutional response to challenge",
+        "tenjin_shinyo_ryu": "School died with its masters. Fragile lineage-dependent transmission — Kano's two teachers both died within four years. No institutional resilience.",
+        "kito_ryu": "Survived longer but eventually faded as judo absorbed its best elements. The common koryu fate: individual mastery without institutional continuity.",
+        "fusen_ryu_challenge": "Faded into obscurity — absorbed by the very institution it had defeated. The ironic endpoint: winning the battle, losing the war.",
+        "kodokan_founding": "The institutional genius: absorb challengers rather than fight them. Hire Tanabe, integrate ne waza, grow stronger. This pattern — challenge → absorption → growth — is the Kodokan's defining characteristic.",
+        "maeda_mitsuyo": "Created a new institutional lineage in Brazil. The Gracie academy replicated the Kodokan model: institutional structure, empirical testing, challenge matches as proof."
+      }
+    ]
+  }
+}
