@@ -40,6 +40,21 @@
         "from": "fusen_ryu_challenge",
         "to": "kodokan_founding",
         "label": "ne waza correction"
+      },
+      {
+        "from": "yagyu_shingan_ryu",
+        "to": "aunkai",
+        "label": "body mechanics (primary)"
+      },
+      {
+        "from": "daitoryu_scrolls",
+        "to": "aunkai",
+        "label": "aiki conditioning (Sagawa line)"
+      },
+      {
+        "from": "ryukyu_chinese_kempo",
+        "to": "aunkai",
+        "label": "xingyiquan / internal arts"
       }
     ]
   },
@@ -1828,6 +1843,55 @@
         ],
         "reliability": "Well-documented from 1922 onward. Pre-modern Okinawan history relies heavily on oral tradition."
       }
+    },
+    {
+      "id": "aunkai",
+      "type": "documentary",
+      "subtype": "institutional",
+      "lane": "school",
+      "name_japanese": "阿吽会",
+      "title": "Aunkai — Bujutsu Body Method",
+      "date": 2003,
+      "date_display": "Founded September 2003",
+      "origin": "Tokyo, Japan",
+      "author": "Akuzawa Minoru (founder)",
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": "https://www.aunkai-tokyo.jp/en/aunkai-en/biography",
+      "passage_japanese": "身体の在り方を見つめ直し、武術の基本となる鍛錬法の重要性を深く認識する",
+      "passage_translation": "By re-examining the nature of the body, one deeply recognizes the importance of foundational training methods in martial arts.",
+      "translator": "Aunkai website",
+      "description": "Aunkai (阿吽会) was founded in September 2003 by Akuzawa Minoru (阿久澤稔), from Gunma Prefecture. Akuzawa's training lineage synthesizes Chinese and Japanese martial traditions: he began with Tai Chi at 16, studied Xingyiquan from 19, and competed in Sanda — placing first at the 1989 Liang Gang Cup International Sanda Tournament. He then encountered Japanese koryu practitioners who prioritized body conditioning over form. His primary influence was a Yagyū Shingan-ryū instructor who shaped his understanding of body mechanics and weapon integration. He also trained for several years at Sagawa Yukiyoshi's Daitō-ryū dojo, absorbing the aiki body conditioning methods that Sagawa had developed from Takeda Sokaku's teaching. Aunkai's methodology strips away kata in favor of foundational exercises (tanchū, maho, shintaijuku) that develop skeletal alignment, connective tissue engagement, and internal power. The system is explicitly cross-tradition: Chinese internal arts (jibengong, xingyiquan principles) merged with Japanese koryu body mechanics (Yagyū Shingan-ryū structure, Daitō-ryū aiki conditioning). Akuzawa conducts annual international seminars across Europe, the Americas, and Asia.",
+      "techniques_shown": [
+        "aiki",
+        "atemi_waza",
+        "nage_waza"
+      ],
+      "terms": [
+        "aiki",
+        "koryu",
+        "dojo"
+      ],
+      "active_period": {
+        "start": 2003,
+        "end": null,
+        "extant": true
+      },
+      "period_display": "2003 – present",
+      "practitioners": "Small — Tokyo headquarters + international seminar network (Europe, Americas, Asia)",
+      "evidence": {
+        "proves": [
+          "Chinese and Japanese martial traditions continue to cross-pollinate in the 21st century",
+          "Sagawa Yukiyoshi's Daitō-ryū body conditioning methods influenced practitioners outside the Daitō-ryū lineage",
+          "Yagyū Shingan-ryū's body mechanics remain technically relevant in modern martial arts development"
+        ],
+        "cannot_prove": [
+          "The exact techniques transmitted from each source tradition",
+          "Whether Aunkai's methods are faithful reproductions or independent derivations"
+        ],
+        "reliability": "Founded by a living practitioner with documented competition record (1989 Sanda). Training lineage reconstructed from Ellis Amdur's analysis (kogenbudo.org), Aunkai official biography, and seminar participant accounts."
+      }
     }
   ],
   "lexicon": [
@@ -1925,7 +1989,8 @@
         "daitoryu_scrolls",
         "ueshiba_aikido",
         "takeda_sokaku_bio",
-        "ueshiba_morihei_bio"
+        "ueshiba_morihei_bio",
+        "aunkai"
       ],
       "modern_parallel": "Aiki in Daito-ryu and Aikido"
     },
@@ -2141,7 +2206,8 @@
         "ueshiba_morihei_bio",
         "ryukyu_chinese_kempo",
         "funakoshi_kodokan_1922",
-        "karate"
+        "karate",
+        "aunkai"
       ],
       "modern_parallel": "Traditional/classical martial arts"
     },
@@ -2168,7 +2234,8 @@
       "category": "institution",
       "sources": [
         "kodokan_founding",
-        "ueshiba_aikido"
+        "ueshiba_aikido",
+        "aunkai"
       ],
       "modern_parallel": "Gym, academy, training facility"
     },
