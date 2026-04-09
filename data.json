@@ -1799,6 +1799,48 @@
       }
     },
     {
+      "id": "sakuraba_kazushi",
+      "type": "documentary",
+      "subtype": "biographical",
+      "lane": "person",
+      "name_japanese": "桜庭和志",
+      "title": "Sakuraba Kazushi — 'The Gracie Hunter'",
+      "date": 1997,
+      "date_display": "1969– (active in Pride 1997–2006)",
+      "origin": "Akita Prefecture, Japan",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Sakuraba Kazushi (桜庭和志, born July 14, 1969) became one of the most important figures in Japanese martial arts history by demonstrating that catch wrestling — transmitted through the Karl Gotch → UWF lineage — could defeat Brazilian Jiu-Jitsu at the highest level. A pro wrestling trainee under the UWF-descended Kingdom promotion, Sakuraba entered MMA with a catch wrestling and shoot-style base. Between 1997 and 2000, he defeated four members of the Gracie family in Pride FC: Royler Gracie (submission via kimura), Royce Gracie (TKO in a legendary 90-minute bout), Ryan Gracie, and Renzo Gracie (kimura). His victories closed a historical circle: Maeda Mitsuyo exported judo/jujutsu to Brazil, where it became BJJ under the Gracies — and Sakuraba, inheritor of the parallel catch wrestling lineage that Gotch brought to Japan, proved that the Japanese grappling tradition had independently developed answers to the art it had spawned. Known as 'The Gracie Hunter' (グレイシーハンター), Sakuraba was celebrated for his unorthodox creativity, showmanship, and willingness to fight opponents far above his natural weight class.",
+      "techniques_shown": [
+        "catch_wrestling",
+        "ne_waza",
+        "kansetsu_waza",
+        "nage_waza"
+      ],
+      "terms": [
+        "ne_waza",
+        "judo"
+      ],
+      "evidence": {
+        "proves": [
+          "The catch wrestling lineage transmitted through Gotch produced world-class MMA fighters",
+          "Japanese grappling traditions could compete with BJJ at the highest level",
+          "The Maeda → Gracie → Pride FC circle completed with a Japanese fighter defeating Gracies using Japanese-trained grappling"
+        ],
+        "cannot_prove": [
+          "Whether Sakuraba's success was due to catch wrestling specifically or his individual talent",
+          "The relative effectiveness of catch wrestling vs. BJJ as systems — individual matchups do not prove systemic superiority"
+        ],
+        "reliability": "Extensively documented through Pride FC broadcast footage, official records, and participant interviews. All four Gracie victories are on video."
+      }
+    },
+    {
       "id": "karate",
       "type": "documentary",
       "subtype": "institutional",
@@ -1960,7 +2002,8 @@
         "mifune_kyuzo",
         "funakoshi_kodokan_1922",
         "santel_kodokan_1921",
-        "pride_fc"
+        "pride_fc",
+        "sakuraba_kazushi"
       ],
       "modern_parallel": "Olympic Judo"
     },
@@ -2063,7 +2106,8 @@
         "uwf_1984",
         "shooto",
         "pancrase",
-        "pride_fc"
+        "pride_fc",
+        "sakuraba_kazushi"
       ],
       "modern_parallel": "Ground game in BJJ, MMA"
     },
