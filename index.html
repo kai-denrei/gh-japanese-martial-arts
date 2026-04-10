@@ -966,7 +966,6 @@
         g.addEventListener('mousemove', (e) => showTooltip(src, e.clientX, e.clientY));
         g.addEventListener('mouseleave', () => {
           hideTooltip();
-          hideInfluenceLines();
         });
         g.addEventListener('click', () => { hideTooltip(); hideInfluenceLines(); showSourceOverlay(src.id); });
         svg.appendChild(g);
@@ -1089,6 +1088,13 @@
         });
         activeInfluenceEls = [];
       }
+
+      // Click on empty spine area clears influence lines
+      svg.addEventListener('click', (e) => {
+        if (e.target === svg || e.target.classList.contains('spine')) {
+          hideInfluenceLines();
+        }
+      });
     }
 
     /* ── Source Overlay ─────────────────────────────── */
