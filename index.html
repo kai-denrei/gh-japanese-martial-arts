@@ -1152,6 +1152,10 @@
           hideInfluenceLines();
         }
       });
+
+      // Expose for use outside renderTimeline scope
+      window._showInfluenceLines = showInfluenceLines;
+      window._hideInfluenceLines = hideInfluenceLines;
     }
 
     /* ── Source Overlay ─────────────────────────────── */
@@ -1380,6 +1384,35 @@
       }).join('');
     }
 
+    /* ── Scroll to Source & Highlight ────────────────── */
+    function scrollToSourceAndShow(sourceId) {
+      // Find the node group on the SVG
+      const g = document.querySelector(`.node-group[data-id="${sourceId}"]`);
+      const dot = document.querySelector(`.spine-dot[data-id="${sourceId}"]`);
+
+      if (g) {
+        // Scroll the node into view
+        g.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        // Flash highlight: temporarily enlarge and pulse the node
+        g.classList.add('active');
+        if (dot) {
+          dot.classList.add('active');
+          const origR = dot.getAttribute('r');
+          dot.setAttribute('r', '10');
+          setTimeout(() => dot.setAttribute('r', origR), 1500);
+        }
+
+        // Show influence lines
+        if (window._showInfluenceLines) window._showInfluenceLines(sourceId);
+
+        // Open the overlay after a brief scroll delay
+        setTimeout(() => showSourceOverlay(sourceId), 400);
+      } else {
+        showSourceOverlay(sourceId);
+      }
+    }
+
     /* ── Source Search ──────────────────────────────── */
     function initSourceSearch() {
       const input = document.getElementById('source-search');
@@ -1418,7 +1451,7 @@
           const title = (src.title.split('—')[0] || '').trim();
           const lane = src.lane || '';
           const icon = lane === 'school' ? '⚔' : lane === 'person' ? '◆' : '●';
-          return `<div style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;margin:2px;border:1px solid var(--rule);border-radius:14px;cursor:pointer;font-family:var(--font-ui);font-size:0.75rem;transition:all 0.15s" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--rule)'" onclick="showSourceOverlay('${src.id}')">
+          return `<div style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;margin:2px;border:1px solid var(--rule);border-radius:14px;cursor:pointer;font-family:var(--font-ui);font-size:0.75rem;transition:all 0.15s" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--rule)'" onclick="scrollToSourceAndShow('${src.id}')">
             <span style="font-size:0.65rem">${icon}</span>
             <span style="font-family:var(--font-jp)">${jp}</span>
             <span style="color:var(--fg-muted)">${title}</span>
