@@ -13,25 +13,42 @@ Implementation of `index.html`, `data.json`, `validate.js`, and image pipeline. 
 ## Decisions
 | Date | Decision | Rationale | Linked roles |
 |---|---|---|---|
+| 2026-04-09 | Rewrote timeline from scratch rather than adapting fishbone prototype JS | Prototype was horizontal SVG with hardcoded data; new system needed vertical, data-driven, lane-based, date-proportional positioning | [[arch]] |
+| 2026-04-09 | CJK font: Noto Serif JP as primary Japanese font, loaded via Google Fonts | Spectral doesn't cover CJK; Noto Serif JP matches the editorial tone and has excellent kanji/kana coverage | [[ux]] |
+| 2026-04-10 | Influence lines shown on click only, persist until dismissed | Showing all 31 lines at once was unreadable. Hover was too aggressive — merely scrolling erased lines. Click-to-show + click-spine-to-clear is the right interaction. Alternatives tried: always-on (cluttered), hover-show/hover-hide (too transient). | [[ux]] |
+| 2026-04-10 | Lane-based filtering via legend clicks (solo/toggle) | 50 sources on one timeline needs filtering. Click legend item to solo that lane; click again to restore all. Faded items at 12% opacity with pointer-events disabled. | [[ux]] |
+| 2026-04-10 | No-cache server for local dev (`Cache-Control: no-store`) | Browser caching caused repeated confusion during iteration — user couldn't see changes. Python HTTP server with custom NoCacheHandler solves this. | [[devops]] |
+| 2026-04-10 | Search results scroll to timeline node, pulse dot, show influence lines, then open card | Search → click was disconnected from the timeline visualization. Now clicking a search result physically navigates you to the node's position. | [[ux]] |
 
 ## Dead Ends
 <!-- APPEND ONLY. Never delete. -->
 | Date | What was tried | Why it failed / was rejected |
 |---|---|---|
+| 2026-04-09 | ⚔ unicode character as spine dot for schools | Too small and hard to see on screen, especially on mobile. Replaced with solid purple filled circles. |
+| 2026-04-10 | Influence lines always visible (all at once) | 31 lines made the timeline unreadable. Switched to on-demand via click. |
+| 2026-04-10 | Influence lines triggered by hover | Too transient — merely scrolling past a node would flash lines. Switched to click-triggered with explicit dismiss. |
+| 2026-04-10 | Even spacing (non-date-proportional) for timeline nodes | Takeda (1859) and Kano (1860) appeared far apart; Tanabe (1869) appeared below Grant demo (1879). Date-proportional positioning fixed this. |
+| 2026-04-10 | 800-year empty gap (726–1532) rendered proportionally | Dominated the timeline visually. Compressed with zigzag break marker. Later adjusted to 660 years when Ryukyu tode (1392) was added. |
 
 ## Lessons
+- Browser caching is a silent enemy during rapid iteration — always serve with no-cache headers in dev. From dead end on 2026-04-10.
+- Influence lines need to be click-triggered, not hover-triggered. Users need time to read connections. From dead end on 2026-04-10.
+- Unicode decorative characters (⚔) render inconsistently across platforms — solid geometric shapes are more reliable. From dead end on 2026-04-09.
 
 ## Open Questions
-- [ ] How much of the existing fishbone HTML's JS/CSS can be reused vs. rewritten? — owner: minikai — since: 2026-04-09
-- [ ] CJK font fallback strategy — Spectral doesn't cover kanji/kana natively — owner: minikai — since: 2026-04-09
+- [x] How much of the existing fishbone HTML's JS/CSS can be reused vs. rewritten? — RESOLVED: full rewrite, only design language (CSS vars, fonts) carried over — 2026-04-09
+- [x] CJK font fallback strategy — RESOLVED: Noto Serif JP via Google Fonts — 2026-04-09
 
 ## Assumptions
-- The existing fishbone prototype's content (Takenouchi, Tenshin Shin'yo, Kito, Fusen, Randori sections) provides a solid starting dataset for the Japanese portion of data.json — status: untested — since: 2026-04-09
-- No build tools needed — static HTML/CSS/JS works at the scale of this project — status: validated — since: 2026-04-09
+- The existing fishbone prototype's content provides a solid starting dataset — status: validated — since: 2026-04-09
+- No build tools needed — static HTML/CSS/JS works at the scale of this project — status: validated (50 sources, ~1600 lines of HTML, no performance issues) — since: 2026-04-09
+- SVG viewBox scaling handles responsive without a separate mobile layout — status: partially validated (works but required significant mobile-specific tweaks to font sizes, bone lengths, and spacing) — since: 2026-04-10
 
 ## Dependencies
-Blocked by: research phase (research doc + images must exist before data.json)
+Blocked by: nothing (research phase complete)
 Feeds into: [[qa]], [[devops]]
 
 ## Session Log
+2026-04-10 — SYNC — 50 sources, 31 influences, lane filtering, mobile fixes, deployed to GitHub Pages. Recorded 5 dead ends, 3 lessons.
+2026-04-09 — BUILD — v1 complete, all 5 tasks done
 2026-04-09 — INIT — scaffolded role file

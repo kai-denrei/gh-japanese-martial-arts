@@ -8,7 +8,7 @@ last-updated: 2026-04-09
 # Project Management
 
 ## Scope
-Scope definition, phasing, risk tracking, assumption surfacing. Ensuring the project stays focused on Japanese martial arts (712 CE – 1964) and doesn't sprawl into the broader grappling lineage already covered by the fishbone prototype.
+Scope definition, phasing, risk tracking, assumption surfacing. Tracking the expanded scope: 712 CE – 2007, covering sumo, koryu jujutsu, judo, aikido, karate, catch wrestling influence, and the path to Japanese MMA.
 
 ## Decisions
 | Date | Decision | Rationale | Linked roles |
@@ -29,11 +29,11 @@ Scope definition, phasing, risk tracking, assumption surfacing. Ensuring the pro
 - [x] **Scope boundary**: RESOLVED — include all Japanese martial history + outside influences; cross-link during integration — 2026-04-09
 - [x] **Content overlap**: RESOLVED — keep broad Japanese history including outside influences (catch wrestling, Maeda circuit as far as it's Japanese story) — 2026-04-09
 - [x] **Research depth**: RESOLVED — expand from prototype, verify with primary sources, scrape images — 2026-04-09
-- [ ] **Image sourcing feasibility**: CC0/public domain Japanese martial arts images — ukiyo-e prints are likely available, but early judo photographs may be harder to find with clear licensing. — owner: minikai — since: 2026-04-09
+- [x] **Image sourcing feasibility**: RESOLVED — 11 CC0/public domain images sourced (Met Museum, Wikimedia Commons, NDL Japan). Ukiyo-e prints readily available; Meiji photographs available via Wikimedia PD. UFC/modern event posters are copyrighted — excluded. — 2026-04-10
 - [x] **Aikido/Kendo inclusion**: RESOLVED — Aikido in (Daito-ryu grappling lineage), Kendo as contextual only — 2026-04-09
 
 ## Assumptions
-- The research phase must complete before any code is written — status: untested — since: 2026-04-09
+- The research phase must complete before any code is written — status: validated (research doc written first, then images, then data.json, then index.html) — since: 2026-04-09
 - This page will eventually be integrated into the parent Grappling History repo at `/Users/minikai/Documents/Dev/grappling_history` — status: untested — since: 2026-04-09
 - Gerald (Jelaludo) reviews and merges all PRs — status: validated — since: 2026-04-09
 
@@ -42,5 +42,6 @@ Blocked by: nothing — this role drives sequencing
 Feeds into: all roles
 
 ## Session Log
+2026-04-10 — SYNC — scope expanded to 2007, all 5 open questions resolved, 50 sources, deployed to GitHub Pages at kai-denrei.github.io/gh-japanese-martial-arts/
 2026-04-09 — resolved 4 of 5 open questions per owner direction: broad scope, include outside influences, aikido in, expand research from prototype
 2026-04-09 — INIT — scaffolded role file, surfaced 5 untested assumptions / scope gaps
