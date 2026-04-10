@@ -185,6 +185,16 @@
         "from": "daitoryu_scrolls",
         "to": "takeda_sokaku_bio",
         "label": "revived Daitō-ryū"
+      },
+      {
+        "from": "kodokan_founding",
+        "to": "lebell_gene",
+        "label": "Kodokan judo (trained in Japan, AAU champion 1954–55)"
+      },
+      {
+        "from": "gotch_japan",
+        "to": "lebell_gene",
+        "label": "catch wrestling (submissions, 'Sadistic Bastard')"
       }
     ]
   },
@@ -2599,6 +2609,50 @@
         ],
         "reliability": "Government policy — well-documented. Source: Nakiri (2015), MEXT curriculum guidelines."
       }
+    },
+    {
+      "id": "lebell_gene",
+      "type": "documentary",
+      "subtype": "biographical",
+      "lane": "person",
+      "name_japanese": "ジーン・ルベル",
+      "title": "Gene LeBell — The Godfather of Grappling",
+      "date": 1932,
+      "date_display": "1932–2022",
+      "origin": "Los Angeles, California",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Ivan 'Judo' Gene LeBell (1932–2022) was the critical bridge between Kodokan judo, catch wrestling, and American martial arts. He began training catch wrestling at age 7 under Ed 'Strangler' Lewis, then moved to judo, winning the AAU National Judo Championships in both 1954 and 1955 (heavyweight and overall). He traveled to Japan and trained at the Kodokan, where he famously fought through the 'slaughter lines' — defeating 20+ opponents in succession. A laundry accident turned his gi pink, which became his trademark. He trained extensively with Karl Gotch, who taught him catch wrestling submissions and bestowed the title 'Sadistic Bastard' — which LeBell considered his proudest distinction. On December 2, 1963, LeBell defeated boxer Milo Savage via rear naked choke in the 4th round in Salt Lake City — often cited as the first televised mixed martial arts fight in America. He refereed the Ali vs. Inoki fight at the Nippon Budokan on June 26, 1976, with Gotch in Inoki's corner. LeBell went on to teach grappling to Bruce Lee, Chuck Norris, and Ronda Rousey ('Uncle Gene'), and co-founded the Hayastan MMA Academy with Gokor Chivichyan in 1991. His career embodied the synthesis that defined late 20th-century fighting: Kodokan judo for throwing, Gotch-lineage catch wrestling for submissions, and the willingness to test everything in live combat.",
+      "techniques_shown": [
+        "nage_waza",
+        "ne_waza",
+        "shime_waza",
+        "catch_wrestling"
+      ],
+      "terms": [
+        "judo",
+        "randori",
+        "ne_waza",
+        "nage_waza"
+      ],
+      "evidence": {
+        "proves": [
+          "Kodokan judo was successfully exported to the US by the 1950s and produced American champions",
+          "The fusion of judo and catch wrestling predates the modern MMA era by decades",
+          "Cross-training between Japanese and Western grappling traditions was happening in the 1950s–1960s"
+        ],
+        "cannot_prove": [
+          "Exact dates of his Kodokan training in Japan",
+          "Some of LeBell's more colorful anecdotes are uncorroborated (Bruce Lee training partnership, Seagal choking incident)"
+        ],
+        "reliability": "AAU championships and Ali-Inoki refereeing are well-documented. Some biographical claims come only from LeBell himself. Black Belt magazine noted he 'was known to fabricate stories regarding his exploits.' Core martial arts career is verifiable; specific anecdotes less so."
+      }
     }
   ],
   "lexicon": [
@@ -2675,7 +2729,8 @@
         "jsdf_toshu_kakuto",
         "jab_founding",
         "budo_compulsory_2012",
-        "ufc_japan_1997"
+        "ufc_japan_1997",
+        "lebell_gene"
       ],
       "modern_parallel": "Olympic Judo"
     },
@@ -2732,7 +2787,8 @@
         "nippon_kempo",
         "tomiki_kenji",
         "jsdf_toshu_kakuto",
-        "budo_compulsory_2012"
+        "budo_compulsory_2012",
+        "lebell_gene"
       ],
       "modern_parallel": "Sparring, rolling (BJJ), live rounds (wrestling)"
     },
@@ -2793,7 +2849,8 @@
         "sakuraba_kazushi",
         "kosen_judo",
         "jsdf_toshu_kakuto",
-        "ufc_japan_1997"
+        "ufc_japan_1997",
+        "lebell_gene"
       ],
       "modern_parallel": "Ground game in BJJ, MMA"
     },
@@ -2816,7 +2873,8 @@
         "hontai_yoshin_ryu",
         "mifune_kyuzo",
         "shooto",
-        "jsdf_toshu_kakuto"
+        "jsdf_toshu_kakuto",
+        "lebell_gene"
       ],
       "modern_parallel": "Throws/takedowns in judo, wrestling"
     },
