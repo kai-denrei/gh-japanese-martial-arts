@@ -165,6 +165,11 @@
         "from": "aizu_oshikiuchi",
         "to": "takeda_sokaku_bio",
         "label": "oshikiuchi (via Saigō Tanomo)"
+      },
+      {
+        "from": "shooto",
+        "to": "sakuraba_kazushi",
+        "label": "Shooto training"
       }
     ]
   },
@@ -2374,6 +2379,47 @@
           "Which specific techniques transferred from sword to empty-hand"
         ],
         "reliability": "Takeda's Onoha Ittō-ryū training is documented in multiple sources. The menkyo at age 17 is cited by Kodokan records and Daito-ryu sources."
+      }
+    },
+    {
+      "id": "ufc_japan_1997",
+      "type": "documentary",
+      "subtype": "competition",
+      "lane": "competition",
+      "name_japanese": "UFC日本",
+      "title": "UFC Japan: Ultimate Japan — First UFC on Japanese Soil",
+      "date": 1997,
+      "date_display": "December 21, 1997",
+      "origin": "Yokohama Arena, Yokohama, Japan",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": "https://en.wikipedia.org/wiki/UFC_Japan:_Ultimate_Japan",
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "UFC Japan: Ultimate Japan (December 21, 1997, Yokohama Arena, 5,000 attendance) was the UFC's first event outside the United States. Kazushi Sakuraba, a last-minute replacement at 183 lbs (nearly 20 lbs under the heavyweight limit), made his UFC debut and won the tournament. His first match against Marcus Silveira was initially ruled a KO loss, but overturned to a no-contest after protest — referee John McCarthy had mistakenly stopped the fight. In the rematch/finals, Sakuraba submitted Silveira by armbar at 3:44. The card was historically significant: Randy Couture defeated Maurice Smith for the heavyweight title, Frank Shamrock submitted Kevin Jackson by armbar, and Tank Abbott defeated Kingdom Pro Wrestling's Yoji Anjo. Remarkably, four of six bouts ended by armbar — a testament to the grappling-dominant era. This event, held just two months after Pride FC's debut at the Tokyo Dome (October 11, 1997), marked the moment when both American and Japanese MMA organizations competed for the Japanese audience simultaneously. Sakuraba — a pro wrestler from the UWF/Gotch lineage — defeating a Brazilian in the UFC crystallized the full-circle narrative: Japanese grappling traditions exported via Maeda, developed as BJJ, returning to face Japanese fighters on home soil.",
+      "techniques_shown": [
+        "ne_waza",
+        "kansetsu_waza",
+        "atemi_waza"
+      ],
+      "terms": [
+        "ne_waza",
+        "kansetsu_waza",
+        "judo"
+      ],
+      "evidence": {
+        "proves": [
+          "The UFC expanded to Japan by late 1997",
+          "Japanese fighters from the shoot wrestling lineage could compete at the highest MMA level",
+          "Armbar submissions dominated the era — grappling expertise was decisive"
+        ],
+        "cannot_prove": [
+          "Whether Sakuraba would have won without the no-contest restart"
+        ],
+        "reliability": "UFC event records, broadcast footage, and fight statistics. Well-documented event."
       }
     }
   ],
