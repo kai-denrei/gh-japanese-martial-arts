@@ -165,6 +165,15 @@
     }
     .overlay-close:hover { background: var(--bg-panel); color: var(--fg); border-color: var(--fg-muted); }
 
+    .overlay-card-short { max-height: 60vh; }
+    .expand-btn {
+      display: block; width: 100%; margin-top: var(--sm); padding: 8px;
+      font-family: var(--font-ui); font-size: 0.78rem; font-weight: 500;
+      background: var(--bg-panel); border: 1px solid var(--rule); border-radius: 4px;
+      color: var(--accent); cursor: pointer; transition: all 0.15s;
+    }
+    .expand-btn:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
     .overlay-card img { width: 100%; border-radius: 4px; border: 1px solid var(--rule); margin-bottom: var(--sm); }
     .overlay-card .source-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; line-height: 1.25; }
     .overlay-card .source-meta { font-family: var(--font-ui); font-size: 0.72rem; color: var(--fg-muted); margin-bottom: var(--sm); }
@@ -524,6 +533,8 @@
   <script>
     let DATA = null;
     let activeSource = null;
+    let savedScrollY = null;
+    let activeInfluenceSourceId = null;
 
     async function init() {
       const res = await fetch('./data.json');
@@ -563,7 +574,7 @@
       document.getElementById('panel-' + tabName).classList.add('active');
     }
 
-    function navigateToSource(sourceId) { switchToTab('sources'); showSourceOverlay(sourceId); }
+    function navigateToSource(sourceId) { switchToTab('sources'); showSourceOverlay(sourceId, 'full'); }
     function navigateToLexicon(termId) {
       closeSourceOverlay();
       switchToTab('lexicon');
@@ -909,7 +920,7 @@
           class: 'lifespan-band' + (period.extant ? ' extant' : ''),
           style: 'cursor:pointer'
         });
-        rect.addEventListener('click', () => { showInfluenceLines(p.src.id); showSourceOverlay(p.src.id); });
+        attachCardInteraction(rect, p.src.id);
         svg.appendChild(rect);
 
         // Fade-out at bottom for extinct schools
@@ -927,7 +938,7 @@
           rect.setAttribute('opacity', '1');
           rect.classList.remove('lifespan-band');
           rect.style.cursor = 'pointer';
-          rect.addEventListener('click', () => { showInfluenceLines(p.src.id); showSourceOverlay(p.src.id); });
+          attachCardInteraction(rect, p.src.id);
         }
 
         // Hover: show name tooltip on band
@@ -1039,7 +1050,7 @@
           });
         }
 
-        dotEl.addEventListener('click', () => { showInfluenceLines(src.id); showSourceOverlay(src.id); });
+        attachCardInteraction(dotEl, src.id);
         // Hover date label on spine marker
         let dotLabel = null;
         dotEl.addEventListener('mouseenter', () => {
@@ -1111,19 +1122,51 @@
           g.appendChild(dt);
         }
 
-        // Hover: tooltip only. Click: show influence lines + overlay card.
+        // Hover: tooltip only. Click: short card + influence lines. Double-click/long-press: full card.
         g.addEventListener('mouseenter', (e) => showTooltip(src, e.clientX, e.clientY));
         g.addEventListener('mousemove', (e) => showTooltip(src, e.clientX, e.clientY));
         g.addEventListener('mouseleave', () => hideTooltip());
-        g.addEventListener('click', () => {
-          hideTooltip();
-          showInfluenceLines(src.id);
-          showSourceOverlay(src.id);
-        });
+        attachCardInteraction(g, src.id);
         svg.appendChild(g);
       });
 
-      // ── Influence Lines (on hover only) ──────────
+      // ── Card Interaction: single click = short, dblclick/longpress = full ──
+      function attachCardInteraction(el, sourceId) {
+        let longPressTimer = null;
+        let didLongPress = false;
+
+        el.addEventListener('click', (e) => {
+          if (didLongPress) { didLongPress = false; return; }
+          e.stopPropagation();
+          hideTooltip();
+          showInfluenceLines(sourceId);
+          showSourceOverlay(sourceId, 'short');
+        });
+
+        el.addEventListener('dblclick', (e) => {
+          e.stopPropagation();
+          e.preventDefault();
+          hideTooltip();
+          showInfluenceLines(sourceId);
+          showSourceOverlay(sourceId, 'full');
+        });
+
+        // Long press for mobile
+        el.addEventListener('touchstart', (e) => {
+          didLongPress = false;
+          longPressTimer = setTimeout(() => {
+            didLongPress = true;
+            hideTooltip();
+            showInfluenceLines(sourceId);
+            showSourceOverlay(sourceId, 'full');
+          }, 500);
+        }, { passive: true });
+
+        el.addEventListener('touchend', () => { clearTimeout(longPressTimer); });
+        el.addEventListener('touchmove', () => { clearTimeout(longPressTimer); });
+      }
+
+      // ── Influence Lines ──────────
       // Build position map for influence line drawing
       const posMap = {};
       positioned.forEach(p => {
@@ -1154,7 +1197,10 @@
       let activeInfluenceEls = [];
 
       function showInfluenceLines(sourceId) {
+        // If clicking the same source, keep lines visible
+        if (activeInfluenceSourceId === sourceId) return;
         hideInfluenceLines();
+        activeInfluenceSourceId = sourceId;
         // Show lines where this source is the TARGET (incoming influences)
         const incoming = influencesByTarget[sourceId] || [];
         // Also show lines where this source is the SOURCE (outgoing influences)
@@ -1248,6 +1294,7 @@
           if (el.parentNode) el.parentNode.removeChild(el);
         });
         activeInfluenceEls = [];
+        activeInfluenceSourceId = null;
       }
 
       // Click on empty spine area clears influence lines
@@ -1263,9 +1310,14 @@
     }
 
     /* ── Source Overlay ─────────────────────────────── */
-    function showSourceOverlay(sourceId) {
+    function showSourceOverlay(sourceId, mode) {
+      mode = mode || 'short';
       const src = DATA.sources.find(s => s.id === sourceId);
       if (!src) return;
+
+      // Save scroll position before showing overlay
+      if (!activeSource) savedScrollY = window.scrollY;
+
       activeSource = sourceId;
       document.body.classList.add('overlay-open');
 
@@ -1275,38 +1327,6 @@
         d.setAttribute('r', d.dataset.id === sourceId ? 7 : 5);
       });
       document.querySelectorAll('.bone').forEach(b => b.classList.toggle('active', b.dataset.id === sourceId));
-
-      let passageHTML = '';
-      if (src.passage_japanese || src.passage_translation) {
-        passageHTML = `
-          <div class="source-passage">
-            ${src.passage_japanese ? `<div class="japanese-text jp-text">${src.passage_japanese}</div>` : ''}
-            ${src.passage_translation ? `<div class="translation-text">${src.passage_translation}</div>` : ''}
-            ${src.translator ? `<div class="translator-credit">— ${src.translator}</div>` : ''}
-          </div>`;
-      }
-
-      const techniquesHTML = (src.techniques_shown || []).map(t =>
-        `<span class="tag technique-tag">${t.replace(/_/g, ' ')}</span>`
-      ).join('');
-
-      const termsHTML = (src.terms || []).map(t => {
-        const lex = DATA.lexicon.find(l => l.id === t);
-        return lex ? `<a class="tag term-tag" onclick="navigateToLexicon('${t}')">${lex.japanese} ${lex.romaji}</a>` : '';
-      }).join('');
-
-      const evidenceHTML = src.evidence ? `
-        <div class="evidence-block">
-          <h4>Evidentiary value</h4>
-          <div><strong style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.04em">Proves:</strong>
-            <ul>${src.evidence.proves.map(p => `<li class="proves">${p}</li>`).join('')}</ul></div>
-          <div><strong style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--fg-muted)">Cannot prove:</strong>
-            <ul>${src.evidence.cannot_prove.map(p => `<li class="cannot-prove">${p}</li>`).join('')}</ul></div>
-          <div class="reliability">${src.evidence.reliability}</div>
-        </div>` : '';
-
-      const sourceURLHTML = src.source_url
-        ? `<a href="${src.source_url}" target="_blank" rel="noopener" class="source-link-ext">View primary source text &#8599;</a>` : '';
 
       const periodInfo = src.period_display || src.date_display;
       const meta = [src.type + ' · ' + src.subtype, periodInfo, src.museum, src.accession, src.author].filter(Boolean);
@@ -1321,25 +1341,75 @@
             </div>`
           : '');
 
-      document.getElementById('overlay-container').innerHTML = `
-        <div class="overlay-backdrop" onclick="if(event.target===this)closeSourceOverlay()">
-          <div class="overlay-card">
-            <button class="overlay-close" onclick="closeSourceOverlay()" aria-label="Close">&times;</button>
-            ${src.image ? `<img src="${DATA.meta.image_dir}${src.image}" alt="${src.title}">` : ''}
-            <h3 class="source-title">${src.title}</h3>
-            <div class="source-meta">${meta.map(m => `<span>${m}</span>`).join('')}</div>
-            ${practHTML}
-            <div class="source-description">${src.description}</div>
-            ${passageHTML}
-            ${techniquesHTML || termsHTML ? `
-              <div style="margin-bottom:var(--sm)">
-                ${techniquesHTML ? `<div class="tag-row">${techniquesHTML}</div>` : ''}
-                ${termsHTML ? `<div class="tag-row">${termsHTML}</div>` : ''}
-              </div>` : ''}
-            ${sourceURLHTML}
-            ${evidenceHTML}
-          </div>
-        </div>`;
+      if (mode === 'short') {
+        // Short card: image, title, dates, one-line description, expand prompt
+        const shortDesc = src.description.split('. ').slice(0, 2).join('. ') + '.';
+        document.getElementById('overlay-container').innerHTML = `
+          <div class="overlay-backdrop" onclick="if(event.target===this)closeSourceOverlay()">
+            <div class="overlay-card overlay-card-short">
+              <button class="overlay-close" onclick="closeSourceOverlay()" aria-label="Close">&times;</button>
+              ${src.image ? `<img src="${DATA.meta.image_dir}${src.image}" alt="${src.title}" style="max-height:150px">` : ''}
+              <h3 class="source-title">${src.title}</h3>
+              <div class="source-meta">${meta.map(m => `<span>${m}</span>`).join('')}</div>
+              ${practHTML}
+              <div class="source-description">${shortDesc}</div>
+              <button class="expand-btn" onclick="showSourceOverlay('${sourceId}','full')">Full details</button>
+            </div>
+          </div>`;
+      } else {
+        // Full card: everything
+        let passageHTML = '';
+        if (src.passage_japanese || src.passage_translation) {
+          passageHTML = `
+            <div class="source-passage">
+              ${src.passage_japanese ? `<div class="japanese-text jp-text">${src.passage_japanese}</div>` : ''}
+              ${src.passage_translation ? `<div class="translation-text">${src.passage_translation}</div>` : ''}
+              ${src.translator ? `<div class="translator-credit">— ${src.translator}</div>` : ''}
+            </div>`;
+        }
+
+        const techniquesHTML = (src.techniques_shown || []).map(t =>
+          `<span class="tag technique-tag">${t.replace(/_/g, ' ')}</span>`
+        ).join('');
+
+        const termsHTML = (src.terms || []).map(t => {
+          const lex = DATA.lexicon.find(l => l.id === t);
+          return lex ? `<a class="tag term-tag" onclick="navigateToLexicon('${t}')">${lex.japanese} ${lex.romaji}</a>` : '';
+        }).join('');
+
+        const evidenceHTML = src.evidence ? `
+          <div class="evidence-block">
+            <h4>Evidentiary value</h4>
+            <div><strong style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.04em">Proves:</strong>
+              <ul>${src.evidence.proves.map(p => `<li class="proves">${p}</li>`).join('')}</ul></div>
+            <div><strong style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--fg-muted)">Cannot prove:</strong>
+              <ul>${src.evidence.cannot_prove.map(p => `<li class="cannot-prove">${p}</li>`).join('')}</ul></div>
+            <div class="reliability">${src.evidence.reliability}</div>
+          </div>` : '';
+
+        const sourceURLHTML = src.source_url
+          ? `<a href="${src.source_url}" target="_blank" rel="noopener" class="source-link-ext">View primary source text &#8599;</a>` : '';
+
+        document.getElementById('overlay-container').innerHTML = `
+          <div class="overlay-backdrop" onclick="if(event.target===this)closeSourceOverlay()">
+            <div class="overlay-card">
+              <button class="overlay-close" onclick="closeSourceOverlay()" aria-label="Close">&times;</button>
+              ${src.image ? `<img src="${DATA.meta.image_dir}${src.image}" alt="${src.title}">` : ''}
+              <h3 class="source-title">${src.title}</h3>
+              <div class="source-meta">${meta.map(m => `<span>${m}</span>`).join('')}</div>
+              ${practHTML}
+              <div class="source-description">${src.description}</div>
+              ${passageHTML}
+              ${techniquesHTML || termsHTML ? `
+                <div style="margin-bottom:var(--sm)">
+                  ${techniquesHTML ? `<div class="tag-row">${techniquesHTML}</div>` : ''}
+                  ${termsHTML ? `<div class="tag-row">${termsHTML}</div>` : ''}
+                </div>` : ''}
+              ${sourceURLHTML}
+              ${evidenceHTML}
+            </div>
+          </div>`;
+      }
     }
 
     function closeSourceOverlay() {
@@ -1349,6 +1419,11 @@
       document.querySelectorAll('.node-group').forEach(g => g.classList.remove('active'));
       document.querySelectorAll('.spine-dot').forEach(d => { d.classList.remove('active'); d.setAttribute('r', 5); });
       document.querySelectorAll('.bone').forEach(b => b.classList.remove('active'));
+      // Restore scroll position
+      if (savedScrollY !== null) {
+        requestAnimationFrame(() => window.scrollTo(0, savedScrollY));
+        savedScrollY = null;
+      }
     }
 
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && activeSource) closeSourceOverlay(); });
@@ -1561,9 +1636,9 @@
         if (window._showInfluenceLines) window._showInfluenceLines(sourceId);
 
         // Open the overlay after a brief scroll delay
-        setTimeout(() => showSourceOverlay(sourceId), 400);
+        setTimeout(() => showSourceOverlay(sourceId, 'full'), 400);
       } else {
-        showSourceOverlay(sourceId);
+        showSourceOverlay(sourceId, 'full');
       }
     }
 
