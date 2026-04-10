@@ -855,14 +855,12 @@
         let dotEl;
 
         if (isSchool) {
-          dotEl = svgEl('text', {
-            x: SPINE_X, y: y,
-            'text-anchor': 'middle', 'dominant-baseline': 'central',
-            class: 'spine-dot spine-icon' + (isActive ? ' active' : ''),
-            'data-id': src.id,
-            style: `font-size:${isActive ? 13 : 11}px;cursor:pointer;fill:${color}`
+          dotEl = svgEl('circle', {
+            cx: SPINE_X, cy: y, r: isActive ? 7 : 5.5, fill: color,
+            stroke: '#fff', 'stroke-width': 1,
+            class: 'spine-dot' + (isActive ? ' active' : ''), 'data-id': src.id,
+            style: 'cursor:pointer'
           });
-          dotEl.textContent = '⚔';
         } else if (isPerson) {
           const r = isActive ? 7 : 5;
           dotEl = svgEl('polygon', {
