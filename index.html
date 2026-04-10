@@ -1074,13 +1074,19 @@
           const to = posMap[inf.to];
           if (!from || !to) return;
 
+          // Start from source's label end (end of bone)
           const startX = from.endX;
           const startY = from.endY;
-          const endX = to.spineX;
-          const endY = to.spineY;
+          // End at target's label end (end of bone) for people, spine dot for schools
+          const toSrc = DATA.sources.find(s => s.id === inf.to);
+          const toIsPerson = toSrc && toSrc.lane === 'person';
+          const endX = toIsPerson ? to.endX : to.spineX;
+          const endY = toIsPerson ? to.endY : to.spineY;
 
           const midY = (startY + endY) / 2;
-          const curveDir = from.right ? 1 : -1;
+          // Curve direction: away from spine, on the side that has more room
+          const avgX = (startX + endX) / 2;
+          const curveDir = avgX >= SPINE_X ? 1 : -1;
           const curveStrength = Math.min(Math.abs(endY - startY) * 0.4, VIEW_W * 0.25);
           const cpX = SPINE_X + curveDir * curveStrength;
           const cpY = midY;

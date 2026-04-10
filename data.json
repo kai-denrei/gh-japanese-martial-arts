@@ -781,7 +781,8 @@
         "reliability": "Documented in multiple Kano biographies and Kodokan records. The date and context are well-established."
       },
       "name_japanese": "柔術演武",
-      "lane": "event"
+      "lane": "artifact",
+      "force_side": "left"
     },
     {
       "id": "daitoryu_scrolls",
