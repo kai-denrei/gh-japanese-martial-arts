@@ -656,7 +656,7 @@
 
       // Date-proportional Y positioning with compressed gap
       const lanePriority = { school: 0, competition: 1, event: 2, artifact: 3, person: 4 };
-      const MIN_GAP = 32;
+      const MIN_GAP = isMobile ? 42 : 52;
       const dateMin = sources[0].date;
       const dateMax = sources[sources.length - 1].date;
 
@@ -730,11 +730,19 @@
           const angleDeg = lane.angleMin + t * (lane.angleMax - lane.angleMin);
           const angle = angleDeg * Math.PI / 180;
 
-          // Offset Y slightly within cluster so bones don't overlap
-          const clusterOffsetY = idx * (MIN_GAP * 0.7);
+          // Offset Y within cluster — full MIN_GAP between items
+          const clusterOffsetY = idx * MIN_GAP;
           positioned.push({ src: ip.src, y: spineY + clusterOffsetY, right: goRight, angle, boneLen });
         });
       });
+
+      // Final pass: enforce MIN_GAP between all positioned nodes (sorted by Y)
+      positioned.sort((a, b) => a.y - b.y);
+      for (let i = 1; i < positioned.length; i++) {
+        if (positioned[i].y - positioned[i - 1].y < MIN_GAP) {
+          positioned[i].y = positioned[i - 1].y + MIN_GAP;
+        }
+      }
 
       const lastY = positioned.length > 0 ? positioned[positioned.length - 1].y : TOP_PAD;
       const totalH = lastY + 60;
