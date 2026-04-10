@@ -80,6 +80,56 @@
         "from": "kodokan_founding",
         "to": "kosen_judo",
         "label": "Kodokan competition framework"
+      },
+      {
+        "from": "tenjin_shinyo_ryu",
+        "to": "kano_jigoro_birth",
+        "label": "atemi + ne waza (Fukuda, Iso)"
+      },
+      {
+        "from": "kito_ryu",
+        "to": "kano_jigoro_birth",
+        "label": "throwing + kuzushi (Iikubo)"
+      },
+      {
+        "from": "daitoryu_scrolls",
+        "to": "takeda_sokaku_bio",
+        "label": "founder"
+      },
+      {
+        "from": "kodokan_founding",
+        "to": "mifune_kyuzo",
+        "label": "Kodokan 10th dan"
+      },
+      {
+        "from": "fusen_ryu_challenge",
+        "to": "tanabe_mataemon",
+        "label": "Fusen-ryū master"
+      },
+      {
+        "from": "daitoryu_scrolls",
+        "to": "ueshiba_morihei_bio",
+        "label": "Daitō-ryū (under Takeda)"
+      },
+      {
+        "from": "kodokan_founding",
+        "to": "maeda_mitsuyo",
+        "label": "Kodokan judo"
+      },
+      {
+        "from": "kodokan_founding",
+        "to": "tomiki_kenji",
+        "label": "judo 8th dan (under Kano)"
+      },
+      {
+        "from": "ueshiba_aikido",
+        "to": "tomiki_kenji",
+        "label": "aikido (under Ueshiba)"
+      },
+      {
+        "from": "daitoryu_scrolls",
+        "to": "tomiki_kenji",
+        "label": "Daitō-ryū study"
       }
     ]
   },
