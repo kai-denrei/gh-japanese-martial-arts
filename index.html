@@ -829,6 +829,11 @@
       const BAND_GAP = 2;
       let leftBandIdx = 0, rightBandIdx = 0;
 
+      // Pastel blue shades for extant, pastel grey shades for extinct
+      const EXTANT_COLORS = ['#a8d8ea', '#89c4e1', '#7bb8d9', '#6aaed0', '#5ba3c7', '#4c99bf', '#82c4de', '#98d0e4', '#b4ddf0', '#71b5d5'];
+      const EXTINCT_COLORS = ['#c8c4bf', '#b8b4ae', '#d0ccc7', '#bfbbb5', '#c4c0ba', '#aeaaa4'];
+      let extantIdx = 0, extinctIdx = 0;
+
       schoolsWithPeriods.forEach(p => {
         const period = p.src.active_period;
         const startY = dateToY(period.start);
@@ -843,7 +848,9 @@
         const offset = (idx + 1) * (BAND_W + BAND_GAP);
         const bandX = goRight ? SPINE_X + offset : SPINE_X - offset - BAND_W;
 
-        const bandColor = LANE_COLORS['school'] || '#6b5b95';
+        const bandColor = period.extant
+          ? EXTANT_COLORS[extantIdx++ % EXTANT_COLORS.length]
+          : EXTINCT_COLORS[extinctIdx++ % EXTINCT_COLORS.length];
 
         // Band rectangle
         const rect = svgEl('rect', {
