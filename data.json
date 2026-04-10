@@ -92,11 +92,6 @@
         "label": "throwing + kuzushi (Iikubo)"
       },
       {
-        "from": "daitoryu_scrolls",
-        "to": "takeda_sokaku_bio",
-        "label": "founder"
-      },
-      {
         "from": "kodokan_founding",
         "to": "mifune_kyuzo",
         "label": "Kodokan 10th dan"
@@ -155,6 +150,21 @@
         "from": "fusen_ryu_challenge",
         "to": "maeda_mitsuyo",
         "label": "ne waza (via Kodokan absorption)"
+      },
+      {
+        "from": "aizu_oshikiuchi",
+        "to": "daitoryu_scrolls",
+        "label": "oshikiuchi (via Saigō Tanomo)"
+      },
+      {
+        "from": "onoha_ittoryu",
+        "to": "takeda_sokaku_bio",
+        "label": "sword (menkyo at 17)"
+      },
+      {
+        "from": "aizu_oshikiuchi",
+        "to": "takeda_sokaku_bio",
+        "label": "oshikiuchi (via Saigō Tanomo)"
       }
     ]
   },
@@ -1376,7 +1386,7 @@
       "passage_japanese": null,
       "passage_translation": "I am not going to teach you Aiki, but I will teach you Jujutsu.",
       "translator": "Takeda Sokaku to early student Sato Sadami",
-      "description": "Takeda Sokaku (1859–1943) revived Daito-ryu and introduced the concept of 'aiki' as a martial technique. Trained in Onoha Itto-ryu kenjutsu from age 10, received menkyo at 17. After Hoshina Chikanori advised him to teach jujutsu rather than swordsmanship (1898), he began teaching Daito-ryu Jujutsu in 1899. He had approximately 30,000 students during his lifetime. He taught aiki selectively — many students received only the jujutsu curriculum. His most famous student, Ueshiba Morihei, went on to found aikido. Takeda's eimeiroku (enrollment records) are a critical primary source for reconstructing the art's evolution.",
+      "description": "Takeda Sokaku (1859–1943) revived the Aizu clan's secret martial tradition as Daitō-ryū. His training was remarkably broad: sword (Onoha Ittō-ryū under Shibuya Toma, menkyo at 17), spear (Hōzōin-ryū Takada-ha), additional sword study (Jikishinkage-ryū under Sakakibara Kenkichi, though unconfirmed by historical documents), and sumo. He spent a decade on musha shugyō (warrior pilgrimage), traveling Japan fighting and training. The pivotal moment: in 1898, Hoshina Chikanori — formerly Saigō Tanomo, last chief retainer of the Aizu clan — advised Sokaku to abandon swordsmanship and teach jujutsu, recognizing the Meiji era's shift. Saigō transmitted the oshikiuchi (palace art) of the Aizu domain. Sokaku began teaching Daitō-ryū Jujutsu in 1899, synthesizing oshikiuchi with his sword and spear body mechanics. He had approximately 30,000 students during his lifetime. He taught the concept of 'aiki' selectively — many students received only jujutsu. His most famous students: Ueshiba Morihei (founded aikido), Sagawa Yukiyoshi (developed aiki body conditioning), Takuma Hisa (Takumakai lineage), and Horikawa Kodo (known for numerous aiki technique variations).",
       "techniques_shown": [
         "aiki",
         "joint_locks",
@@ -2273,6 +2283,98 @@
         ],
         "reliability": "JSDF training manuals and federation records. Wikipedia article cites Japanese military sources."
       }
+    },
+    {
+      "id": "aizu_oshikiuchi",
+      "type": "literary",
+      "subtype": "school_record",
+      "lane": "school",
+      "name_japanese": "御式内",
+      "title": "Oshikiuchi — Secret Art of the Aizu Clan",
+      "date": 1574,
+      "date_display": "c. 1574 – 1868 (Aizu domain secret tradition)",
+      "origin": "Aizu domain, Mutsu Province (modern Fukushima)",
+      "author": "Takeda Kunitsugu (brought to Aizu c. 1574)",
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Oshikiuchi (御式内, 'palace art') was the secret martial tradition of the Aizu domain, transmitted exclusively within the clan's samurai. The tradition claims lineage from Shinra Saburo Minamoto no Yoshimitsu (1045–1127), who studied classical Chinese military strategy and reportedly founded the art at a place called Daitō in Ōmi Province — hence 'Daitō-ryū.' Yoshimitsu's descendant Takeda Kunitsugu brought the art to the Aizu domain c. 1574, carrying Takeda Shingen's last will. The art became an otome-bujutsu (inside-the-clan martial art), secretly transmitted until the Boshin War (1868–69) ended the Aizu domain. The last custodian was Saigō Tanomo (1830–1903), the domain's chief retainer, who transmitted it to Takeda Sokaku. Critical caveat: no extant records of the art exist before Takeda Sokaku. The claimed 900-year lineage is the school's own tradition, not independently verified.",
+      "techniques_shown": [
+        "aiki",
+        "joint_locks",
+        "kogusoku"
+      ],
+      "terms": [
+        "aiki",
+        "koryu",
+        "densho"
+      ],
+      "active_period": {
+        "start": 1574,
+        "end": 1899,
+        "extant": false
+      },
+      "period_display": "c. 1574 – 1899 (secret Aizu tradition → revived as Daitō-ryū)",
+      "evidence": {
+        "proves": [
+          "The Aizu clan had martial traditions transmitted within the domain",
+          "Saigō Tanomo was the last traditional custodian before Takeda Sokaku"
+        ],
+        "cannot_prove": [
+          "The 900-year lineage back to Minamoto no Yoshimitsu",
+          "What techniques were actually transmitted vs. developed by Sokaku",
+          "Whether oshikiuchi resembled what Sokaku later taught"
+        ],
+        "reliability": "No pre-Takeda documents exist. The entire pre-1899 history relies on the school's own oral tradition. Guillaume Erard's research describes this as 'Daito-ryu mythology.'"
+      }
+    },
+    {
+      "id": "onoha_ittoryu",
+      "type": "literary",
+      "subtype": "school_record",
+      "lane": "school",
+      "name_japanese": "小野派一刀流",
+      "title": "Onoha Ittō-ryū — Takeda's Sword Foundation",
+      "date": 1580,
+      "date_display": "Founded c. 1580",
+      "origin": "Japan",
+      "author": "Itō Ittōsai Kagehisa (Ittō-ryū founder); Ono Jirōemon Tadaaki (Onoha branch)",
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Onoha Ittō-ryū (小野派一刀流) is one of the most influential sword schools in Japanese history, a branch of Ittō-ryū founded by Ono Jirōemon Tadaaki. Takeda Sokaku trained in this school from age 10 under Shibuya Toma, receiving a menkyo (teaching license) at age 17 (1876). Sword technique was Sokaku's primary martial foundation — he was known as a swordsman before he became a jujutsu teacher. When Hoshina Chikanori (Saigō Tanomo) advised him in 1898 to teach jujutsu instead of swordsmanship, recognizing the Meiji era's shift away from sword culture, Sokaku transformed his martial knowledge. The body mechanics, timing, and distance management from Onoha Ittō-ryū likely informed the Daitō-ryū technical system.",
+      "techniques_shown": [
+        "kogusoku"
+      ],
+      "terms": [
+        "koryu",
+        "menkyo_kaiden"
+      ],
+      "active_period": {
+        "start": 1580,
+        "end": null,
+        "extant": true
+      },
+      "period_display": "c. 1580 – present",
+      "practitioners": "Small — active in Japan",
+      "evidence": {
+        "proves": [
+          "Takeda Sokaku's primary early training was in swordsmanship, not jujutsu",
+          "He held a teaching license in Onoha Ittō-ryū by age 17"
+        ],
+        "cannot_prove": [
+          "Which specific techniques transferred from sword to empty-hand"
+        ],
+        "reliability": "Takeda's Onoha Ittō-ryū training is documented in multiple sources. The menkyo at age 17 is cited by Kodokan records and Daito-ryu sources."
+      }
     }
   ],
   "lexicon": [
@@ -2379,7 +2481,8 @@
         "takeda_sokaku_bio",
         "ueshiba_morihei_bio",
         "aunkai",
-        "tomiki_kenji"
+        "tomiki_kenji",
+        "aizu_oshikiuchi"
       ],
       "modern_parallel": "Aiki in Daito-ryu and Aikido"
     },
@@ -2563,7 +2666,8 @@
         "takenouchi_founding",
         "daitoryu_scrolls",
         "ueshiba_aikido",
-        "takeda_sokaku_bio"
+        "takeda_sokaku_bio",
+        "aizu_oshikiuchi"
       ],
       "modern_parallel": "Curriculum, syllabus, instructional manuals"
     },
@@ -2577,7 +2681,8 @@
       "sources": [
         "kito_ryu",
         "daitoryu_scrolls",
-        "takeda_sokaku_bio"
+        "takeda_sokaku_bio",
+        "onoha_ittoryu"
       ],
       "modern_parallel": "Black belt (approximate), master instructor certification"
     },
@@ -2609,7 +2714,9 @@
         "funakoshi_kodokan_1922",
         "karate",
         "aunkai",
-        "jukendo"
+        "jukendo",
+        "aizu_oshikiuchi",
+        "onoha_ittoryu"
       ],
       "modern_parallel": "Traditional/classical martial arts"
     },
