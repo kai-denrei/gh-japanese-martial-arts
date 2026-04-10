@@ -76,12 +76,12 @@
     }
     .header-rule { border: none; border-top: 2px solid var(--fg); width: 4rem; margin-bottom: var(--lg); }
     .meta-line {
-      font-family: var(--font-ui); font-size: 0.8rem; color: var(--fg-muted); margin-bottom: var(--xl);
+      font-family: var(--font-ui); font-size: 0.8rem; color: var(--fg-muted); margin-bottom: var(--md);
     }
     .meta-line span + span::before { content: ' · '; color: var(--fg-faint); }
 
     /* ── Tab Bar ────────────────────────────────────── */
-    .tab-bar { display: flex; gap: var(--xs); border-bottom: 1px solid var(--rule); margin-bottom: var(--xl); }
+    .tab-bar { display: flex; gap: var(--xs); border-bottom: 1px solid var(--rule); margin-bottom: var(--md); }
     .tab-bar button {
       font-family: var(--font-ui); font-size: 0.85rem; font-weight: 500;
       padding: var(--sm) var(--md); background: none;
@@ -404,6 +404,11 @@
 
     <!-- SOURCES TAB -->
     <div id="panel-sources" class="panel active">
+      <div style="display:flex;gap:var(--sm);align-items:center;margin-bottom:var(--sm);flex-wrap:wrap">
+        <input type="text" class="lexicon-search" id="source-search" placeholder="Search sources (Japanese, English, date, technique)..." style="flex:1;min-width:200px">
+        <span id="source-count" style="font-family:var(--font-ui);font-size:0.72rem;color:var(--fg-faint)"></span>
+      </div>
+      <div id="source-results" style="display:none;margin-bottom:var(--md)"></div>
       <div class="type-legend" id="type-legend"></div>
       <div class="vfb-wrap" style="position:relative">
         <svg class="vfb-svg" id="vfb-svg"></svg>
@@ -443,6 +448,7 @@
       renderEvidenceIndex();
       renderLexicon();
       renderCenterpiece();
+      initSourceSearch();
       let resizeTimer;
       window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
@@ -1250,6 +1256,55 @@
         ).join('');
         return `<div class="matrix-card"><h4>${slot.slot}</h4>${passages}</div>`;
       }).join('');
+    }
+
+    /* ── Source Search ──────────────────────────────── */
+    function initSourceSearch() {
+      const input = document.getElementById('source-search');
+      const results = document.getElementById('source-results');
+      const count = document.getElementById('source-count');
+
+      input.addEventListener('input', () => {
+        const q = input.value.toLowerCase().trim();
+        if (!q) {
+          results.style.display = 'none';
+          count.textContent = '';
+          return;
+        }
+        const matches = DATA.sources.filter(src => {
+          const searchable = [
+            src.title, src.name_japanese || '', src.description,
+            src.date_display, src.author || '',
+            (src.techniques_shown || []).join(' '),
+            (src.terms || []).join(' '),
+            src.passage_translation || '', src.passage_japanese || '',
+            src.practitioners || '', src.period_display || ''
+          ].join(' ').toLowerCase();
+          return searchable.includes(q);
+        });
+
+        count.textContent = `${matches.length} of ${DATA.sources.length}`;
+
+        if (matches.length === 0) {
+          results.innerHTML = '<div style="font-family:var(--font-ui);font-size:0.82rem;color:var(--fg-faint);padding:var(--sm)">No matches</div>';
+          results.style.display = 'block';
+          return;
+        }
+
+        results.innerHTML = matches.map(src => {
+          const jp = src.name_japanese || '';
+          const title = (src.title.split('—')[0] || '').trim();
+          const lane = src.lane || '';
+          const icon = lane === 'school' ? '⚔' : lane === 'person' ? '◆' : '●';
+          return `<div style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;margin:2px;border:1px solid var(--rule);border-radius:14px;cursor:pointer;font-family:var(--font-ui);font-size:0.75rem;transition:all 0.15s" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--rule)'" onclick="showSourceOverlay('${src.id}')">
+            <span style="font-size:0.65rem">${icon}</span>
+            <span style="font-family:var(--font-jp)">${jp}</span>
+            <span style="color:var(--fg-muted)">${title}</span>
+            <span style="color:var(--fg-faint);font-size:0.65rem">${src.date}</span>
+          </div>`;
+        }).join('');
+        results.style.display = 'block';
+      });
     }
 
     /* ── Launch ─────────────────────────────────────── */

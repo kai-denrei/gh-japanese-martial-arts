@@ -50,6 +50,11 @@
         "from": "ryukyu_chinese_kempo",
         "to": "aunkai",
         "label": "xingyiquan / internal arts"
+      },
+      {
+        "from": "fusen_ryu_challenge",
+        "to": "kosen_judo",
+        "label": "ne waza tradition"
       }
     ]
   },
@@ -619,8 +624,8 @@
       "type": "documentary",
       "subtype": "competition",
       "title": "Fusen-ryū — The Ne Waza Shock",
-      "date": 1891,
-      "date_display": "1891–1905",
+      "date": 1828,
+      "date_display": "Founded c. 1828; challenge matches 1891–1905",
       "origin": "Tokyo, Japan",
       "author": null,
       "museum": null,
@@ -630,7 +635,7 @@
       "passage_japanese": null,
       "passage_translation": null,
       "translator": null,
-      "description": "Mataemon Tanabe (1869–1942), master of Fusen-ryū, inflicted the only defeats in Kodokan challenge-match history. In January 1891, Tanabe defeated 3rd-dan judoka Takisaburo Tobari: he reversed an osoto-makikomi attempt, pinned with kami-shiho-gatame, then choked Tobari unconscious with juji-jime. In spring 1892, Tobari returned with improved skills but made the mistake of voluntarily engaging on the ground. Tanabe patiently exhausted him and choked him again. The strategic insight: identify the phase where the opponent is weakest, take the fight there. The Kodokan had almost no ground game before 1900. Kano's response was institutional genius — he invited Tanabe to teach ne waza to the Kodokan. A ne waza explosion followed (1900–1925), producing 'the ne-waza of the Kansai region.' Fusen-ryū subsequently faded into obscurity, absorbed by the institution it had defeated.",
+      "description": "Fusen-ryū (不遷流) was founded by Takeda Motsuge, who trained across multiple classical jujutsu schools: Nanba Ippō-ryū, Takenouchi-ryū, Sekiguchi-ryū, Yōshin-ryū, Shibukawa-ryū, and Yagyū-ryū. This broad lineage produced a school with unusually strong ne waza (ground fighting) — drawing from the ground traditions of Sekiguchi-ryū and the grappling depth of Takenouchi-ryū. Mataemon Tanabe (1869–1942), master of Fusen-ryū, inflicted the only defeats in Kodokan challenge-match history. In January 1891, Tanabe defeated 3rd-dan judoka Takisaburo Tobari: he reversed an osoto-makikomi, pinned with kami-shiho-gatame, then choked him unconscious with juji-jime. In spring 1892, Tobari returned but Tanabe patiently exhausted him and choked him again. The strategic insight: identify the phase where the opponent is weakest, take the fight there. The Kodokan had almost no ground game before 1900. Kano's response was institutional genius — he invited Tanabe to teach ne waza at the Kodokan. A ne waza explosion followed (1900–1925), producing 'the ne-waza of the Kansai region.' Fusen-ryū's ground fighting tradition is the direct ancestor of Kosen Judo's heavy ne waza emphasis. Fusen-ryū itself faded into obscurity — absorbed by the institution it had defeated.",
       "techniques_shown": [
         "ne_waza",
         "juji_jime",
@@ -659,11 +664,11 @@
       "name_japanese": "不遷流",
       "lane": "school",
       "active_period": {
-        "start": 1800,
+        "start": 1828,
         "end": 1910,
         "extant": false
       },
-      "period_display": "c. 1800s – c. 1910s (absorbed by Kodokan)"
+      "period_display": "c. 1828 – c. 1910 (absorbed by Kodokan)"
     },
     {
       "id": "kano_grant_demonstration",
@@ -1929,6 +1934,57 @@
         ],
         "reliability": "Founded by a living practitioner with documented competition record (1989 Sanda). Training lineage reconstructed from Ellis Amdur's analysis (kogenbudo.org), Aunkai official biography, and seminar participant accounts."
       }
+    },
+    {
+      "id": "kosen_judo",
+      "type": "documentary",
+      "subtype": "institutional",
+      "lane": "school",
+      "name_japanese": "高専柔道",
+      "title": "Kosen Judo — The Ground Fighting Tradition Within Judo",
+      "date": 1914,
+      "date_display": "1914 – present (as Shichitei Judo)",
+      "origin": "Kyoto Imperial University, Japan",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Kosen Judo (高専柔道) emerged as a distinct competition style within Kodokan Judo. Kano organized the first All Japan High School Championships in 1914 at Kyoto Imperial University, formalizing university-level competition. While structurally part of Kodokan Judo, Kosen's character — heavy ne waza, guard pulling (hikikomi), extended ground exchanges — comes largely from Fusen-ryū's influence on the Kodokan's ground curriculum. In 1925, the Kodokan introduced rules limiting ground time (penalizing pulling guard more than three times) to keep judo balanced between standing and ground work. But the seven national university Kosen schools (Hokkaido, Tohoku, Tokyo, Nagoya, Kyoto, Osaka, Kyushu) ignored these restrictions and kept rules allowing direct pulling into ne waza, long ground exchanges, and prioritization of submissions over throws. This tradition continues today as Shichitei Judo (七帝柔道), the annual tournament among the seven imperial universities. Kosen Judo is the closest living descendant of the Fusen-ryū ne waza tradition within the Kodokan framework — and a direct ancestor of BJJ's ground-heavy approach via Maeda, who trained during the Kodokan's ne waza explosion period (1900–1925).",
+      "techniques_shown": [
+        "ne_waza",
+        "kansetsu_waza",
+        "shime_waza"
+      ],
+      "terms": [
+        "judo",
+        "ne_waza",
+        "shime_waza",
+        "kansetsu_waza",
+        "randori"
+      ],
+      "active_period": {
+        "start": 1914,
+        "end": null,
+        "extant": true
+      },
+      "period_display": "1914 – present (as Shichitei Judo among 7 national universities)",
+      "practitioners": "Limited — seven national university teams + alumni networks",
+      "evidence": {
+        "proves": [
+          "The Fusen-ryu ne waza tradition survived within Kodokan Judo through university competition rules",
+          "Kano himself organized the first Kosen championship in 1914",
+          "The 1925 Kodokan rule changes were specifically designed to limit ne waza dominance"
+        ],
+        "cannot_prove": [
+          "Whether Kosen rules were deliberately preserved to maintain Fusen-ryu's legacy, or simply evolved through competitive preference",
+          "The exact proportion of Fusen-ryu technique in modern Kosen practice"
+        ],
+        "reliability": "University tournament records from 1914 onward. Harrysuke's Blog provides detailed historical analysis with primary source citations."
+      }
     }
   ],
   "lexicon": [
@@ -1998,7 +2054,8 @@
         "funakoshi_kodokan_1922",
         "santel_kodokan_1921",
         "pride_fc",
-        "sakuraba_kazushi"
+        "sakuraba_kazushi",
+        "kosen_judo"
       ],
       "modern_parallel": "Olympic Judo"
     },
@@ -2046,7 +2103,8 @@
         "maeda_mitsuyo",
         "olympics_1964",
         "kano_jigoro_birth",
-        "mifune_kyuzo"
+        "mifune_kyuzo",
+        "kosen_judo"
       ],
       "modern_parallel": "Sparring, rolling (BJJ), live rounds (wrestling)"
     },
@@ -2102,7 +2160,8 @@
         "shooto",
         "pancrase",
         "pride_fc",
-        "sakuraba_kazushi"
+        "sakuraba_kazushi",
+        "kosen_judo"
       ],
       "modern_parallel": "Ground game in BJJ, MMA"
     },
@@ -2153,7 +2212,8 @@
       "sources": [
         "fusen_ryu_challenge",
         "tenjin_shinyo_ryu",
-        "tanabe_mataemon"
+        "tanabe_mataemon",
+        "kosen_judo"
       ],
       "modern_parallel": "Chokes/strangles in BJJ, MMA"
     },
@@ -2173,7 +2233,8 @@
         "jikishin_ryu",
         "yagyu_shingan_ryu",
         "ryoi_shinto_ryu",
-        "hontai_yoshin_ryu"
+        "hontai_yoshin_ryu",
+        "kosen_judo"
       ],
       "modern_parallel": "Joint locks, submissions in BJJ/MMA"
     },
