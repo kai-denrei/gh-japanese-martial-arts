@@ -1,7 +1,7 @@
 {
   "meta": {
     "tradition": "Japanese Martial Arts",
-    "period": "712 CE – 2007",
+    "period": "712 CE – 2012",
     "region": "Japan",
     "sports": [
       "sumo",
@@ -170,6 +170,21 @@
         "from": "shooto",
         "to": "sakuraba_kazushi",
         "label": "Shooto training"
+      },
+      {
+        "from": "takeda_sokaku_bio",
+        "to": "ueshiba_morihei_bio",
+        "label": "direct teacher (1915–1937)"
+      },
+      {
+        "from": "ueshiba_morihei_bio",
+        "to": "ueshiba_aikido",
+        "label": "founded aikido (1942)"
+      },
+      {
+        "from": "daitoryu_scrolls",
+        "to": "takeda_sokaku_bio",
+        "label": "revived Daitō-ryū"
       }
     ]
   },
@@ -325,7 +340,10 @@
         "densho",
         "koryu",
         "kata",
-        "kansetsu_waza"
+        "kansetsu_waza",
+        "bujutsu",
+        "musha_shugyo",
+        "ryu_ha"
       ],
       "evidence": {
         "proves": [
@@ -370,7 +388,8 @@
       "terms": [
         "katanagari",
         "jujutsu",
-        "koryu"
+        "koryu",
+        "bushido"
       ],
       "evidence": {
         "proves": [
@@ -412,7 +431,9 @@
         "jujutsu",
         "ne_waza",
         "koryu",
-        "kansetsu_waza"
+        "kansetsu_waza",
+        "bujutsu",
+        "ryu_ha"
       ],
       "evidence": {
         "proves": [
@@ -462,7 +483,9 @@
         "koryu",
         "atemi_waza",
         "kansetsu_waza",
-        "nage_waza"
+        "nage_waza",
+        "bujutsu",
+        "ryu_ha"
       ],
       "evidence": {
         "proves": [
@@ -668,7 +691,10 @@
         "seiryoku_zenyo",
         "jita_kyoei",
         "ne_waza",
-        "nage_waza"
+        "nage_waza",
+        "budo",
+        "bushido",
+        "musha_shugyo"
       ],
       "evidence": {
         "proves": [
@@ -762,7 +788,8 @@
         "ne_waza",
         "shime_waza",
         "randori",
-        "judo"
+        "judo",
+        "musha_shugyo"
       ],
       "evidence": {
         "proves": [
@@ -905,7 +932,8 @@
         "jujutsu",
         "densho",
         "koryu",
-        "dojo"
+        "dojo",
+        "budo"
       ],
       "evidence": {
         "proves": [
@@ -995,7 +1023,8 @@
       ],
       "terms": [
         "judo",
-        "randori"
+        "randori",
+        "budo"
       ],
       "evidence": {
         "proves": [
@@ -1159,7 +1188,8 @@
         "koryu",
         "nage_waza",
         "atemi_waza",
-        "kansetsu_waza"
+        "kansetsu_waza",
+        "ryu_ha"
       ],
       "evidence": {
         "proves": [
@@ -2421,6 +2451,154 @@
         ],
         "reliability": "UFC event records, broadcast footage, and fight statistics. Well-documented event."
       }
+    },
+    {
+      "id": "nitobe_bushido",
+      "type": "literary",
+      "subtype": "philosophical",
+      "lane": "artifact",
+      "name_japanese": "武士道",
+      "title": "Nitobe Inazō — Bushido: The Soul of Japan",
+      "date": 1900,
+      "date_display": "1900 (English), 1908 (expanded)",
+      "origin": "Philadelphia / Tokyo",
+      "author": "Nitobe Inazō",
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": "What Japan was she owed to the Samurai. They were not only the flower of the nation, but its root as well. All the gracious gifts of Heaven flowed through them.",
+      "translator": null,
+      "description": "Nitobe Inazō wrote 'Bushido: The Soul of Japan' in English to explain Japanese ethics to Western audiences. Originally published in Philadelphia in 1900, expanded in 1908. While widely cited, modern scholars consider it an idealized construction — Nitobe drew on Confucian, Buddhist, and Shinto elements to present a unified 'code' that may never have existed as such. The book nonetheless shaped international perceptions of Japanese martial culture and influenced how budō was framed for export.",
+      "techniques_shown": [],
+      "terms": [
+        "bushido",
+        "budo"
+      ],
+      "evidence": {
+        "proves": [
+          "How bushido was presented to Western audiences at the turn of the 20th century",
+          "The syncretic philosophical framework attributed to samurai culture"
+        ],
+        "cannot_prove": [
+          "Whether a unified bushido code was actually practiced historically"
+        ],
+        "reliability": "Primary source for the construction of bushido as an international concept. Scholarly consensus: important cultural document but not historically accurate as description of actual samurai behavior."
+      }
+    },
+    {
+      "id": "jab_founding",
+      "type": "documentary",
+      "subtype": "institutional",
+      "lane": "event",
+      "name_japanese": "日本武道学会",
+      "title": "Japanese Academy of Budo — JAB Founded",
+      "date": 1968,
+      "date_display": "1968",
+      "origin": "Tokyo, Japan",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": "https://www.budo.ac",
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "The Japanese Academy of Budo (JAB, 日本武道学会) was founded in 1968, four years after the Nippon Budokan was built for the 1964 Tokyo Olympics. Matsutarō Shōriki, first president of the Nippon Budokan, called for budo to be developed as an academic field. Today JAB has ~900 members across 7 branches, with specialist subcommittees for judo, kendo, sumo, kyudo, karate, and naginata. Publishes 'Research Journal of Budo' three times yearly.",
+      "techniques_shown": [],
+      "terms": [
+        "budo",
+        "judo",
+        "dojo"
+      ],
+      "evidence": {
+        "proves": [
+          "Institutional commitment to studying budo as an academic discipline",
+          "The post-Olympic push to formalize martial arts scholarship"
+        ],
+        "cannot_prove": [
+          "The impact of JAB research on actual practice in dōjō"
+        ],
+        "reliability": "Well-documented institutional history. Source: Nakiri (2015)."
+      }
+    },
+    {
+      "id": "draeger_trilogy",
+      "type": "literary",
+      "subtype": "scholarly",
+      "lane": "artifact",
+      "name_japanese": "武道三部作",
+      "title": "Donn Draeger — Martial Arts & Ways of Japan (Trilogy)",
+      "date": 1973,
+      "date_display": "1973–1974",
+      "origin": "Tokyo / New York",
+      "author": "Donn F. Draeger",
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Donn Draeger's three-volume series — Classical Bujutsu (1973), Classical Budō (1973), and Modern Bujutsu & Budō (1974) — established the foundational taxonomy for English-language study of Japanese martial arts. His trifurcation of martial development into classical bujutsu, classical budō, and modern budō remains the dominant framework. Draeger, an American Marine who lived in Japan for decades, described kata mastery as 'solving physical kōan' — connecting martial practice to Zen Buddhist epistemology.",
+      "techniques_shown": [],
+      "terms": [
+        "budo",
+        "bujutsu",
+        "kata",
+        "koryu"
+      ],
+      "evidence": {
+        "proves": [
+          "The bujutsu→budō taxonomy became standard in English-language scholarship",
+          "Western scholarly engagement with Japanese martial arts was formalized by the 1970s"
+        ],
+        "cannot_prove": [
+          "Whether the trifurcation accurately reflects Japanese self-understanding of their traditions"
+        ],
+        "reliability": "Foundational reference work. Some claims debated by later scholars (Amdur, Friday). The taxonomy is useful but reductive."
+      }
+    },
+    {
+      "id": "budo_compulsory_2012",
+      "type": "documentary",
+      "subtype": "institutional",
+      "lane": "event",
+      "name_japanese": "武道必修化",
+      "title": "Budō Made Compulsory in Japanese Junior High Schools",
+      "date": 2012,
+      "date_display": "2012",
+      "origin": "Japan (nationwide)",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "In 2012, budō became a required subject in Japanese junior high school physical education, following the 2006 revision of the Fundamental Law of Education. Dr. Yasuhiko Torii, referencing Ruth Benedict's 'The Chrysanthemum and the Sword,' argued that post-WWII Westernization caused Japanese youth to lose traditional values — courtesy, honour, endurance — that budō education could restore. Students choose from judo, kendo, or sumo. The decision institutionalized budō as a vehicle for cultural identity formation, not just physical education.",
+      "techniques_shown": [
+        "jujutsu",
+        "kuzushi"
+      ],
+      "terms": [
+        "budo",
+        "judo",
+        "randori",
+        "kata"
+      ],
+      "evidence": {
+        "proves": [
+          "The Japanese state formally positions budō as character education",
+          "Judo, kendo, and sumo are the three budō taught in schools"
+        ],
+        "cannot_prove": [
+          "Whether compulsory budō education actually achieves its cultural goals"
+        ],
+        "reliability": "Government policy — well-documented. Source: Nakiri (2015), MEXT curriculum guidelines."
+      }
     }
   ],
   "lexicon": [
@@ -2494,7 +2672,10 @@
         "kosen_judo",
         "nippon_kempo",
         "tomiki_kenji",
-        "jsdf_toshu_kakuto"
+        "jsdf_toshu_kakuto",
+        "jab_founding",
+        "budo_compulsory_2012",
+        "ufc_japan_1997"
       ],
       "modern_parallel": "Olympic Judo"
     },
@@ -2550,7 +2731,8 @@
         "kosen_judo",
         "nippon_kempo",
         "tomiki_kenji",
-        "jsdf_toshu_kakuto"
+        "jsdf_toshu_kakuto",
+        "budo_compulsory_2012"
       ],
       "modern_parallel": "Sparring, rolling (BJJ), live rounds (wrestling)"
     },
@@ -2565,7 +2747,9 @@
         "tenjin_shinyo_ryu",
         "kito_ryu",
         "kodokan_founding",
-        "takenouchi_founding"
+        "takenouchi_founding",
+        "draeger_trilogy",
+        "budo_compulsory_2012"
       ],
       "modern_parallel": "Drills, forms, technique demonstration"
     },
@@ -2608,7 +2792,8 @@
         "pride_fc",
         "sakuraba_kazushi",
         "kosen_judo",
-        "jsdf_toshu_kakuto"
+        "jsdf_toshu_kakuto",
+        "ufc_japan_1997"
       ],
       "modern_parallel": "Ground game in BJJ, MMA"
     },
@@ -2684,7 +2869,8 @@
         "ryoi_shinto_ryu",
         "hontai_yoshin_ryu",
         "kosen_judo",
-        "jsdf_toshu_kakuto"
+        "jsdf_toshu_kakuto",
+        "ufc_japan_1997"
       ],
       "modern_parallel": "Joint locks, submissions in BJJ/MMA"
     },
@@ -2762,7 +2948,8 @@
         "aunkai",
         "jukendo",
         "aizu_oshikiuchi",
-        "onoha_ittoryu"
+        "onoha_ittoryu",
+        "draeger_trilogy"
       ],
       "modern_parallel": "Traditional/classical martial arts"
     },
@@ -2790,7 +2977,8 @@
       "sources": [
         "kodokan_founding",
         "ueshiba_aikido",
-        "aunkai"
+        "aunkai",
+        "jab_founding"
       ],
       "modern_parallel": "Gym, academy, training facility"
     },
@@ -2868,6 +3056,82 @@
         "kojiki_wrestling"
       ],
       "modern_parallel": "No direct parallel — mythological concept"
+    },
+    {
+      "id": "budo",
+      "japanese": "武道",
+      "romaji": "budō",
+      "literal": "martial way/path",
+      "definition": "The modern philosophical framing of Japanese martial arts as paths of self-cultivation rather than battlefield technique. Distinguished from bujutsu (martial technique) by the suffix -dō (way/path). Nakiri (2015) argues budō should not be translated as 'martial art' internationally, as it fails to capture the religious, ethical, traditional, and aesthetic dimensions. Irie Kohei identifies five characteristics: combative, religious, aesthetic, educational, and competitive. Made compulsory in Japanese junior high schools in 2012.",
+      "category": "philosophy",
+      "sources": [
+        "kodokan_founding",
+        "ueshiba_aikido",
+        "olympics_1964",
+        "nitobe_bushido",
+        "jab_founding",
+        "draeger_trilogy",
+        "budo_compulsory_2012"
+      ],
+      "modern_parallel": "Used internationally as a loanword"
+    },
+    {
+      "id": "bujutsu",
+      "japanese": "武術",
+      "romaji": "bujutsu",
+      "literal": "martial technique/art",
+      "definition": "Battlefield combat techniques practiced before the Tokugawa pacification. Distinguished from budō by the suffix -jutsu (technique/skill) vs. -dō (way). Draeger's trifurcation (1973–74) classifies the historical development as classical bujutsu → classical budō → modern budō. The shift from -jutsu to -dō reflects the Tokugawa-era transformation as warriors sought meaning beyond combat in a pacified society.",
+      "category": "philosophy",
+      "sources": [
+        "takenouchi_founding",
+        "sekiguchi_ryu",
+        "yoshin_ryu",
+        "draeger_trilogy"
+      ],
+      "modern_parallel": "Some koryu schools still use -jutsu suffix"
+    },
+    {
+      "id": "bushido",
+      "japanese": "武士道",
+      "romaji": "bushidō",
+      "literal": "way of the warrior",
+      "definition": "Ethical code attributed to the samurai class, systematized retrospectively during the Tokugawa period. Nitobe Inazō's 'Bushido: The Soul of Japan' (1900/1908) popularized the concept internationally but is considered an idealized construction rather than a historical code. Modern scholars view bushido as partly an 'invented tradition' — real behavioral norms existed, but the unified 'code' was formalized after the fact.",
+      "category": "philosophy",
+      "sources": [
+        "katanagari_1588",
+        "kodokan_founding",
+        "nitobe_bushido"
+      ],
+      "modern_parallel": "Popular culture concept; debated in scholarship"
+    },
+    {
+      "id": "musha_shugyo",
+      "japanese": "武者修行",
+      "romaji": "musha shugyō",
+      "literal": "warrior's austere training pilgrimage",
+      "definition": "The practice of traveling throughout Japan to test and improve martial skills by training at and challenging other schools. Particularly common during the Muromachi period (1333–1568). Warriors like Tsukahara Bokuden and Kamiizumi Nobutsuna are famous for their pilgrimages. The practice created branch schools (bunryū) and factions (bumpa) that spread techniques across feudal domains.",
+      "category": "training",
+      "sources": [
+        "takenouchi_founding",
+        "kodokan_founding",
+        "fusen_ryu_challenge"
+      ],
+      "modern_parallel": "Training trips to Japan by foreign martial artists"
+    },
+    {
+      "id": "ryu_ha",
+      "japanese": "流派",
+      "romaji": "ryū-ha",
+      "literal": "style/school/lineage",
+      "definition": "A formalized school of martial arts with codified curriculum, transmission documents (densho), and lineage succession (iemoto system). Discrete ryū-ha began forming around the Keicho era (~1600) as techniques became individuated and teachers gained insights into combat principles. By the end of the Edo period, Japan had ~718 kenjutsu, ~179 jujutsu, ~148 sōjutsu, and ~52 kyūjutsu schools (Nihon Kobudō Sōkan).",
+      "category": "organization",
+      "sources": [
+        "takenouchi_founding",
+        "sekiguchi_ryu",
+        "yoshin_ryu",
+        "yagyu_shingan_ryu"
+      ],
+      "modern_parallel": "Martial arts style/school lineage systems worldwide"
     }
   ],
   "centerpiece": {
@@ -2962,6 +3226,200 @@
         "fusen_ryu_challenge": "Faded into obscurity — absorbed by the very institution it had defeated. The ironic endpoint: winning the battle, losing the war.",
         "kodokan_founding": "The institutional genius: absorb challengers rather than fight them. Hire Tanabe, integrate ne waza, grow stronger. This pattern — challenge → absorption → growth — is the Kodokan's defining characteristic.",
         "maeda_mitsuyo": "Created a new institutional lineage in Brazil. The Gracie academy replicated the Kodokan model: institutional structure, empirical testing, challenge matches as proof."
+      }
+    ]
+  },
+  "philosophy": {
+    "title": "Philosophy of Budō",
+    "intro": "The transformation from battlefield bujutsu to modern budō is not merely a change of suffix — it reflects centuries of social, religious, and institutional evolution. These themes are synthesized from contemporary scholarship across history, sociology, philosophy, and cultural studies.",
+    "themes": [
+      {
+        "id": "bujutsu_to_budo",
+        "title": "From Bujutsu to Budō: The Civilizing Process",
+        "body": "The central narrative of Japanese martial arts is the transformation from battlefield technique (bujutsu 武術) to a path of self-cultivation (budō 武道). This shift was not abrupt but unfolded across centuries, driven by the Tokugawa pacification (1600–1868) that left a warrior class without wars to fight. Sánchez García applies Norbert Elias's civilizing process theory to this transformation, arguing that the pacification of samurai society parallels broader patterns of violence regulation seen in European state-formation. As Skoss documents, the end of the Heian period (~1185) marks the beginning of formalized martial traditions (ryū-ha), which by the Keicho era (~1600) had proliferated into hundreds of discrete schools — roughly 718 kenjutsu, 179 jujutsu, 148 sōjutsu, and 52 kyūjutsu lineages by the end of the Edo period.",
+        "sources_cited": [
+          {
+            "author": "Sánchez García, Raúl",
+            "work": "The Historical Sociology of Japanese Martial Arts",
+            "year": 2018,
+            "publisher": "Cardiff University Press",
+            "url": "https://mas.cardiffuniversitypress.org/articles/10.18573/mas.124"
+          },
+          {
+            "author": "Skoss, Meik",
+            "work": "A Bit of Background (Koryu.com)",
+            "year": 1994,
+            "publisher": "Aikido Journal #100",
+            "url": "https://koryu.com/library/mskoss2/"
+          }
+        ],
+        "related_sources": [
+          "takenouchi_founding",
+          "katanagari_1588",
+          "kodokan_founding"
+        ],
+        "related_terms": [
+          "budo",
+          "bujutsu",
+          "koryu",
+          "ryu_ha"
+        ]
+      },
+      {
+        "id": "kata_as_pedagogy",
+        "title": "Kata: Physical Kōan and Spiritual Pedagogy",
+        "body": "Kata (形/型) — pre-arranged forms practiced solo or in pairs — are more than technique drills. Dodd and Brown argue that kata represent 'the intended essence of budō' as well as a 'culturally-valued, spiritual pedagogy.' Draeger calls the mastery of kata 'solving physical kōan' — drawing an explicit parallel to Zen Buddhist paradoxical questions that force practitioners beyond intellectual understanding into embodied insight. As Mifune Kyūzō observed, 'there is internal work going on in the bio-mechanics of budō that is not obvious.' The tension between kata (form) and randori (free practice) is central to Kano's synthesis: he preserved dangerous techniques in kata while making randori the daily testing ground — a safety solution that enabled the high-frequency training that made the Kodokan dominant.",
+        "sources_cited": [
+          {
+            "author": "Dodd, Simon A. & Brown, David",
+            "work": "Kata — The True Essence of Budō Martial Arts?",
+            "year": 2016,
+            "publisher": "Revista de Artes Marciales Asiáticas (RAMA)",
+            "url": "https://pdfs.semanticscholar.org/5751/2f51d99eed4aef2f115b1834f93996d82c81.pdf"
+          },
+          {
+            "author": "Draeger, Donn F.",
+            "work": "Classical Bujutsu / Classical Budō / Modern Bujutsu & Budō (trilogy)",
+            "year": 1973,
+            "publisher": "Weatherhill",
+            "url": null
+          }
+        ],
+        "related_sources": [
+          "kodokan_founding",
+          "tenjin_shinyo_ryu",
+          "kito_ryu"
+        ],
+        "related_terms": [
+          "kata",
+          "randori",
+          "budo"
+        ]
+      },
+      {
+        "id": "five_characteristics",
+        "title": "The Five Characteristics of Budō",
+        "body": "Irie Kohei identifies five dimensions that distinguish budō from sport or generic martial arts: (1) the combative characteristic — real techniques derived from battlefield application; (2) the religious characteristic — integration of Shinto, Buddhist, and syncretic spiritual practices; (3) the aesthetic characteristic — yūgen (幽玄, profound elegance), miyabi (雅, courtly refinement), and the pursuit of beauty in movement; (4) the educational characteristic (kyōiku-sei) — character formation as a primary goal, not a byproduct; (5) the competitive characteristic — structured contest as a testing ground. Nakiri argues that the untranslatable nature of these intertwined dimensions is precisely why 'budō' should remain as a loanword rather than being translated as 'martial art,' which collapses all five into one.",
+        "sources_cited": [
+          {
+            "author": "Nagy, Stephen Robert",
+            "work": "Japanese Martial Arts as Popular Culture: Teaching Opportunity and Challenge",
+            "year": 2015,
+            "publisher": "Asian Studies III (XIX), University of Ljubljana",
+            "url": "https://journals.uni-lj.si/as/article/download/2947/3336/0"
+          },
+          {
+            "author": "Nakiri, Fuminori",
+            "work": "Concept of Budō and the History and Activities of the Japanese Academy of Budo",
+            "year": 2015,
+            "publisher": "Ido Movement for Culture, Vol. 15",
+            "url": "http://imcjournal.com/images/15.1/15.1.2.pdf"
+          }
+        ],
+        "related_sources": [
+          "kodokan_founding",
+          "ueshiba_aikido",
+          "olympics_1964"
+        ],
+        "related_terms": [
+          "budo",
+          "kata",
+          "randori",
+          "dojo"
+        ]
+      },
+      {
+        "id": "dojo_transmission",
+        "title": "The Dōjō as Institution of Transmission",
+        "body": "The training hall (dōjō 道場, literally 'place of the way') is not merely a room with mats. It functions as a voluntary organization with its own symbolic order: the kamidana (miniature shrine), the hierarchical seating arrangement (kamiza/shimoza), the sempai-kōhai relationships, and the ritualized etiquette (rei 礼) that frames every session. These structures enabled koryu schools to transmit knowledge across generations — and their absence explains why many schools died with their last master. The iemoto system (house headmaster lineage) provided institutional continuity, but was fragile: Kano's two Tenjin Shin'yō-ryū teachers both died within four years. His response — building the Kodokan as a resilient institution rather than a personal lineage — was the critical organizational innovation.",
+        "sources_cited": [
+          {
+            "author": "JSTOR (anon.)",
+            "work": "Training Halls of the Japanese Martial Tradition",
+            "year": null,
+            "publisher": "JSTOR",
+            "url": "https://www.jstor.org/stable/40462114"
+          },
+          {
+            "author": "Nagy, Stephen Robert",
+            "work": "Japanese Martial Arts as Popular Culture",
+            "year": 2015,
+            "publisher": "Asian Studies III (XIX)",
+            "url": "https://journals.uni-lj.si/as/article/download/2947/3336/0"
+          }
+        ],
+        "related_sources": [
+          "kodokan_founding",
+          "tenjin_shinyo_ryu",
+          "takenouchi_founding"
+        ],
+        "related_terms": [
+          "dojo",
+          "koryu",
+          "densho",
+          "menkyo_kaiden",
+          "ryu_ha"
+        ]
+      },
+      {
+        "id": "implicit_religion",
+        "title": "Implicit Religion and the Sacred in Martial Practice",
+        "body": "Budō training carries religious dimensions that practitioners often do not consciously frame as religion — what scholars call 'implicit religion.' The bowing to the dōjō, the purification rituals borrowed from Shinto, the meditative practices drawn from Zen Buddhism, and the ethical frameworks inherited from Confucianism create a syncretic spiritual practice embedded in physical training. This dimension is most explicit in aikido, where Ueshiba Morihei's Ōmoto-kyō beliefs directly shaped technique and philosophy, and in sumo, where every match is preceded by Shinto purification (chikara-mizu, salt-throwing). Even judo, which Kano deliberately framed as secular education, retains the dōjō as sacred space and seiryoku zen'yō as a quasi-metaphysical principle.",
+        "sources_cited": [
+          {
+            "author": "Molle, Andrea",
+            "work": "Towards a Sociology of Budō: Studying the Implicit Religious Issues",
+            "year": 2010,
+            "publisher": "International Journal of Religion",
+            "url": "https://www.academia.edu/27342537/Towards_a_Sociology_of_Bud%C5%8D_Studying_the_Implicit_Religious_Issues"
+          }
+        ],
+        "related_sources": [
+          "kojiki_wrestling",
+          "sechie_zumo",
+          "ueshiba_aikido",
+          "kodokan_founding"
+        ],
+        "related_terms": [
+          "budo",
+          "dojo",
+          "chikara_mizu",
+          "seiryoku_zenyo",
+          "aiki"
+        ]
+      },
+      {
+        "id": "wars_to_spirituality",
+        "title": "From Wars to Spirituality: Budō and the Body",
+        "body": "The trajectory from combative bujutsu to spiritual budō is not a simple dilution of martial effectiveness. It reflects a fundamental reconceptualization of the body's purpose in training. Where bujutsu trained the body as a weapon, budō trains the body as a vehicle for self-knowledge. Sogawa Tsuneo identifies four factors that define modern budō: (1) Japanese traditions and ideas that are inherently Japanese; (2) a mentality seeking differentiation from non-Japanese sporting culture; (3) mind cultivation through exercises derived from battle; (4) competition and character development as international sport. The tension between factors 3 and 4 — training derived from combat vs. international sport — remains unresolved and is visible in the ongoing debates about judo's Olympic direction, aikido's relevance without competition, and karate's struggle between kata and kumite.",
+        "sources_cited": [
+          {
+            "author": "ResearchGate (multiple authors)",
+            "work": "From Wars to Spirituality: A Socio-Historical Investigation of the Japanese Budō",
+            "year": null,
+            "publisher": "ResearchGate",
+            "url": "https://www.researchgate.net/publication/400916997_From_Wars_to_Spirituality_A_Socio-Historical_Investigation_of_the_Japanese_Budo"
+          },
+          {
+            "author": "Nakiri, Fuminori (citing Sogawa Tsuneo)",
+            "work": "Concept of Budō and the JAB",
+            "year": 2015,
+            "publisher": "Ido Movement for Culture",
+            "url": "http://imcjournal.com/images/15.1/15.1.2.pdf"
+          }
+        ],
+        "related_sources": [
+          "kodokan_founding",
+          "olympics_1964",
+          "ueshiba_aikido",
+          "karate"
+        ],
+        "related_terms": [
+          "budo",
+          "bujutsu",
+          "kata",
+          "randori"
+        ]
       }
     ]
   }

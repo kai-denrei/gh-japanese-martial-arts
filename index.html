@@ -321,6 +321,49 @@
     }
     .matrix-card-text { font-size: 0.82rem; line-height: 1.5; }
 
+    /* ── Philosophy ────────────────────────────────── */
+    .philosophy-intro {
+      font-size: 0.95rem; line-height: 1.65; margin-bottom: var(--lg); color: var(--fg-muted);
+      border-left: 3px solid var(--accent); padding-left: var(--md);
+    }
+    .philosophy-theme {
+      margin-bottom: var(--xl); padding-bottom: var(--lg); border-bottom: 1px solid var(--rule);
+    }
+    .philosophy-theme:last-child { border-bottom: none; }
+    .philosophy-theme h3 {
+      font-family: var(--font-body); font-size: 1.15rem; font-weight: 700;
+      color: var(--fg); margin-bottom: var(--sm); line-height: 1.3;
+    }
+    .philosophy-theme .theme-body {
+      font-size: 0.92rem; line-height: 1.7; margin-bottom: var(--md); color: var(--fg);
+    }
+    .philosophy-citations {
+      background: var(--bg-panel); border-radius: 6px; padding: var(--sm) var(--md);
+      margin-bottom: var(--sm);
+    }
+    .philosophy-citations h4 {
+      font-family: var(--font-ui); font-size: 0.68rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-muted);
+      margin-bottom: var(--xs);
+    }
+    .citation-item {
+      font-family: var(--font-ui); font-size: 0.78rem; line-height: 1.5;
+      color: var(--fg-muted); margin-bottom: 3px;
+    }
+    .citation-item a { color: var(--accent); text-decoration: none; }
+    .citation-item a:hover { text-decoration: underline; }
+    .philosophy-links {
+      display: flex; flex-wrap: wrap; gap: var(--xs); margin-top: var(--sm);
+    }
+    .philosophy-links .tag {
+      font-family: var(--font-ui); font-size: 0.7rem; padding: 2px 8px;
+      border-radius: 3px; cursor: pointer; border: 1px solid var(--rule);
+      background: var(--bg); color: var(--fg-muted); transition: all 0.15s;
+    }
+    .philosophy-links .tag:hover { border-color: var(--accent); color: var(--accent); }
+    .philosophy-links .tag.source-tag { border-color: var(--type-literary); color: var(--type-literary); }
+    .philosophy-links .tag.term-tag { border-color: var(--accent-light); color: var(--accent); }
+
     /* ── Responsive ─────────────────────────────────── */
     @media (max-width: 600px) {
       .page { padding: var(--md) var(--sm); }
@@ -424,7 +467,7 @@
     <p class="subhead">Sumo, Jujutsu, Judo & the Path to MMA — through primary sources</p>
     <hr class="header-rule">
     <p class="meta-line">
-      <span>712 CE – 2007</span>
+      <span>712 CE – 2012</span>
       <span>Japan</span>
       <span>Literary, material, documentary & photographic evidence</span>
     </p>
@@ -433,6 +476,7 @@
       <button class="active" data-tab="sources" role="tab" aria-selected="true">Sources</button>
       <button data-tab="lexicon" role="tab" aria-selected="false">Lexicon</button>
       <button data-tab="centerpiece" role="tab" aria-selected="false">Kano Synthesis</button>
+      <button data-tab="philosophy" role="tab" aria-selected="false">Philosophy of Budō</button>
     </nav>
 
     <!-- SOURCES TAB -->
@@ -470,6 +514,11 @@
       <div class="matrix-wrap"><table class="matrix" id="centerpiece-matrix"></table></div>
       <div class="matrix-cards" id="centerpiece-cards"></div>
     </div>
+
+    <!-- PHILOSOPHY TAB -->
+    <div id="panel-philosophy" class="panel">
+      <div id="philosophy-content"></div>
+    </div>
   </div>
 
   <script>
@@ -484,6 +533,7 @@
       renderEvidenceIndex();
       renderLexicon();
       renderCenterpiece();
+      renderPhilosophy();
       initSourceSearch();
       let resizeTimer;
       window.addEventListener('resize', () => {
@@ -1436,6 +1486,56 @@
         ).join('');
         return `<div class="matrix-card"><h4>${slot.slot}</h4>${passages}</div>`;
       }).join('');
+    }
+
+    /* ── Philosophy Tab ──────────────────────────────── */
+    function renderPhilosophy() {
+      if (!DATA.philosophy) return;
+      const phil = DATA.philosophy;
+      const container = document.getElementById('philosophy-content');
+
+      let html = `<div class="philosophy-intro"><p>${phil.intro}</p></div>`;
+
+      phil.themes.forEach(theme => {
+        html += `<div class="philosophy-theme">`;
+        html += `<h3>${theme.title}</h3>`;
+        html += `<div class="theme-body">${theme.body}</div>`;
+
+        // Citations
+        if (theme.sources_cited && theme.sources_cited.length) {
+          html += `<div class="philosophy-citations"><h4>Sources</h4>`;
+          theme.sources_cited.forEach(cite => {
+            const yearStr = cite.year ? ` (${cite.year})` : '';
+            const link = cite.url
+              ? `<a href="${cite.url}" target="_blank" rel="noopener">${cite.work}</a>`
+              : `<em>${cite.work}</em>`;
+            html += `<div class="citation-item">${cite.author}${yearStr}. ${link}. ${cite.publisher || ''}</div>`;
+          });
+          html += `</div>`;
+        }
+
+        // Related links
+        const relSources = (theme.related_sources || []).map(sid => {
+          const src = DATA.sources.find(s => s.id === sid);
+          if (!src) return '';
+          const label = src.name_japanese || src.title.split('—')[0].trim();
+          return `<a class="tag source-tag" onclick="switchToTab('sources');setTimeout(()=>scrollToSourceAndShow('${sid}'),300)">${label}</a>`;
+        }).filter(Boolean);
+
+        const relTerms = (theme.related_terms || []).map(tid => {
+          const lex = DATA.lexicon.find(l => l.id === tid);
+          if (!lex) return '';
+          return `<a class="tag term-tag" onclick="navigateToLexicon('${tid}')">${lex.japanese} ${lex.romaji}</a>`;
+        }).filter(Boolean);
+
+        if (relSources.length || relTerms.length) {
+          html += `<div class="philosophy-links">${relSources.join('')}${relTerms.join('')}</div>`;
+        }
+
+        html += `</div>`;
+      });
+
+      container.innerHTML = html;
     }
 
     /* ── Scroll to Source & Highlight ────────────────── */
