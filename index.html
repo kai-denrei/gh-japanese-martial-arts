@@ -98,8 +98,8 @@
     .panel.active { display: block; }
 
     /* ── Vertical Fishbone Timeline ────────────────── */
-    .vfb-wrap { width: 100%; overflow: visible; }
-    .vfb-svg { display: block; width: 100%; overflow: visible; }
+    .vfb-wrap { width: 100%; overflow-x: auto; overflow-y: visible; -webkit-overflow-scrolling: touch; }
+    .vfb-svg { display: block; width: 100%; min-width: 300px; overflow: visible; }
     .vfb-svg text { font-family: var(--font-ui); }
     .vfb-svg .spine { stroke: var(--rule-heavy); stroke-width: 2; stroke-linecap: round; }
     .vfb-svg .bone { stroke: var(--rule); stroke-width: 1.2; stroke-linecap: round; transition: stroke 0.15s; }
@@ -118,6 +118,13 @@
     .vfb-svg .node-label { fill: var(--fg); font-size: 10px; font-weight: 600; }
     .vfb-svg .node-date { fill: var(--fg-faint); font-size: 8.5px; font-family: var(--font-mono); }
     .vfb-svg .era-label { fill: var(--accent); font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+    @media (max-width: 600px) {
+      .vfb-svg .node-label, .vfb-svg .node-label-jp { font-size: 8px !important; }
+      .vfb-svg .node-date { font-size: 7px !important; }
+      .vfb-svg .era-label { font-size: 8px !important; }
+      .vfb-svg .influence-label { font-size: 6px !important; }
+      .vfb-svg .lifespan-label { font-size: 5.5px !important; }
+    }
     .vfb-svg .era-line { stroke: var(--accent-light); stroke-width: 0.5; stroke-dasharray: 3,3; }
 
     .type-legend {
@@ -316,8 +323,28 @@
 
     /* ── Responsive ─────────────────────────────────── */
     @media (max-width: 600px) {
-      .page { padding: var(--lg) var(--md); }
+      .page { padding: var(--md) var(--sm); }
+      .headline { font-size: 1.8rem; }
+      .subhead { font-size: 0.95rem; margin-bottom: var(--sm); }
+      .header-rule { margin-bottom: var(--sm); }
       .lexicon-grid { grid-template-columns: 1fr; }
+      .tab-bar { gap: 0; }
+      .tab-bar button { font-size: 0.75rem; padding: var(--xs) var(--sm); }
+      .overlay-card { padding: var(--md) var(--sm) var(--sm); max-height: 92vh; }
+      .overlay-card .source-title { font-size: 1rem; }
+      .overlay-card .source-description { font-size: 0.85rem; }
+      .overlay-card img { max-height: 200px; object-fit: cover; }
+      .evidence-block { font-size: 0.78rem; padding: var(--sm); }
+      .vfb-tooltip { max-width: 180px; font-size: 0.7rem; }
+      .vfb-tooltip .tt-title { font-size: 0.75rem; }
+      .type-legend { font-size: 0.62rem; gap: var(--sm); }
+      .type-legend-item { padding: 1px 4px; }
+      .lexicon-search { font-size: 0.8rem; min-width: 150px !important; }
+    }
+    @media (max-width: 380px) {
+      .page { padding: var(--sm) var(--xs); }
+      .headline { font-size: 1.5rem; }
+      .tab-bar button { font-size: 0.68rem; padding: 3px 6px; }
     }
 
     /* ── Lifespan Bands ───────────────────────────── */
@@ -362,7 +389,7 @@
 
     .vfb-svg .node-label-jp {
       fill: var(--fg);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
       font-family: 'Noto Serif JP', 'Hiragino Mincho Pro', serif;
     }
@@ -545,21 +572,25 @@
       const sources = [...DATA.sources].sort((a, b) => a.date - b.date);
 
       const containerW = svg.parentElement.clientWidth || 600;
-      const VIEW_W = Math.max(320, Math.min(containerW, 700));
+      const VIEW_W = Math.max(280, Math.min(containerW, 700));
       const SPINE_X = VIEW_W / 2;
+      const isMobile = VIEW_W < 400;
+      const isNarrow = VIEW_W < 340;
       const TOP_PAD = 20;
-      const NODE_SPACING = 44;
-      const THUMB_SIZE = 40;
-      const MAX_LABEL_CHARS = VIEW_W < 400 ? 14 : 18;
+      const NODE_SPACING = isMobile ? 38 : 44;
+      const THUMB_SIZE = isMobile ? 28 : 40;
+      const MAX_LABEL_CHARS = isNarrow ? 8 : isMobile ? 11 : 18;
       const CLUSTER_DIST = 15;
 
       // Lane-based bone lengths: schools near spine, people at edges
+      // Scale down on mobile to keep labels in frame
+      const mobScale = isMobile ? 0.7 : 1;
       const LANE_CONFIG = {
-        school:   { lenMin: 0.12, lenMax: 0.18, angleMin: 12, angleMax: 30 },
-        event:    { lenMin: 0.20, lenMax: 0.28, angleMin: 18, angleMax: 38 },
-        artifact: { lenMin: 0.22, lenMax: 0.30, angleMin: 20, angleMax: 40 },
-        person:   { lenMin: 0.32, lenMax: 0.42, angleMin: 15, angleMax: 35 },
-        competition: { lenMin: 0.22, lenMax: 0.30, angleMin: 18, angleMax: 38 },
+        school:      { lenMin: 0.12 * mobScale, lenMax: 0.18 * mobScale, angleMin: 12, angleMax: 28 },
+        event:       { lenMin: 0.18 * mobScale, lenMax: 0.26 * mobScale, angleMin: 16, angleMax: 35 },
+        artifact:    { lenMin: 0.20 * mobScale, lenMax: 0.28 * mobScale, angleMin: 18, angleMax: 35 },
+        person:      { lenMin: 0.28 * mobScale, lenMax: 0.38 * mobScale, angleMin: 14, angleMax: 32 },
+        competition: { lenMin: 0.20 * mobScale, lenMax: 0.28 * mobScale, angleMin: 16, angleMax: 35 },
       };
       const DEFAULT_LANE = { lenMin: 0.20, lenMax: 0.28, angleMin: 18, angleMax: 38 };
 
@@ -1086,8 +1117,11 @@
           // Curve direction: away from spine, on the side that has more room
           const avgX = (startX + endX) / 2;
           const curveDir = avgX >= SPINE_X ? 1 : -1;
-          const curveStrength = Math.min(Math.abs(endY - startY) * 0.4, VIEW_W * 0.25);
-          const cpX = SPINE_X + curveDir * curveStrength;
+          const maxCurve = isMobile ? VIEW_W * 0.15 : VIEW_W * 0.25;
+          const curveStrength = Math.min(Math.abs(endY - startY) * 0.35, maxCurve);
+          // Clamp control point inside viewBox
+          const cpXRaw = SPINE_X + curveDir * curveStrength;
+          const cpX = Math.max(15, Math.min(VIEW_W - 15, cpXRaw));
           const cpY = midY;
 
           // Animated path
