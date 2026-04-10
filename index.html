@@ -958,82 +958,136 @@
           g.appendChild(dt);
         }
 
-        // Hover tooltip
-        g.addEventListener('mouseenter', (e) => showTooltip(src, e.clientX, e.clientY));
+        // Hover tooltip + influence lines on demand
+        g.addEventListener('mouseenter', (e) => {
+          showTooltip(src, e.clientX, e.clientY);
+          showInfluenceLines(src.id);
+        });
         g.addEventListener('mousemove', (e) => showTooltip(src, e.clientX, e.clientY));
-        g.addEventListener('mouseleave', hideTooltip);
-        g.addEventListener('click', () => { hideTooltip(); showSourceOverlay(src.id); });
+        g.addEventListener('mouseleave', () => {
+          hideTooltip();
+          hideInfluenceLines();
+        });
+        g.addEventListener('click', () => { hideTooltip(); hideInfluenceLines(); showSourceOverlay(src.id); });
         svg.appendChild(g);
       });
 
-      // ── Influence Lines (curved dotted) ──────────
-      if (DATA.meta.influences) {
-        const posMap = {};
-        positioned.forEach(p => {
-          const dirX = p.right ? 1 : -1;
-          const dx = dirX * p.boneLen * Math.cos(p.angle);
-          const dy = p.boneLen * Math.sin(p.angle) * 0.4;
-          posMap[p.src.id] = {
-            spineX: SPINE_X,
-            spineY: p.y,
-            endX: SPINE_X + dx,
-            endY: p.y + dy,
-            right: p.right
-          };
-        });
+      // ── Influence Lines (on hover only) ──────────
+      // Build position map for influence line drawing
+      const posMap = {};
+      positioned.forEach(p => {
+        const dirX = p.right ? 1 : -1;
+        const dx2 = dirX * p.boneLen * Math.cos(p.angle);
+        const dy2 = p.boneLen * Math.sin(p.angle) * 0.4;
+        posMap[p.src.id] = {
+          spineX: SPINE_X,
+          spineY: p.y,
+          endX: SPINE_X + dx2,
+          endY: p.y + dy2,
+          right: p.right
+        };
+      });
 
+      // Group influences by target
+      const influencesByTarget = {};
+      const influencesBySource = {};
+      if (DATA.meta.influences) {
         DATA.meta.influences.forEach(inf => {
+          if (!influencesByTarget[inf.to]) influencesByTarget[inf.to] = [];
+          influencesByTarget[inf.to].push(inf);
+          if (!influencesBySource[inf.from]) influencesBySource[inf.from] = [];
+          influencesBySource[inf.from].push(inf);
+        });
+      }
+
+      let activeInfluenceEls = [];
+
+      function showInfluenceLines(sourceId) {
+        hideInfluenceLines();
+        // Show lines where this source is the TARGET (incoming influences)
+        const incoming = influencesByTarget[sourceId] || [];
+        // Also show lines where this source is the SOURCE (outgoing influences)
+        const outgoing = influencesBySource[sourceId] || [];
+        const allLines = [...incoming.map(inf => ({ ...inf, direction: 'incoming' })),
+                          ...outgoing.map(inf => ({ ...inf, direction: 'outgoing' }))];
+
+        if (allLines.length === 0) return;
+
+        allLines.forEach(inf => {
           const from = posMap[inf.from];
           const to = posMap[inf.to];
           if (!from || !to) return;
 
-          // Start from the end of the "from" bone, arrive at the spine dot of "to"
           const startX = from.endX;
           const startY = from.endY;
           const endX = to.spineX;
           const endY = to.spineY;
 
-          // Control point: curve outward from spine, offset horizontally
           const midY = (startY + endY) / 2;
           const curveDir = from.right ? 1 : -1;
-          const cpX = SPINE_X + curveDir * (BONE_LEN_BASE * 1.8);
+          const curveStrength = Math.min(Math.abs(endY - startY) * 0.4, VIEW_W * 0.25);
+          const cpX = SPINE_X + curveDir * curveStrength;
           const cpY = midY;
 
+          // Animated path
           const path = svgEl('path', {
             d: `M ${startX} ${startY} Q ${cpX} ${cpY} ${endX} ${endY}`,
-            class: 'influence-line'
+            class: 'influence-line',
+            style: 'opacity:0;transition:opacity 0.3s'
           });
           svg.appendChild(path);
+          requestAnimationFrame(() => path.style.opacity = '0.7');
+          activeInfluenceEls.push(path);
 
-          // Small arrowhead at the end
+          // Arrowhead
           const arrowSize = 4;
-          // Approximate tangent direction at endpoint
-          const dx2 = endX - cpX;
-          const dy2 = endY - cpY;
-          const len2 = Math.sqrt(dx2*dx2 + dy2*dy2);
-          const ux = dx2/len2, uy = dy2/len2;
+          const adx = endX - cpX, ady = endY - cpY;
+          const alen = Math.sqrt(adx*adx + ady*ady) || 1;
+          const ux = adx/alen, uy = ady/alen;
           const px = -uy, py = ux;
-          const ax = endX - ux*arrowSize*2;
-          const ay = endY - uy*arrowSize*2;
+          const ax = endX - ux*arrowSize*2, ay = endY - uy*arrowSize*2;
           const arrow = svgEl('polygon', {
             points: `${endX},${endY} ${ax + px*arrowSize},${ay + py*arrowSize} ${ax - px*arrowSize},${ay - py*arrowSize}`,
-            class: 'influence-arrow'
+            class: 'influence-arrow',
+            style: 'opacity:0;transition:opacity 0.3s'
           });
           svg.appendChild(arrow);
+          requestAnimationFrame(() => arrow.style.opacity = '0.7');
+          activeInfluenceEls.push(arrow);
 
-          // Label at midpoint of curve
+          // Label
           if (inf.label) {
-            const labelX = (startX + cpX + endX) / 3;
-            const labelY = (startY + cpY + endY) / 3 - 3;
+            const lx = (startX + cpX + endX) / 3;
+            const ly = (startY + cpY + endY) / 3 - 3;
             const lbl = svgEl('text', {
-              x: labelX, y: labelY,
+              x: lx, y: ly,
               'text-anchor': curveDir > 0 ? 'start' : 'end',
-              class: 'influence-label'
+              class: 'influence-label',
+              style: 'opacity:0;transition:opacity 0.3s'
             });
             lbl.textContent = inf.label;
             svg.appendChild(lbl);
+            requestAnimationFrame(() => lbl.style.opacity = '0.7');
+            activeInfluenceEls.push(lbl);
+          }
+
+          // Highlight source/target dots
+          const highlightId = inf.direction === 'incoming' ? inf.from : inf.to;
+          const highlightDot = svg.querySelector(`.spine-dot[data-id="${highlightId}"]`);
+          if (highlightDot) {
+            highlightDot.setAttribute('r', '8');
+            highlightDot._origR = highlightDot.getAttribute('r');
+            activeInfluenceEls.push({ restore: () => highlightDot.setAttribute('r', '5.5') });
           }
         });
+      }
+
+      function hideInfluenceLines() {
+        activeInfluenceEls.forEach(el => {
+          if (el.restore) { el.restore(); return; }
+          if (el.parentNode) el.parentNode.removeChild(el);
+        });
+        activeInfluenceEls = [];
       }
     }
 
