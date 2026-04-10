@@ -519,7 +519,8 @@
       school: 'var(--type-literary)',
       person: 'var(--type-photographic)',
       event: 'var(--type-documentary)',
-      artifact: 'var(--type-material)'
+      artifact: 'var(--type-material)',
+      competition: '#c0392b'
     };
     const ERAS = [
       { start: 700, label: 'Nara / Heian' },
@@ -549,24 +550,24 @@
         event:    { lenMin: 0.20, lenMax: 0.28, angleMin: 18, angleMax: 38 },
         artifact: { lenMin: 0.22, lenMax: 0.30, angleMin: 20, angleMax: 40 },
         person:   { lenMin: 0.32, lenMax: 0.42, angleMin: 15, angleMax: 35 },
+        competition: { lenMin: 0.22, lenMax: 0.30, angleMin: 18, angleMax: 38 },
       };
       const DEFAULT_LANE = { lenMin: 0.20, lenMax: 0.28, angleMin: 18, angleMax: 38 };
 
       const legend = document.getElementById('type-legend');
-      legend.innerHTML = [
-        { cls: 'school', label: 'Schools / Ryū' },
-        { cls: 'person', label: 'Key People' },
-        { cls: 'event', label: 'Events' },
-        { cls: 'artifact', label: 'Artifacts' },
-      ].map(t => `<span class="type-legend-item"><span class="type-legend-dot" style="background:${
-        t.cls === 'school' ? 'var(--type-literary)' :
-        t.cls === 'person' ? 'var(--type-photographic)' :
-        t.cls === 'event' ? 'var(--type-documentary)' :
-        'var(--type-material)'
-      }"></span>${t.label}</span>`).join('');
+      const legendItems = [
+        { cls: 'school', label: '⚔ Schools / Ryū', color: 'var(--type-literary)' },
+        { cls: 'person', label: '◆ Key People', color: 'var(--type-photographic)' },
+        { cls: 'competition', label: '● Competitions', color: '#c0392b' },
+        { cls: 'event', label: '● Events', color: 'var(--type-documentary)' },
+        { cls: 'artifact', label: '● Artifacts', color: 'var(--type-material)' },
+      ];
+      legend.innerHTML = legendItems.map(t =>
+        `<span class="type-legend-item"><span class="type-legend-dot" style="background:${t.color}"></span>${t.label}</span>`
+      ).join('');
 
       // Date-proportional Y positioning with compressed gap
-      const lanePriority = { school: 0, event: 1, artifact: 2, person: 3 };
+      const lanePriority = { school: 0, competition: 1, event: 2, artifact: 3, person: 4 };
       const MIN_GAP = 32;
       const dateMin = sources[0].date;
       const dateMax = sources[sources.length - 1].date;
@@ -847,13 +848,13 @@
           class: 'bone' + (isActive ? ' active' : ''), 'data-id': src.id
         }));
 
-        // Spine marker: ⚔ for schools, ● for people, ◆ for events, ■ for artifacts
+        // Spine marker: ⚔ schools, ◆ people, ● competitions (red), ● events/artifacts
         const isSchool = src.lane === 'school';
         const isPerson = src.lane === 'person';
+        const isCompetition = src.lane === 'competition';
         let dotEl;
 
         if (isSchool) {
-          // Crossed swords icon
           dotEl = svgEl('text', {
             x: SPINE_X, y: y,
             'text-anchor': 'middle', 'dominant-baseline': 'central',
@@ -863,7 +864,6 @@
           });
           dotEl.textContent = '⚔';
         } else if (isPerson) {
-          // Person diamond
           const r = isActive ? 7 : 5;
           dotEl = svgEl('polygon', {
             points: `${SPINE_X},${y-r} ${SPINE_X+r},${y} ${SPINE_X},${y+r} ${SPINE_X-r},${y}`,
@@ -872,8 +872,15 @@
             'data-id': src.id,
             style: 'cursor:pointer'
           });
+        } else if (isCompetition) {
+          // Red filled circle, slightly larger
+          dotEl = svgEl('circle', {
+            cx: SPINE_X, cy: y, r: isActive ? 7 : 5.5, fill: color,
+            stroke: '#fff', 'stroke-width': 1.5,
+            class: 'spine-dot' + (isActive ? ' active' : ''), 'data-id': src.id,
+            style: 'cursor:pointer'
+          });
         } else {
-          // Circle for events/artifacts
           dotEl = svgEl('circle', {
             cx: SPINE_X, cy: y, r: isActive ? 6 : 4, fill: color,
             class: 'spine-dot' + (isActive ? ' active' : ''), 'data-id': src.id,

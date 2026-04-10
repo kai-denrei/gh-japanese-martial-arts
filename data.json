@@ -894,7 +894,7 @@
         "reliability": "IOC and IJF records. Fully documented event."
       },
       "name_japanese": "東京五輪",
-      "lane": "event"
+      "lane": "competition"
     },
     {
       "id": "kuniyoshi_sumo_triptych",
@@ -1710,7 +1710,7 @@
       "id": "pancrase",
       "type": "documentary",
       "subtype": "institutional",
-      "lane": "school",
+      "lane": "competition",
       "name_japanese": "パンクラス",
       "title": "Pancrase — Real Fights, Named After Pankration",
       "date": 1993,
@@ -1756,7 +1756,7 @@
       "id": "pride_fc",
       "type": "documentary",
       "subtype": "institutional",
-      "lane": "school",
+      "lane": "competition",
       "name_japanese": "PRIDE",
       "title": "Pride Fighting Championships — MMA's Golden Age in Japan",
       "date": 1997,
