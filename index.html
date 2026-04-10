@@ -106,9 +106,15 @@
     .vfb-svg .bone.active { stroke: var(--accent); stroke-width: 1.6; }
     .vfb-svg .spine-dot { transition: r 0.15s; }
     .vfb-svg .spine-dot.active { r: 7; }
-    .vfb-svg .node-group { cursor: pointer; }
+    .vfb-svg .node-group { cursor: pointer; transition: opacity 0.3s; }
+    .vfb-svg .node-group.faded { opacity: 0.12; pointer-events: none; }
     .vfb-svg .node-group:hover .card-bg { stroke: var(--accent-light); }
     .vfb-svg .node-group.active .card-bg { stroke: var(--accent); stroke-width: 1.5; }
+    .vfb-svg .bone.faded { opacity: 0.06; }
+    .vfb-svg .spine-dot.faded { opacity: 0.12; pointer-events: none; }
+    .type-legend-item { cursor: pointer; user-select: none; transition: opacity 0.2s; padding: 2px 6px; border-radius: 8px; }
+    .type-legend-item:hover { background: rgba(0,0,0,0.04); }
+    .type-legend-item.dimmed { opacity: 0.35; }
     .vfb-svg .node-label { fill: var(--fg); font-size: 10px; font-weight: 600; }
     .vfb-svg .node-date { fill: var(--fg-faint); font-size: 8.5px; font-family: var(--font-mono); }
     .vfb-svg .era-label { fill: var(--accent); font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
@@ -409,7 +415,10 @@
         <span id="source-count" style="font-family:var(--font-ui);font-size:0.72rem;color:var(--fg-faint)"></span>
       </div>
       <div id="source-results" style="display:none;margin-bottom:var(--md)"></div>
-      <div class="type-legend" id="type-legend"></div>
+      <div style="display:flex;gap:var(--sm);align-items:center;flex-wrap:wrap;margin-bottom:var(--sm)">
+        <div class="type-legend" id="type-legend" style="margin-bottom:0"></div>
+        <span style="font-family:var(--font-ui);font-size:0.65rem;color:var(--fg-faint);margin-left:auto">click to filter</span>
+      </div>
       <div class="vfb-wrap" style="position:relative">
         <svg class="vfb-svg" id="vfb-svg"></svg>
         <div class="vfb-tooltip" id="vfb-tooltip"></div>
@@ -556,15 +565,63 @@
 
       const legend = document.getElementById('type-legend');
       const legendItems = [
-        { cls: 'school', label: '⚔ Schools / Ryū', color: 'var(--type-literary)' },
-        { cls: 'person', label: '◆ Key People', color: 'var(--type-photographic)' },
-        { cls: 'competition', label: '● Competitions', color: '#c0392b' },
-        { cls: 'event', label: '● Events', color: 'var(--type-documentary)' },
-        { cls: 'artifact', label: '● Artifacts', color: 'var(--type-material)' },
+        { cls: 'school', label: 'Schools / Ryū', color: 'var(--type-literary)' },
+        { cls: 'person', label: 'Key People', color: 'var(--type-photographic)' },
+        { cls: 'competition', label: 'Competitions', color: '#c0392b' },
+        { cls: 'event', label: 'Events', color: 'var(--type-documentary)' },
+        { cls: 'artifact', label: 'Artifacts', color: 'var(--type-material)' },
       ];
+      const activeLanes = new Set(legendItems.map(l => l.cls));
+
       legend.innerHTML = legendItems.map(t =>
-        `<span class="type-legend-item"><span class="type-legend-dot" style="background:${t.color}"></span>${t.label}</span>`
+        `<span class="type-legend-item" data-lane="${t.cls}"><span class="type-legend-dot" style="background:${t.color}"></span>${t.label}</span>`
       ).join('');
+
+      function applyLaneFilter() {
+        const showAll = activeLanes.size === legendItems.length;
+        document.querySelectorAll('.node-group').forEach(g => {
+          const src = DATA.sources.find(s => s.id === g.dataset.id);
+          if (!src) return;
+          const visible = showAll || activeLanes.has(src.lane);
+          g.classList.toggle('faded', !visible);
+        });
+        document.querySelectorAll('.spine-dot').forEach(d => {
+          const src = DATA.sources.find(s => s.id === d.dataset.id);
+          if (!src) return;
+          const visible = showAll || activeLanes.has(src.lane);
+          d.classList.toggle('faded', !visible);
+        });
+        document.querySelectorAll('.bone').forEach(b => {
+          const src = DATA.sources.find(s => s.id === b.dataset.id);
+          if (!src) return;
+          const visible = showAll || activeLanes.has(src.lane);
+          b.classList.toggle('faded', !visible);
+        });
+        legend.querySelectorAll('.type-legend-item').forEach(el => {
+          el.classList.toggle('dimmed', !activeLanes.has(el.dataset.lane));
+        });
+      }
+
+      legend.querySelectorAll('.type-legend-item').forEach(el => {
+        el.addEventListener('click', () => {
+          const lane = el.dataset.lane;
+          if (activeLanes.size === legendItems.length) {
+            // All active → solo this lane
+            activeLanes.clear();
+            activeLanes.add(lane);
+          } else if (activeLanes.has(lane) && activeLanes.size === 1) {
+            // Only this lane active → show all
+            legendItems.forEach(l => activeLanes.add(l.cls));
+          } else if (activeLanes.has(lane)) {
+            // Multiple active, toggle off
+            activeLanes.delete(lane);
+          } else {
+            // Toggle on
+            activeLanes.add(lane);
+          }
+          applyLaneFilter();
+        });
+      });
 
       // Date-proportional Y positioning with compressed gap
       const lanePriority = { school: 0, competition: 1, event: 2, artifact: 3, person: 4 };

@@ -50,6 +50,31 @@
         "from": "fusen_ryu_challenge",
         "to": "kosen_judo",
         "label": "ne waza tradition"
+      },
+      {
+        "from": "nippon_kempo",
+        "to": "jsdf_toshu_kakuto",
+        "label": "primary striking base"
+      },
+      {
+        "from": "jukendo",
+        "to": "jsdf_toshu_kakuto",
+        "label": "bayonet fighting"
+      },
+      {
+        "from": "kodokan_founding",
+        "to": "jsdf_toshu_kakuto",
+        "label": "judo throws + groundwork"
+      },
+      {
+        "from": "ueshiba_aikido",
+        "to": "jsdf_toshu_kakuto",
+        "label": "aikido via Tomiki"
+      },
+      {
+        "from": "kodokan_founding",
+        "to": "nippon_kempo",
+        "label": "judo base"
       }
     ]
   },
@@ -1981,6 +2006,192 @@
         "reliability": "University tournament records from 1914 onward. Harrysuke's Blog provides detailed historical analysis with primary source citations."
       },
       "force_side": "right"
+    },
+    {
+      "id": "nippon_kempo",
+      "type": "documentary",
+      "subtype": "institutional",
+      "lane": "school",
+      "name_japanese": "日本拳法",
+      "title": "Nippon Kempō — Full-Contact Armored Sparring",
+      "date": 1932,
+      "date_display": "Founded 1932",
+      "origin": "Osaka, Japan",
+      "author": "Sawayama Muneomi (founder)",
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Nippon Kempō (日本拳法) was founded in 1932 by Sawayama Muneomi, a judo practitioner who wanted to create a full-contact system combining strikes, throws, and ground fighting. Fighters wear protective armor (bōgu) allowing full-power strikes to the head and body — solving the same safety problem Kano addressed with randori, but for striking. The system integrates punching, kicking, throwing, and ground submissions. Nippon Kempō became the primary technical base for the JSDF's toshu kakutō (hand-to-hand combat) system in 1959, selected because its armored sparring method was directly applicable to fighting in military equipment.",
+      "techniques_shown": [
+        "atemi_waza",
+        "nage_waza",
+        "ne_waza"
+      ],
+      "terms": [
+        "judo",
+        "randori"
+      ],
+      "active_period": {
+        "start": 1932,
+        "end": null,
+        "extant": true
+      },
+      "period_display": "1932 – present",
+      "practitioners": "~10,000 in Japan; practiced in universities and JSDF",
+      "evidence": {
+        "proves": [
+          "Armored full-contact sparring was developed independently from kendo for unarmed combat",
+          "Judo practitioners drove innovation in striking integration"
+        ],
+        "cannot_prove": [
+          "Exact techniques borrowed from judo vs. karate vs. boxing"
+        ],
+        "reliability": "Well-documented institutional history. University competition records from 1932 onward."
+      }
+    },
+    {
+      "id": "jukendo",
+      "type": "documentary",
+      "subtype": "institutional",
+      "lane": "school",
+      "name_japanese": "銃剣道",
+      "title": "Jūkendō — The Way of the Bayonet",
+      "date": 1890,
+      "date_display": "Formalized c. 1890s; modern form post-1956",
+      "origin": "Japan (Imperial Army → JSDF)",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Jūkendō (銃剣道, 'way of the bayonet') is the Japanese martial art of bayonet fighting. Derived from sōjutsu (spear arts) adapted for the rifle-mounted bayonet, it was formalized in the Imperial Japanese Army in the 1890s and became a core component of military training. After WWII it was briefly banned under the occupation. The All Japan Jukendo Federation was established in 1956. Jūkendō uses wooden replica rifles (mokujū) and protective armor similar to kendo. It was integrated into the JSDF's 1959 toshu kakutō manual alongside Nippon Kempō and aikido. While not a grappling art, jūkendō represents the weapons-combat thread of Japanese military martial arts and contextualizes the armed/unarmed distinction that runs through the entire history — from Takenouchi-ryū's kogusoku to modern military combatives.",
+      "techniques_shown": [
+        "kogusoku"
+      ],
+      "terms": [
+        "koryu"
+      ],
+      "active_period": {
+        "start": 1890,
+        "end": null,
+        "extant": true
+      },
+      "period_display": "c. 1890s – present (Imperial Army → JSDF → civilian budō)",
+      "practitioners": "~30,000 in Japan (All Japan Jukendo Federation); practiced in JSDF and schools",
+      "evidence": {
+        "proves": [
+          "Bayonet fighting was systematized as a budō discipline",
+          "Weapons arts continued to evolve alongside unarmed traditions"
+        ],
+        "cannot_prove": [
+          "Direct technical lineage from classical sōjutsu schools"
+        ],
+        "reliability": "Military training records and federation documentation."
+      }
+    },
+    {
+      "id": "tomiki_kenji",
+      "type": "documentary",
+      "subtype": "biographical",
+      "lane": "person",
+      "name_japanese": "富木謙治",
+      "title": "Tomiki Kenji — Bridge Between Kano and Ueshiba",
+      "date": 1900,
+      "date_display": "1900–1979",
+      "origin": "Kakunodate, Akita Prefecture",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Tomiki Kenji (1900–1979) is one of the rarest figures in martial arts history: a direct student of both Kanō Jigorō and Ueshiba Morihei. He earned 8th dan in judo under Kano, then studied Daitō-ryū Aikijūjutsu and later aikido under Ueshiba, receiving a teaching license. In 1967, he founded Shōdōkan Aikido — the only major aikido style that includes competitive randori, applying Kano's methodological insight (live sparring against resistance) to Ueshiba's techniques. He was co-architect of the JSDF's 1959 toshu kakutō system, bringing both judo and aikido expertise to military combatives. Tomiki embodies the synthesis principle that runs through this entire history — the same impulse that drove Kano, but applied across judo and aikido.",
+      "techniques_shown": [
+        "aiki",
+        "nage_waza",
+        "kansetsu_waza",
+        "randori"
+      ],
+      "terms": [
+        "judo",
+        "aikido",
+        "aiki",
+        "randori"
+      ],
+      "evidence": {
+        "proves": [
+          "One individual could master both Kano's and Ueshiba's systems",
+          "Competitive randori could be applied to aikido technique"
+        ],
+        "cannot_prove": [
+          "Whether Shōdōkan Aikido faithfully represents Ueshiba's teaching"
+        ],
+        "reliability": "Kodokan and aikido records. His dual lineage is undisputed."
+      }
+    },
+    {
+      "id": "jsdf_toshu_kakuto",
+      "type": "documentary",
+      "subtype": "institutional",
+      "lane": "school",
+      "name_japanese": "自衛隊格闘術",
+      "title": "Jieitai Kakutōjutsu — JSDF Military Combatives",
+      "date": 1959,
+      "date_display": "1959 (revised 2008 as 新格闘術)",
+      "origin": "Japan (JSDF)",
+      "author": "Ryōnosuke Mori & Kenji Tomiki (architects)",
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Jieitai Kakutōjutsu (自衛隊格闘術) is the JSDF military hand-to-hand combat system, established in 1959 after research beginning in 1955. Architected by Ryōnosuke Mori (highest-ranked Nippon Kempō instructor) and Kenji Tomiki (judo 8th dan / aikido expert), the original manual synthesized Nippon Kempō (primary striking base), Shōdōkan Aikido (joint locks and throws), jūkendō (bayonet), judo, and sumo. In 1984, the All Self-Defense Forces Hand Fighting Federation was organized and the first inter-service tournament held. In 2008, the system was revised as 'Shinkakutō' (新格闘術) in response to North Korean incidents and terrorism threats. The revision added judo-derived throws (ōsoto-gari, seoi-nage), chokes (hadaka-jime, sankaku-jime), and joint locks (juji-gatame, ude-garami). US Army knife fighting techniques were incorporated. The system trains personnel for unarmed, knife, bayonet, and rifle-butt combat, including one-vs-multiple scenarios.",
+      "techniques_shown": [
+        "atemi_waza",
+        "nage_waza",
+        "ne_waza",
+        "kansetsu_waza",
+        "shime_waza",
+        "kogusoku"
+      ],
+      "terms": [
+        "judo",
+        "aikido",
+        "ne_waza",
+        "nage_waza",
+        "shime_waza",
+        "kansetsu_waza",
+        "randori"
+      ],
+      "active_period": {
+        "start": 1959,
+        "end": null,
+        "extant": true
+      },
+      "period_display": "1959 – present (revised 2008 as Shinkakutō)",
+      "practitioners": "JSDF personnel (~230,000 active duty); not taught to civilians",
+      "evidence": {
+        "proves": [
+          "Military combatives synthesized civilian martial arts for battlefield application",
+          "Tomiki bridged judo and aikido in a military context",
+          "The 2008 revision incorporated international influences (US combatives)"
+        ],
+        "cannot_prove": [
+          "Combat effectiveness — no public after-action data"
+        ],
+        "reliability": "JSDF training manuals and federation records. Wikipedia article cites Japanese military sources."
+      }
     }
   ],
   "lexicon": [
@@ -2051,7 +2262,10 @@
         "santel_kodokan_1921",
         "pride_fc",
         "sakuraba_kazushi",
-        "kosen_judo"
+        "kosen_judo",
+        "nippon_kempo",
+        "tomiki_kenji",
+        "jsdf_toshu_kakuto"
       ],
       "modern_parallel": "Olympic Judo"
     },
@@ -2065,7 +2279,9 @@
       "sources": [
         "ueshiba_aikido",
         "daitoryu_scrolls",
-        "ueshiba_morihei_bio"
+        "ueshiba_morihei_bio",
+        "tomiki_kenji",
+        "jsdf_toshu_kakuto"
       ],
       "modern_parallel": "Aikido (unchanged)"
     },
@@ -2081,7 +2297,8 @@
         "ueshiba_aikido",
         "takeda_sokaku_bio",
         "ueshiba_morihei_bio",
-        "aunkai"
+        "aunkai",
+        "tomiki_kenji"
       ],
       "modern_parallel": "Aiki in Daito-ryu and Aikido"
     },
@@ -2100,7 +2317,10 @@
         "olympics_1964",
         "kano_jigoro_birth",
         "mifune_kyuzo",
-        "kosen_judo"
+        "kosen_judo",
+        "nippon_kempo",
+        "tomiki_kenji",
+        "jsdf_toshu_kakuto"
       ],
       "modern_parallel": "Sparring, rolling (BJJ), live rounds (wrestling)"
     },
@@ -2157,7 +2377,8 @@
         "pancrase",
         "pride_fc",
         "sakuraba_kazushi",
-        "kosen_judo"
+        "kosen_judo",
+        "jsdf_toshu_kakuto"
       ],
       "modern_parallel": "Ground game in BJJ, MMA"
     },
@@ -2179,7 +2400,8 @@
         "sosuishi_ryu",
         "hontai_yoshin_ryu",
         "mifune_kyuzo",
-        "shooto"
+        "shooto",
+        "jsdf_toshu_kakuto"
       ],
       "modern_parallel": "Throws/takedowns in judo, wrestling"
     },
@@ -2209,7 +2431,8 @@
         "fusen_ryu_challenge",
         "tenjin_shinyo_ryu",
         "tanabe_mataemon",
-        "kosen_judo"
+        "kosen_judo",
+        "jsdf_toshu_kakuto"
       ],
       "modern_parallel": "Chokes/strangles in BJJ, MMA"
     },
@@ -2230,7 +2453,8 @@
         "yagyu_shingan_ryu",
         "ryoi_shinto_ryu",
         "hontai_yoshin_ryu",
-        "kosen_judo"
+        "kosen_judo",
+        "jsdf_toshu_kakuto"
       ],
       "modern_parallel": "Joint locks, submissions in BJJ/MMA"
     },
@@ -2303,7 +2527,8 @@
         "ryukyu_chinese_kempo",
         "funakoshi_kodokan_1922",
         "karate",
-        "aunkai"
+        "aunkai",
+        "jukendo"
       ],
       "modern_parallel": "Traditional/classical martial arts"
     },
