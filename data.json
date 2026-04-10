@@ -75,6 +75,11 @@
         "from": "kodokan_founding",
         "to": "nippon_kempo",
         "label": "judo base"
+      },
+      {
+        "from": "kodokan_founding",
+        "to": "kosen_judo",
+        "label": "Kodokan competition framework"
       }
     ]
   },
