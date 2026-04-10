@@ -813,7 +813,7 @@
           class: 'lifespan-band' + (period.extant ? ' extant' : ''),
           style: 'cursor:pointer'
         });
-        rect.addEventListener('click', () => showSourceOverlay(p.src.id));
+        rect.addEventListener('click', () => { showInfluenceLines(p.src.id); showSourceOverlay(p.src.id); });
         svg.appendChild(rect);
 
         // Fade-out at bottom for extinct schools
@@ -831,7 +831,7 @@
           rect.setAttribute('opacity', '1');
           rect.classList.remove('lifespan-band');
           rect.style.cursor = 'pointer';
-          rect.addEventListener('click', () => showSourceOverlay(p.src.id));
+          rect.addEventListener('click', () => { showInfluenceLines(p.src.id); showSourceOverlay(p.src.id); });
         }
 
         // Hover: show name tooltip on band
@@ -943,7 +943,7 @@
           });
         }
 
-        dotEl.addEventListener('click', () => showSourceOverlay(src.id));
+        dotEl.addEventListener('click', () => { showInfluenceLines(src.id); showSourceOverlay(src.id); });
         // Hover date label on spine marker
         let dotLabel = null;
         dotEl.addEventListener('mouseenter', () => {
@@ -1015,16 +1015,15 @@
           g.appendChild(dt);
         }
 
-        // Hover tooltip + influence lines on demand
-        g.addEventListener('mouseenter', (e) => {
-          showTooltip(src, e.clientX, e.clientY);
-          showInfluenceLines(src.id);
-        });
+        // Hover: tooltip only. Click: show influence lines + overlay card.
+        g.addEventListener('mouseenter', (e) => showTooltip(src, e.clientX, e.clientY));
         g.addEventListener('mousemove', (e) => showTooltip(src, e.clientX, e.clientY));
-        g.addEventListener('mouseleave', () => {
+        g.addEventListener('mouseleave', () => hideTooltip());
+        g.addEventListener('click', () => {
           hideTooltip();
+          showInfluenceLines(src.id);
+          showSourceOverlay(src.id);
         });
-        g.addEventListener('click', () => { hideTooltip(); hideInfluenceLines(); showSourceOverlay(src.id); });
         svg.appendChild(g);
       });
 

@@ -130,6 +130,26 @@
         "from": "daitoryu_scrolls",
         "to": "tomiki_kenji",
         "label": "Daitō-ryū study"
+      },
+      {
+        "from": "gotch_japan",
+        "to": "uwf_1984",
+        "label": "catch wrestling (via Fujiwara, Maeda, Sayama)"
+      },
+      {
+        "from": "gotch_japan",
+        "to": "shooto",
+        "label": "catch wrestling (via Sayama)"
+      },
+      {
+        "from": "uwf_1984",
+        "to": "sakuraba_kazushi",
+        "label": "UWF shoot wrestling"
+      },
+      {
+        "from": "kodokan_founding",
+        "to": "sakuraba_kazushi",
+        "label": "judo base (university)"
       }
     ]
   },
