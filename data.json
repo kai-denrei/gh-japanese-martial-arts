@@ -230,6 +230,31 @@
         "from": "spiridonov_viktor",
         "to": "sambo_founding",
         "label": "jujutsu concepts + soft technique"
+      },
+      {
+        "from": "uwf_1984",
+        "to": "pancrase",
+        "label": "Fujiwara-gumi → Pancrase (Suzuki, Shamrock)"
+      },
+      {
+        "from": "uwf_1984",
+        "to": "shooto",
+        "label": "Sayama's shoot wrestling → Shooto"
+      },
+      {
+        "from": "sakuraba_kazushi",
+        "to": "ufc_japan_1997",
+        "label": "tournament winner (armbar, debut)"
+      },
+      {
+        "from": "sakuraba_kazushi",
+        "to": "pride_fc",
+        "label": "headline fighter (Gracie Hunter)"
+      },
+      {
+        "from": "pancrase",
+        "to": "sakuraba_kazushi",
+        "label": "Pancrase competition"
       }
     ],
     "international_spread": [
