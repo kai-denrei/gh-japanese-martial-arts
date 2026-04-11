@@ -2,7 +2,7 @@
 role: pm
 owner: minikai
 status: active
-last-updated: 2026-04-09
+last-updated: 2026-04-11
 ---
 
 # Project Management
@@ -31,6 +31,8 @@ Scope definition, phasing, risk tracking, assumption surfacing. Tracking the exp
 - [x] **Research depth**: RESOLVED — expand from prototype, verify with primary sources, scrape images — 2026-04-09
 - [x] **Image sourcing feasibility**: RESOLVED — 11 CC0/public domain images sourced (Met Museum, Wikimedia Commons, NDL Japan). Ukiyo-e prints readily available; Meiji photographs available via Wikimedia PD. UFC/modern event posters are copyrighted — excluded. — 2026-04-10
 - [x] **Aikido/Kendo inclusion**: RESOLVED — Aikido in (Daito-ryu grappling lineage), Kendo as contextual only — 2026-04-09
+- [x] **International dimension**: RESOLVED — added Brazil (Maeda/BJJ), UK (Koizumi/Budokwai), US (Yamashita/White House, LeBell/AAU), Russia (Oshchepkov/Sambo). Flag markers with exchange descriptions. — 2026-04-11
+- [x] **Academic research integration**: RESOLVED — Philosophy of Budō tab with 6 thematic essays from Sánchez García, Skoss, Dodd/Brown, Draeger, Nagy, Nakiri, Molle. Citations with URLs. — 2026-04-11
 
 ## Assumptions
 - The research phase must complete before any code is written — status: validated (research doc written first, then images, then data.json, then index.html) — since: 2026-04-09
@@ -42,6 +44,7 @@ Blocked by: nothing — this role drives sequencing
 Feeds into: all roles
 
 ## Session Log
+2026-04-11 — SYNC — 61 sources, 44 influences, 30 lexicon, 4 tabs. International spread (4 countries). Academic research integrated. Period 712–2012.
 2026-04-10 — SYNC — scope expanded to 2007, all 5 open questions resolved, 50 sources, deployed to GitHub Pages at kai-denrei.github.io/gh-japanese-martial-arts/
 2026-04-09 — resolved 4 of 5 open questions per owner direction: broad scope, include outside influences, aikido in, expand research from prototype
 2026-04-09 — INIT — scaffolded role file, surfaced 5 untested assumptions / scope gaps
