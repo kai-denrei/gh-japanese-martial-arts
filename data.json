@@ -195,6 +195,83 @@
         "from": "gotch_japan",
         "to": "lebell_gene",
         "label": "catch wrestling (submissions, 'Sadistic Bastard')"
+      },
+      {
+        "from": "tenjin_shinyo_ryu",
+        "to": "koizumi_gunji",
+        "label": "jujutsu training (Tago, 1901)"
+      },
+      {
+        "from": "kodokan_founding",
+        "to": "koizumi_gunji",
+        "label": "converted to judo (Kano visit, 1920)"
+      },
+      {
+        "from": "koizumi_gunji",
+        "to": "budokwai_london",
+        "label": "founded Budokwai (1918)"
+      },
+      {
+        "from": "kodokan_founding",
+        "to": "yamashita_yoshiaki",
+        "label": "Kodokan 6th dan (joined 1884)"
+      },
+      {
+        "from": "kodokan_founding",
+        "to": "oshchepkov_vasili",
+        "label": "Kodokan nidan (under Kano, 1911)"
+      },
+      {
+        "from": "oshchepkov_vasili",
+        "to": "sambo_founding",
+        "label": "judo methodology + throws"
+      },
+      {
+        "from": "spiridonov_viktor",
+        "to": "sambo_founding",
+        "label": "jujutsu concepts + soft technique"
+      }
+    ],
+    "international_spread": [
+      {
+        "person": "maeda_mitsuyo",
+        "flag": "🇧🇷",
+        "country": "Brazil",
+        "date": 1914,
+        "label": "Maeda settles in Belém",
+        "description": "Mitsuyo Maeda (1878–1941) arrived in Brazil around 1914 after a decade of challenge matches across the Americas and Europe. Settling in Belém, he taught Kodokan judo to Carlos Gracie beginning in 1917. What Maeda transmitted was already hybrid — Kodokan throws, Fusen-ryū ground technique, and catch wrestling absorbed during his travels. Carlos and his brother Hélio adapted this into what became Brazilian Jiu-Jitsu, emphasizing ground fighting for smaller practitioners. The Gracie challenge-match tradition directly mirrored the Kodokan's own history of challenge matches in Japan. BJJ would later return to Japan through Pride FC in the 1990s, completing a full circle."
+      },
+      {
+        "person": "koizumi_gunji",
+        "flag": "🇬🇧",
+        "country": "United Kingdom",
+        "date": 1918,
+        "label": "Budokwai founded, London",
+        "description": "Koizumi Gunji (1885–1965) arrived in Wales in 1906 and founded the Budokwai in London on January 26, 1918 — the first permanent public judo club in Europe. Originally teaching Tenjin Shin'yō-ryū jujutsu, Koizumi converted to Kodokan judo after Kano Jigoro's personal visit in July 1920 en route to the Antwerp Olympics. Kano awarded Koizumi 2nd dan on the spot. The Budokwai became the institutional seed from which British and European judo grew. Koizumi founded the European Judo Union and the British Judo Association (1948). The club still operates at its original location near Buckingham Palace."
+      },
+      {
+        "person": "yamashita_yoshiaki",
+        "flag": "🇺🇸",
+        "country": "United States",
+        "date": 1903,
+        "label": "Seattle Dojo + White House",
+        "description": "Yamashita Yoshiaki (1865–1935), a Kodokan 6th dan, arrived in Seattle on October 8, 1903. Japanese Americans formed the Seattle Dojo — the first judo dojo in the continental United States, still operating today. In March 1904, Yamashita gave judo lessons to President Theodore Roosevelt at the White House. Mitsuyo Maeda also arrived in New York in December 1904 for exhibitions at Princeton and West Point. Gene LeBell later became the first prominent American-born judoka, winning AAU championships in 1954–55 after training at the Kodokan. The formal institutional path: Seattle Dojo (1903) → White House (1904) → Naval Academy (1905) → AAU championships (1950s) → Olympic judo (1964)."
+      },
+      {
+        "person": "oshchepkov_vasili",
+        "flag": "🇷🇺",
+        "country": "Russia",
+        "date": 1914,
+        "label": "first judo section, Vladivostok",
+        "description": "Vasili Oshchepkov (1893–1937), orphaned on Sakhalin Island, was sent to the Tokyo Orthodox Seminary where judo was added to the curriculum in 1908. He joined the Kodokan in 1911 — the first Russian and fourth non-Japanese to earn a judo degree — and received nidan directly from Kano. In 1914 he founded Russia's first judo section in Vladivostok. He then applied Kano's synthesis methodology to a wider input set including folk wrestling traditions from across the USSR, creating what became sambo. Parallel to this, Viktor Spiridonov absorbed jujutsu concepts from European manuals. Their independent systems merged through their students, and sambo was officially adopted in 1938. Oshchepkov was executed in 1937 as a 'Japanese spy' — the very connection that made sambo possible was used to destroy its creator."
+      },
+      {
+        "person": "lebell_gene",
+        "flag": "🇺🇸",
+        "country": "United States",
+        "date": 1955,
+        "label": "AAU champion, Kodokan trained",
+        "description": "Yamashita Yoshiaki (1865–1935), a Kodokan 6th dan, arrived in Seattle on October 8, 1903. Japanese Americans formed the Seattle Dojo — the first judo dojo in the continental United States, still operating today. In March 1904, Yamashita gave judo lessons to President Theodore Roosevelt at the White House. Mitsuyo Maeda also arrived in New York in December 1904 for exhibitions at Princeton and West Point. Gene LeBell later became the first prominent American-born judoka, winning AAU championships in 1954–55 after training at the Kodokan. The formal institutional path: Seattle Dojo (1903) → White House (1904) → Naval Academy (1905) → AAU championships (1950s) → Olympic judo (1964)."
       }
     ]
   },
@@ -681,7 +758,7 @@
       "author": "Kano Jigoro",
       "museum": null,
       "accession": null,
-      "image": "kano_jigoro_1892.webp",
+      "image": "kodokan_logo.webp",
       "source_url": null,
       "passage_japanese": null,
       "passage_translation": "Judo is the way of the highest or most efficient use of both physical and mental energy.",
@@ -872,7 +949,7 @@
       "author": "Takeda Sokaku",
       "museum": null,
       "accession": null,
-      "image": "takeda_sokaku.webp",
+      "image": "takeda_mon.webp",
       "source_url": null,
       "passage_japanese": null,
       "passage_translation": "When one hand is grabbed by two hands, push that hand forward, apply Aiki, turn to back, throw over your back.",
@@ -925,7 +1002,7 @@
       "author": "Ueshiba Morihei",
       "museum": null,
       "accession": null,
-      "image": "ueshiba_morihei_1922.webp",
+      "image": "aikido_logo.webp",
       "source_url": null,
       "passage_japanese": null,
       "passage_translation": null,
@@ -972,8 +1049,8 @@
       "type": "documentary",
       "subtype": "biographical",
       "title": "Maeda Mitsuyo — 'Conde Koma' and the Export of Judo",
-      "date": 1897,
-      "date_display": "1897–1941",
+      "date": 1878,
+      "date_display": "1878–1941",
       "origin": "Japan → Europe → Brazil",
       "author": null,
       "museum": null,
@@ -1007,7 +1084,11 @@
         "reliability": "Newspaper records (Correio Paulistano) confirm the Brazil dates. The European career is attested by multiple sources. Match records are likely inflated but the broad career is well-documented. National Diet Library article provides primary Brazilian sources."
       },
       "name_japanese": "前田光世",
-      "lane": "person"
+      "lane": "person",
+      "key_event": {
+        "date": 1904,
+        "label": "begins world tour from Kodokan"
+      }
     },
     {
       "id": "olympics_1964",
@@ -1181,7 +1262,7 @@
       "author": "Takenaga Hayato (founder)",
       "museum": null,
       "accession": null,
-      "image": null,
+      "image": "yagyu_shingan_mon.webp",
       "source_url": null,
       "passage_japanese": null,
       "passage_translation": null,
@@ -1411,6 +1492,10 @@
           "Whether Kano's vision has been faithfully preserved in modern sport judo"
         ],
         "reliability": "The most thoroughly documented figure in martial arts history. Multiple primary sources: own writings, Kodokan records, IOC archives, newspaper accounts."
+      },
+      "key_event": {
+        "date": 1882,
+        "label": "founds Kodokan"
       }
     },
     {
@@ -1454,6 +1539,10 @@
           "What techniques Takeda inherited versus developed"
         ],
         "reliability": "Eimeiroku (enrollment records) are primary documents. The pre-Takeda history is unverifiable."
+      },
+      "key_event": {
+        "date": 1899,
+        "label": "begins teaching Daitō-ryū"
       }
     },
     {
@@ -1495,6 +1584,10 @@
           "Whether his techniques are replicable by average practitioners"
         ],
         "reliability": "Extensively documented through film, photographs, and Kodokan records. Multiple independent witnesses across decades."
+      },
+      "key_event": {
+        "date": 1903,
+        "label": "enters Kodokan"
       }
     },
     {
@@ -1536,6 +1629,10 @@
           "Exact match details — accounts vary by source"
         ],
         "reliability": "Multiple accounts agree on the broad narrative. Specific details vary."
+      },
+      "key_event": {
+        "date": 1891,
+        "label": "defeats Kodokan (challenge matches)"
       }
     },
     {
@@ -1577,6 +1674,10 @@
           "When exactly technique diverged from Takeda's teaching"
         ],
         "reliability": "Well-documented through certificates, student accounts, and Takeda's eimeiroku."
+      },
+      "key_event": {
+        "date": 1915,
+        "label": "meets Takeda Sokaku"
       }
     },
     {
@@ -1736,7 +1837,7 @@
       "lane": "person",
       "name_japanese": "カール・ゴッチ",
       "title": "Karl Gotch — 'God of Wrestling' in Japan",
-      "date": 1972,
+      "date": 1924,
       "date_display": "1924–2007 (active in Japan from 1972)",
       "origin": "Belgium → Japan",
       "author": null,
@@ -1747,7 +1848,7 @@
       "passage_japanese": null,
       "passage_translation": null,
       "translator": null,
-      "description": "Belgian-born catch wrestler Karl Gotch (1924–2007) became the 'God of Wrestling' in Japan. In January 1972, Antonio Inoki recruited Gotch to help found New Japan Pro-Wrestling (NJPW) on the condition he serve as trainer. Gotch wrestled the main event of NJPW's first show (March 6, 1972), defeating Inoki. Throughout the 1970s he taught catch wrestling — slams, submissions, joint locks — to Inoki, Tatsumi Fujinami, Yoshiaki Fujiwara, Satoru Sayama, and Akira Maeda. These students became the founders of shoot-style wrestling and MMA in Japan. Gotch's catch wrestling lineage runs directly through to Shooto, Pancrase, and Pride FC.",
+      "description": "Belgian-born catch wrestler Karl Gotch (1924–2007) became the 'God of Wrestling' in Japan. In January 1972, Antonio Inoki recruited Gotch to help found New Japan Pro-Wrestling (NJPW) on the condition he serve as trainer. Gotch wrestled the main event of NJPW's first show (March 6, 1972), defeating Inoki. Throughout the 1970s he taught catch wrestling — slams, submissions, joint locks — to Inoki, Tatsumi Fujinami, Yoshiaki Fujiwara, Satoru Sayama, and Akira Maeda. These students became the founders of shoot-style wrestling and MMA in Japan. Gotch's fingerprint on modern MMA runs through two parallel lineages: in Japan, via NJPW → UWF → Shooto/Pancrase/Pride FC (Sayama, Fujiwara, Maeda); in the United States, via Gene LeBell, whom Gotch trained in catch wrestling submissions. LeBell — 'Judo Gene,' the 'Godfather of Grappling' — went on to popularize grappling in American professional fighting circles and taught Bruce Lee, Chuck Norris, and Ronda Rousey. Gotch is arguably the single most consequential figure in the global spread of submission grappling from the 1970s onward.",
       "techniques_shown": [
         "catch_wrestling",
         "ne_waza",
@@ -1766,6 +1867,10 @@
           "The exact proportion of Gotch's techniques vs. other influences in each student's style"
         ],
         "reliability": "NJPW records, match footage, and multiple student testimonials. The training lineage is undisputed."
+      },
+      "key_event": {
+        "date": 1972,
+        "label": "arrives in Japan (NJPW)"
       }
     },
     {
@@ -1961,7 +2066,7 @@
       "lane": "person",
       "name_japanese": "桜庭和志",
       "title": "Sakuraba Kazushi — 'The Gracie Hunter'",
-      "date": 1997,
+      "date": 1969,
       "date_display": "1969– (active in Pride 1997–2006)",
       "origin": "Akita Prefecture, Japan",
       "author": null,
@@ -1994,6 +2099,10 @@
           "The relative effectiveness of catch wrestling vs. BJJ as systems — individual matchups do not prove systemic superiority"
         ],
         "reliability": "Extensively documented through Pride FC broadcast footage, official records, and participant interviews. All four Gracie victories are on video."
+      },
+      "key_event": {
+        "date": 1997,
+        "label": "UFC Japan debut"
       }
     },
     {
@@ -2272,6 +2381,10 @@
           "Whether Shōdōkan Aikido faithfully represents Ueshiba's teaching"
         ],
         "reliability": "Kodokan and aikido records. His dual lineage is undisputed."
+      },
+      "key_event": {
+        "date": 1926,
+        "label": "begins training under Ueshiba"
       }
     },
     {
@@ -2652,6 +2765,279 @@
           "Some of LeBell's more colorful anecdotes are uncorroborated (Bruce Lee training partnership, Seagal choking incident)"
         ],
         "reliability": "AAU championships and Ali-Inoki refereeing are well-documented. Some biographical claims come only from LeBell himself. Black Belt magazine noted he 'was known to fabricate stories regarding his exploits.' Core martial arts career is verifiable; specific anecdotes less so."
+      },
+      "key_event": {
+        "date": 1955,
+        "label": "trains at Kodokan, AAU champion"
+      }
+    },
+    {
+      "id": "koizumi_gunji",
+      "type": "documentary",
+      "subtype": "biographical",
+      "lane": "person",
+      "name_japanese": "小泉軍治",
+      "title": "Koizumi Gunji — Father of European Judo",
+      "date": 1885,
+      "date_display": "1885–1965",
+      "origin": "Ibaraki Prefecture, Japan → London, England",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Koizumi Gunji (1885–1965) founded the Budokwai in London on January 26, 1918 — the oldest continuously operating judo club in Europe. Originally a jujutsu practitioner trained under Tago Nobushige (Tenjin Shin'yō-ryū) from 1901, he arrived in Wales in 1906 and taught jujutsu before settling in London. In July 1920, Kano Jigoro visited the Budokwai en route to the Antwerp Olympics; after their meeting, Koizumi converted the club from jujutsu to Kodokan judo, and Kano awarded him 2nd dan on the spot. Koizumi went on to found the European Judo Union and the British Judo Association (1948), earning the title 'Father of British Judo.' He reached 8th dan and wrote 'My Study of Judo' (1960), one of the earliest English-language judo texts.",
+      "techniques_shown": [
+        "nage_waza",
+        "ne_waza",
+        "jujutsu"
+      ],
+      "terms": [
+        "judo",
+        "jujutsu",
+        "dojo",
+        "ryu_ha"
+      ],
+      "key_event": {
+        "date": 1918,
+        "label": "founds Budokwai, London"
+      },
+      "evidence": {
+        "proves": [
+          "Kodokan judo was transmitted to Europe through personal conversion, not institutional export",
+          "The jujutsu-to-judo transition happened in Europe as well as in Japan"
+        ],
+        "cannot_prove": [
+          "Whether Koizumi's early jujutsu teaching differed meaningfully from his post-1920 judo teaching"
+        ],
+        "reliability": "Well-documented through Budokwai records, Kodokan archives, and multiple biographical sources. The 1920 Kano visit is independently verified."
+      }
+    },
+    {
+      "id": "budokwai_london",
+      "type": "documentary",
+      "subtype": "institutional",
+      "lane": "school",
+      "name_japanese": "武道会",
+      "title": "Budokwai — First Judo Club in Europe",
+      "date": 1918,
+      "date_display": "1918 – present",
+      "origin": "15 Lower Grosvenor Place, Victoria, London",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "The Budokwai (武道会, 'martial way association') was founded on January 26, 1918 by Koizumi Gunji at his own expense with 12 founding members, near the back wall of Buckingham Palace. Originally offering jujutsu, kendo, and other Japanese arts, it formally converted to Kodokan judo after Kano's 1920 visit. It is the oldest continuously operating judo club in Europe and the institutional seed from which British and European judo grew.",
+      "techniques_shown": [
+        "nage_waza",
+        "ne_waza"
+      ],
+      "terms": [
+        "judo",
+        "dojo",
+        "budo"
+      ],
+      "active_period": {
+        "start": 1918,
+        "end": null,
+        "extant": true
+      },
+      "period_display": "1918 – present",
+      "practitioners": "Active — London, UK",
+      "evidence": {
+        "proves": [
+          "Institutional judo existed in Europe from 1918/1920",
+          "The Budokwai model (public membership, permanent dojo) became the template for European judo clubs"
+        ],
+        "cannot_prove": [
+          "Whether earlier, informal jujutsu teaching in Europe (from 1899) constitutes 'judo'"
+        ],
+        "reliability": "Well-documented. The Budokwai still operates at its founding location."
+      }
+    },
+    {
+      "id": "yamashita_yoshiaki",
+      "type": "documentary",
+      "subtype": "biographical",
+      "lane": "person",
+      "name_japanese": "山下義韶",
+      "title": "Yamashita Yoshiaki — Judo at the White House",
+      "date": 1865,
+      "date_display": "1865–1935",
+      "origin": "Ishikawa Prefecture, Japan → United States",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Yamashita Yoshiaki (1865–1935) joined the Kodokan in 1884 and earned 6th dan by 1898. He arrived in Seattle on October 8, 1903, where Japanese Americans promptly formed the Seattle Dojo — the first judo dojo in the continental United States, still operating today. In March 1904, arranged by naval attaché Commander Takeshita Isamu, Yamashita gave judo lessons to President Theodore Roosevelt at the White House. He taught at the U.S. Naval Academy in 1905–06 before returning to Japan. His White House demonstrations represent the earliest high-level diplomatic exposure of judo in America.",
+      "techniques_shown": [
+        "nage_waza",
+        "ne_waza"
+      ],
+      "terms": [
+        "judo",
+        "randori",
+        "dojo"
+      ],
+      "key_event": {
+        "date": 1904,
+        "label": "teaches judo to President Roosevelt"
+      },
+      "evidence": {
+        "proves": [
+          "Kodokan judo reached the United States by 1903",
+          "Judo had diplomatic prestige — a sitting US president trained in it"
+        ],
+        "cannot_prove": [
+          "How much Roosevelt actually learned or retained"
+        ],
+        "reliability": "Well-documented through White House records, Kodokan archives, and contemporary press coverage."
+      }
+    },
+    {
+      "id": "oshchepkov_vasili",
+      "type": "documentary",
+      "subtype": "biographical",
+      "lane": "person",
+      "name_japanese": "オシチェプコフ",
+      "title": "Oshchepkov Vasili — Kodokan to Sambo",
+      "date": 1893,
+      "date_display": "1893–1937",
+      "origin": "Sakhalin Island, Russia → Tokyo → Moscow",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Vasili Oshchepkov (1893–1937) was the direct conduit between Kodokan judo and Soviet sambo. Born on Sakhalin Island, orphaned in 1907, he was sent to the Tokyo Orthodox Seminary under the patronage of St. Nicholas of Japan. In 1908, judo was added to the seminary curriculum under Okamoto Yoshiro (2nd dan). Showing exceptional ability, Oshchepkov joined the Kodokan in 1911, becoming the first Russian and fourth non-Japanese to earn a judo degree. He later received nidan (2nd dan) directly from Kano Jigoro. In 1914, he founded Russia's first judo section in Vladivostok. Critically, Oshchepkov understood Kano's methodology — the process of synthesis itself. He applied Kano's abstraction method (identify principles, discard what doesn't transfer, integrate what does) to an even wider input set: judo throws, karate strikes, jujutsu submissions, and folk wrestling traditions from across the USSR. By the late 1930s, his system had surpassed classical Kodokan judo in breadth. On October 1, 1937, he was arrested as a 'Japanese spy' and died in Butyrka prison — officially of a heart attack, in reality executed for fraternization with 'Japanese imperialists.' He was posthumously exonerated in 1957.",
+      "techniques_shown": [
+        "nage_waza",
+        "ne_waza",
+        "kansetsu_waza",
+        "atemi_waza"
+      ],
+      "terms": [
+        "judo",
+        "jujutsu",
+        "randori",
+        "kata"
+      ],
+      "key_event": {
+        "date": 1911,
+        "label": "joins Kodokan"
+      },
+      "evidence": {
+        "proves": [
+          "Kodokan judo was directly transmitted to Russia by 1911",
+          "The Kano synthesis methodology was itself transferable — Oshchepkov applied it independently",
+          "Soviet political paranoia destroyed the man but not his system"
+        ],
+        "cannot_prove": [
+          "Exact techniques Oshchepkov brought from the Kodokan vs. developed independently"
+        ],
+        "reliability": "Soviet-era records, Kodokan enrollment records, and posthumous rehabilitation documents. The Kodokan connection is independently verified by Japanese sources."
+      }
+    },
+    {
+      "id": "spiridonov_viktor",
+      "type": "documentary",
+      "subtype": "biographical",
+      "lane": "person",
+      "name_japanese": "スピリドノフ",
+      "title": "Spiridonov Viktor — Jujutsu's Conceptual Legacy in Sambo",
+      "date": 1883,
+      "date_display": "1883–1943",
+      "origin": "Russia",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Viktor Spiridonov (1883–1943) developed the parallel track that merged with Oshchepkov's judo to form sambo. Since 1906, he studied jujutsu through European manuals — never training in Japan, but absorbing jujutsu's core principle: leverage over force. A WWI bayonet wound left his left arm lame, forcing him to develop a system that didn't depend on muscular dominance — the exact same constraint that shaped Hélio Gracie's adaptation of judo into BJJ in Brazil. Same period, same problem, parallel solutions on opposite sides of the planet. In 1923, he co-founded the Dynamo Sports Club in Moscow and organized the section of offense and defense without weapons. His system went through several names — SAM, SAMOZ — before he gave it the name SAMBO (САМозащита Без Оружия, 'self-defense without weapons'). Spiridonov's style was softer, more defensive, and conceived as a classified law enforcement tool, not a sport. He and Oshchepkov reportedly disliked each other personally and did not collaborate directly.",
+      "techniques_shown": [
+        "joint_locks",
+        "throwing",
+        "ne_waza"
+      ],
+      "terms": [
+        "jujutsu",
+        "budo"
+      ],
+      "evidence": {
+        "proves": [
+          "Jujutsu's conceptual framework spread to Russia through European manuals by 1906",
+          "Physical limitation as a driver of martial arts innovation is a recurring pattern (Spiridonov, Gracie)"
+        ],
+        "cannot_prove": [
+          "Which specific European jujutsu manuals Spiridonov studied",
+          "How much his system actually derived from jujutsu vs. other wrestling traditions"
+        ],
+        "reliability": "Soviet-era records and Dynamo Club archives. Less well-documented internationally than Oshchepkov."
+      }
+    },
+    {
+      "id": "sambo_founding",
+      "type": "documentary",
+      "subtype": "institutional",
+      "lane": "school",
+      "name_japanese": "サンボ",
+      "title": "Sambo — Soviet Synthesis of Judo and Folk Wrestling",
+      "date": 1938,
+      "date_display": "1938 – present",
+      "origin": "Soviet Union / Russia",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Sambo (САМозащита Без Оружия, 'self-defense without weapons') was officially adopted as the martial art of the Soviet Union in 1938, synthesized from Oshchepkov's Kodokan judo, Spiridonov's jujutsu-informed self-defense system, and folk wrestling traditions from across the USSR. The synthesis was completed not by the founders but by their students — primarily Anatoly Kharlampiyev, Oshchepkov's protégé. After Oshchepkov's execution in 1937, the Soviets wanted to disband sambo because of its Japanese ties, but Kharlampiyev used his political connections to convince the USSR State Sports Committee to adopt it. Sambo is Kodokan judo filtered through a second synthesis methodology — Oshchepkov did to judo what Kano did to jujutsu. The Japanese martial arts tradition is doubly embedded: once through Oshchepkov's direct Kodokan training, and once through Spiridonov's conceptual absorption of jujutsu's core principle.",
+      "techniques_shown": [
+        "nage_waza",
+        "ne_waza",
+        "kansetsu_waza",
+        "grappling"
+      ],
+      "terms": [
+        "judo",
+        "jujutsu",
+        "randori"
+      ],
+      "active_period": {
+        "start": 1938,
+        "end": null,
+        "extant": true
+      },
+      "period_display": "1938 – present",
+      "practitioners": "~500,000 worldwide",
+      "evidence": {
+        "proves": [
+          "Kodokan judo's methodology was exportable — it could be re-applied to create new martial arts",
+          "The Soviet state adopted a Japanese-derived martial art despite political hostility to Japan"
+        ],
+        "cannot_prove": [
+          "The exact proportion of judo vs. folk wrestling in modern sambo technique"
+        ],
+        "reliability": "Well-documented through Soviet sports committee records. International Sambo Federation archives."
       }
     }
   ],
@@ -2698,7 +3084,11 @@
         "hontai_yoshin_ryu",
         "takeda_sokaku_bio",
         "tanabe_mataemon",
-        "ueshiba_morihei_bio"
+        "ueshiba_morihei_bio",
+        "koizumi_gunji",
+        "oshchepkov_vasili",
+        "spiridonov_viktor",
+        "sambo_founding"
       ],
       "modern_parallel": "Brazilian Jiu-Jitsu, various jujutsu styles"
     },
@@ -2730,7 +3120,12 @@
         "jab_founding",
         "budo_compulsory_2012",
         "ufc_japan_1997",
-        "lebell_gene"
+        "lebell_gene",
+        "koizumi_gunji",
+        "budokwai_london",
+        "yamashita_yoshiaki",
+        "oshchepkov_vasili",
+        "sambo_founding"
       ],
       "modern_parallel": "Olympic Judo"
     },
@@ -2788,7 +3183,10 @@
         "tomiki_kenji",
         "jsdf_toshu_kakuto",
         "budo_compulsory_2012",
-        "lebell_gene"
+        "lebell_gene",
+        "yamashita_yoshiaki",
+        "oshchepkov_vasili",
+        "sambo_founding"
       ],
       "modern_parallel": "Sparring, rolling (BJJ), live rounds (wrestling)"
     },
@@ -2805,7 +3203,8 @@
         "kodokan_founding",
         "takenouchi_founding",
         "draeger_trilogy",
-        "budo_compulsory_2012"
+        "budo_compulsory_2012",
+        "oshchepkov_vasili"
       ],
       "modern_parallel": "Drills, forms, technique demonstration"
     },
@@ -3036,7 +3435,10 @@
         "kodokan_founding",
         "ueshiba_aikido",
         "aunkai",
-        "jab_founding"
+        "jab_founding",
+        "koizumi_gunji",
+        "budokwai_london",
+        "yamashita_yoshiaki"
       ],
       "modern_parallel": "Gym, academy, training facility"
     },
@@ -3129,7 +3531,9 @@
         "nitobe_bushido",
         "jab_founding",
         "draeger_trilogy",
-        "budo_compulsory_2012"
+        "budo_compulsory_2012",
+        "budokwai_london",
+        "spiridonov_viktor"
       ],
       "modern_parallel": "Used internationally as a loanword"
     },
@@ -3187,7 +3591,8 @@
         "takenouchi_founding",
         "sekiguchi_ryu",
         "yoshin_ryu",
-        "yagyu_shingan_ryu"
+        "yagyu_shingan_ryu",
+        "koizumi_gunji"
       ],
       "modern_parallel": "Martial arts style/school lineage systems worldwide"
     }

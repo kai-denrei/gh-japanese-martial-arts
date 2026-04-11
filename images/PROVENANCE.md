@@ -23,6 +23,15 @@ All images are CC0 / public domain. Downloaded 2026-04-09.
 | ueshiba_morihei_1939.webp | Ueshiba Morihei, portrait in montsuki | 1939 | Wikimedia Commons (File:Morihei_Ueshiba_1939.jpg) | Public domain (pre-1946 Japanese photograph) |
 | ueshiba_morihei_1922.webp | Ueshiba Morihei seated at Ayabe dojo with "Daito-ryu Aiki-jujutsu" sign | 1922 | Wikimedia Commons (File:Morihei_Ueshiba_Ayabe_1922.jpg) | Public domain (pre-1946 Japanese photograph) |
 
+## Emblems / Mon
+
+| Filename | Subject | Source | License |
+|---|---|---|---|
+| takeda_mon.webp | Takeda clan mon (yotsuwari-bishi / four-diamond crest) | Wikimedia Commons (File:Takeda_mon.svg), created with Inkscape | Public domain (traditional Japanese heraldry, no copyright) |
+| kodokan_logo.webp | Kodokan Judo Institute emblem (cherry blossom with red circle) | Wikimedia Commons | Public domain |
+| aikido_logo.webp | Aikikai Foundation emblem (合気道 with swirl motif) | Wikimedia Commons | Public domain |
+| yagyu_shingan_mon.webp | Yagyū Shingan-ryū crest (nimai-gasa / two stacked hats) | Public domain (traditional Japanese heraldry) | Public domain |
+
 ## License Notes
 
 - **Metropolitan Museum of Art**: All images of public domain works are released under CC0.

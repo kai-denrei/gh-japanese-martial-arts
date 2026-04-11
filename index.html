@@ -165,16 +165,7 @@
     }
     .overlay-close:hover { background: var(--bg-panel); color: var(--fg); border-color: var(--fg-muted); }
 
-    .overlay-card-short { max-height: 60vh; }
-    .expand-btn {
-      display: block; width: 100%; margin-top: var(--sm); padding: 8px;
-      font-family: var(--font-ui); font-size: 0.78rem; font-weight: 500;
-      background: var(--bg-panel); border: 1px solid var(--rule); border-radius: 4px;
-      color: var(--accent); cursor: pointer; transition: all 0.15s;
-    }
-    .expand-btn:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); }
-
-    .overlay-card img { width: 100%; border-radius: 4px; border: 1px solid var(--rule); margin-bottom: var(--sm); }
+    .overlay-card img { max-width: 100%; height: auto; border-radius: 4px; border: 1px solid var(--rule); margin-bottom: var(--sm); display: block; margin-left: auto; margin-right: auto; object-fit: contain; }
     .overlay-card .source-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; line-height: 1.25; }
     .overlay-card .source-meta { font-family: var(--font-ui); font-size: 0.72rem; color: var(--fg-muted); margin-bottom: var(--sm); }
     .overlay-card .source-meta span + span::before { content: ' · '; }
@@ -220,7 +211,7 @@
     }
     .source-link-ext:hover { text-decoration: underline; }
 
-    body.overlay-open { overflow: hidden; }
+    body.overlay-open { position: fixed; width: 100%; overflow-y: scroll; }
 
     /* ── Evidence Index ─────────────────────────────── */
     .evidence-index { border-top: 2px solid var(--rule-heavy); padding-top: var(--lg); margin-top: var(--xl); }
@@ -385,7 +376,7 @@
       .overlay-card { padding: var(--md) var(--sm) var(--sm); max-height: 92vh; }
       .overlay-card .source-title { font-size: 1rem; }
       .overlay-card .source-description { font-size: 0.85rem; }
-      .overlay-card img { max-height: 200px; object-fit: cover; }
+      .overlay-card img { max-height: 200px; object-fit: contain; }
       .evidence-block { font-size: 0.78rem; padding: var(--sm); }
       .vfb-tooltip { max-width: 180px; font-size: 0.7rem; }
       .vfb-tooltip .tt-title { font-size: 0.75rem; }
@@ -397,6 +388,11 @@
       .page { padding: var(--sm) var(--xs); }
       .headline { font-size: 1.5rem; }
       .tab-bar button { font-size: 0.68rem; padding: 3px 6px; }
+      .philosophy-theme h3 { font-size: 1rem; }
+      .philosophy-theme .theme-body { font-size: 0.82rem; }
+      .philosophy-citations { padding: var(--xs) var(--sm); }
+      .citation-item { font-size: 0.7rem; }
+      .overlay-card { max-width: 95vw; }
     }
 
     /* ── Lifespan Bands ───────────────────────────── */
@@ -574,7 +570,7 @@
       document.getElementById('panel-' + tabName).classList.add('active');
     }
 
-    function navigateToSource(sourceId) { switchToTab('sources'); showSourceOverlay(sourceId, 'full'); }
+    function navigateToSource(sourceId) { switchToTab('sources'); showSourceOverlay(sourceId); }
     function navigateToLexicon(termId) {
       closeSourceOverlay();
       switchToTab('lexicon');
@@ -920,7 +916,13 @@
           class: 'lifespan-band' + (period.extant ? ' extant' : ''),
           style: 'cursor:pointer'
         });
-        attachCardInteraction(rect, p.src.id);
+        // Band click: full view + connections
+        rect.addEventListener('click', (e) => {
+          if (window._spineDotClicked) return;
+          e.stopPropagation();
+          showInfluenceLines(p.src.id);
+          showSourceOverlay(p.src.id);
+        });
         svg.appendChild(rect);
 
         // Fade-out at bottom for extinct schools
@@ -938,7 +940,6 @@
           rect.setAttribute('opacity', '1');
           rect.classList.remove('lifespan-band');
           rect.style.cursor = 'pointer';
-          attachCardInteraction(rect, p.src.id);
         }
 
         // Hover: show name tooltip on band
@@ -1050,7 +1051,15 @@
           });
         }
 
-        attachCardInteraction(dotEl, src.id);
+        // Spine dot: click = connections only (no modal)
+        dotEl.addEventListener('click', (e) => {
+          e.stopPropagation();
+          window._spineDotClicked = true;
+          setTimeout(() => { window._spineDotClicked = false; }, 50);
+          showInfluenceLines(src.id);
+        });
+
+
         // Hover date label on spine marker
         let dotLabel = null;
         dotEl.addEventListener('mouseenter', () => {
@@ -1073,9 +1082,75 @@
         // Use Japanese name as primary label, or fall back to short title
         const jpName = src.name_japanese || '';
         const hasThumb = !!src.image;
+        const anchor = right ? 'start' : 'end';
 
-        if (hasThumb) {
-          const thumbX = right ? endX + 4 : endX - THUMB_SIZE - 4;
+        // Helper: create an item dot (connections only on click, no overlay)
+        function makeItemDot(cx, cy, fillColor, fillOpacity) {
+          const d = svgEl('circle', { cx, cy, r: 5, fill: fillColor, opacity: fillOpacity, style: 'cursor:pointer' });
+          d.addEventListener('click', (e) => {
+            e.stopPropagation();
+            window._spineDotClicked = true;
+            setTimeout(() => { window._spineDotClicked = false; }, 50);
+            showInfluenceLines(src.id);
+          });
+          return d;
+        }
+
+        if (isPerson) {
+          // ── PERSON: always green dot at bone end, text next to it ──
+          const dotX = right ? endX + 10 : endX - 10;
+          g.appendChild(makeItemDot(dotX, endY, color, 0.8));
+
+          if (hasThumb) {
+            // Thumbnail between dot and text, not on spine
+            const thumbX = right ? dotX + 10 : dotX - 10 - THUMB_SIZE;
+            const thumbY = endY - THUMB_SIZE / 2;
+            const clipId = 'vc-' + src.id.replace(/[^a-z0-9]/g, '');
+            const defs = svgEl('defs', {});
+            const cp = svgEl('clipPath', { id: clipId });
+            cp.appendChild(svgEl('rect', { x: thumbX, y: thumbY, width: THUMB_SIZE, height: THUMB_SIZE, rx: 3, ry: 3 }));
+            defs.appendChild(cp);
+            g.appendChild(defs);
+            g.appendChild(svgEl('rect', {
+              x: thumbX, y: thumbY, width: THUMB_SIZE, height: THUMB_SIZE, rx: 3, ry: 3,
+              fill: 'none', stroke: 'var(--rule)', 'stroke-width': 1, class: 'card-bg'
+            }));
+            g.appendChild(svgEl('image', {
+              href: DATA.meta.image_dir + src.image,
+              x: thumbX, y: thumbY, width: THUMB_SIZE, height: THUMB_SIZE,
+              'clip-path': `url(#${clipId})`, preserveAspectRatio: 'xMidYMid slice'
+            }));
+            // Text after thumbnail
+            const labelX = right ? thumbX + THUMB_SIZE + 5 : thumbX - 5;
+            if (jpName) {
+              const jt = svgEl('text', { x: labelX, y: endY + 4, 'text-anchor': anchor, class: 'node-label-jp' });
+              jt.textContent = jpName;
+              g.appendChild(jt);
+            }
+            const dt = svgEl('text', { x: labelX, y: endY + (jpName ? 17 : 14), 'text-anchor': anchor, class: 'node-date' });
+            dt.textContent = src.date_display;
+            g.appendChild(dt);
+          } else {
+            // No thumbnail: text right after dot
+            const labelX = right ? dotX + 10 : dotX - 10;
+            if (jpName) {
+              const jt = svgEl('text', { x: labelX, y: endY + 4, 'text-anchor': anchor, class: 'node-label-jp' });
+              jt.textContent = jpName;
+              g.appendChild(jt);
+            } else {
+              const lbl = svgEl('text', { x: labelX, y: endY + 3, 'text-anchor': anchor, class: 'node-label' });
+              lbl.textContent = (src.author || src.title.substring(0, MAX_LABEL_CHARS));
+              g.appendChild(lbl);
+            }
+            const dt = svgEl('text', { x: labelX, y: endY + (jpName ? 17 : 14), 'text-anchor': anchor, class: 'node-date' });
+            dt.textContent = src.date_display;
+            g.appendChild(dt);
+          }
+        } else if (hasThumb) {
+          // ── NON-PERSON with thumbnail: thumbnail at bone end ──
+          const dotX = right ? endX + 10 : endX - 10;
+          g.appendChild(makeItemDot(dotX, endY, color, 0.6));
+          const thumbX = right ? dotX + 10 : dotX - 10 - THUMB_SIZE;
           const thumbY = endY - THUMB_SIZE / 2;
           const clipId = 'vc-' + src.id.replace(/[^a-z0-9]/g, '');
           const defs = svgEl('defs', {});
@@ -1093,8 +1168,6 @@
             'clip-path': `url(#${clipId})`, preserveAspectRatio: 'xMidYMid slice'
           }));
           const labelX = right ? thumbX + THUMB_SIZE + 5 : thumbX - 5;
-          const anchor = right ? 'start' : 'end';
-          // Japanese name
           if (jpName) {
             const jt = svgEl('text', { x: labelX, y: thumbY + 14, 'text-anchor': anchor, class: 'node-label-jp' });
             jt.textContent = jpName;
@@ -1104,10 +1177,10 @@
           dt.textContent = src.date_display;
           g.appendChild(dt);
         } else {
+          // ── NO THUMBNAIL: colored dot + text ──
           const dotX = right ? endX + 10 : endX - 10;
-          g.appendChild(svgEl('circle', { cx: dotX, cy: endY, r: 5, fill: color, opacity: 0.6 }));
+          g.appendChild(makeItemDot(dotX, endY, color, 0.6));
           const labelX = right ? dotX + 10 : dotX - 10;
-          const anchor = right ? 'start' : 'end';
           if (jpName) {
             const jt = svgEl('text', { x: labelX, y: endY + 4, 'text-anchor': anchor, class: 'node-label-jp' });
             jt.textContent = jpName;
@@ -1122,48 +1195,105 @@
           g.appendChild(dt);
         }
 
-        // Hover: tooltip only. Click: short card + influence lines. Double-click/long-press: full card.
+        // Hover: tooltip only. Click: full detailed view + connections.
         g.addEventListener('mouseenter', (e) => showTooltip(src, e.clientX, e.clientY));
         g.addEventListener('mousemove', (e) => showTooltip(src, e.clientX, e.clientY));
         g.addEventListener('mouseleave', () => hideTooltip());
-        attachCardInteraction(g, src.id);
+        g.addEventListener('click', (e) => {
+          if (window._spineDotClicked) return;
+          e.stopPropagation();
+          hideTooltip();
+          showInfluenceLines(src.id);
+          showSourceOverlay(src.id);
+        });
         svg.appendChild(g);
       });
 
-      // ── Card Interaction: single click = short, dblclick/longpress = full ──
-      function attachCardInteraction(el, sourceId) {
-        let longPressTimer = null;
-        let didLongPress = false;
+      // ── International Spread Flags ──────────
+      if (DATA.meta.international_spread) {
+        DATA.meta.international_spread.forEach(sp => {
+          const personPos = positioned.find(p => p.src.id === sp.person);
+          if (!personPos) return;
 
-        el.addEventListener('click', (e) => {
-          if (didLongPress) { didLongPress = false; return; }
-          e.stopPropagation();
-          hideTooltip();
-          showInfluenceLines(sourceId);
-          showSourceOverlay(sourceId, 'short');
+          // Place flag on same side as the person's bone, past the bone end
+          const dirX = personPos.right ? 1 : -1;
+          const dx = dirX * personPos.boneLen * Math.cos(personPos.angle);
+          const dy = personPos.boneLen * Math.sin(personPos.angle) * 0.4;
+          const personEndX = SPINE_X + dx;
+          const personEndY = personPos.y + dy;
+
+          // Flag position: at the edge of the viewBox on the same side as the person
+          const flagMargin = isMobile ? 16 : 24;
+          const flagX = personPos.right
+            ? VIEW_W - flagMargin
+            : flagMargin;
+          const flagY = personEndY;
+
+          // Dotted line from person's bone end to flag
+          svg.appendChild(svgEl('line', {
+            x1: personEndX + (personPos.right ? 20 : -20), y1: personEndY,
+            x2: flagX, y2: flagY,
+            stroke: 'var(--fg-faint)', 'stroke-width': 1,
+            'stroke-dasharray': '4,3', opacity: 0.5,
+            style: 'pointer-events:none'
+          }));
+
+          // Clickable flag group
+          const flagG = svgEl('g', { style: 'cursor:pointer' });
+
+          // Flag emoji
+          const flagEmoji = svgEl('text', {
+            x: flagX, y: flagY + 6,
+            'text-anchor': 'middle',
+            style: 'font-size:18px'
+          });
+          flagEmoji.textContent = sp.flag;
+          flagG.appendChild(flagEmoji);
+
+          // Country label below flag
+          const flagLabel = svgEl('text', {
+            x: flagX, y: flagY + 20,
+            'text-anchor': 'middle',
+            style: 'font-size:7px;fill:var(--fg-muted);font-family:var(--font-ui)'
+          });
+          flagLabel.textContent = sp.country + ' ' + sp.date;
+          flagG.appendChild(flagLabel);
+
+          // Click: show overlay with the exchange description
+          flagG.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showFlagOverlay(sp);
+          });
+
+          // Hover: reuse clamped tooltip system
+          flagG.addEventListener('mouseenter', (e) => {
+            tooltip.innerHTML = `<div class="tt-title">${sp.flag} ${sp.country}</div><div class="tt-desc">${sp.label}</div>`;
+            const wr = svg.parentElement.getBoundingClientRect();
+            let tx = e.clientX - wr.left + 14;
+            let ty = e.clientY - wr.top + 14;
+            const tw = 240, th = 60;
+            if (tx + tw > wr.width) tx = e.clientX - wr.left - tw - 8;
+            if (ty + th > wr.height) ty = e.clientY - wr.top - th - 8;
+            if (tx < 0) tx = 4;
+            if (ty < 0) ty = 4;
+            tooltip.style.left = tx + 'px';
+            tooltip.style.top = ty + 'px';
+            tooltip.classList.add('visible');
+          });
+          flagG.addEventListener('mousemove', (e) => {
+            const wr = svg.parentElement.getBoundingClientRect();
+            let tx = e.clientX - wr.left + 14;
+            let ty = e.clientY - wr.top + 14;
+            const tw = 240, th = 60;
+            if (tx + tw > wr.width) tx = e.clientX - wr.left - tw - 8;
+            if (tx < 0) tx = 4;
+            tooltip.style.left = tx + 'px';
+            tooltip.style.top = ty + 'px';
+          });
+          flagG.addEventListener('mouseleave', () => tooltip.classList.remove('visible'));
+
+          svg.appendChild(flagG);
         });
-
-        el.addEventListener('dblclick', (e) => {
-          e.stopPropagation();
-          e.preventDefault();
-          hideTooltip();
-          showInfluenceLines(sourceId);
-          showSourceOverlay(sourceId, 'full');
-        });
-
-        // Long press for mobile
-        el.addEventListener('touchstart', (e) => {
-          didLongPress = false;
-          longPressTimer = setTimeout(() => {
-            didLongPress = true;
-            hideTooltip();
-            showInfluenceLines(sourceId);
-            showSourceOverlay(sourceId, 'full');
-          }, 500);
-        }, { passive: true });
-
-        el.addEventListener('touchend', () => { clearTimeout(longPressTimer); });
-        el.addEventListener('touchmove', () => { clearTimeout(longPressTimer); });
       }
 
       // ── Influence Lines ──────────
@@ -1215,14 +1345,11 @@
           const to = posMap[inf.to];
           if (!from || !to) return;
 
-          // Start from source's label end (end of bone)
+          // Always start and end at the bone end (where the text/dot is), never at the spine
           const startX = from.endX;
           const startY = from.endY;
-          // End at target's label end (end of bone) for people, spine dot for schools
-          const toSrc = DATA.sources.find(s => s.id === inf.to);
-          const toIsPerson = toSrc && toSrc.lane === 'person';
-          const endX = toIsPerson ? to.endX : to.spineX;
-          const endY = toIsPerson ? to.endY : to.spineY;
+          const endX = to.endX;
+          const endY = to.endY;
 
           const midY = (startY + endY) / 2;
           // Curve direction: away from spine, on the side that has more room
@@ -1310,14 +1437,15 @@
     }
 
     /* ── Source Overlay ─────────────────────────────── */
-    function showSourceOverlay(sourceId, mode) {
-      mode = mode || 'short';
+    function showSourceOverlay(sourceId) {
       const src = DATA.sources.find(s => s.id === sourceId);
       if (!src) return;
 
-      // Save scroll position before showing overlay
-      if (!activeSource) savedScrollY = window.scrollY;
-
+      // Save scroll position and lock body
+      if (!activeSource) {
+        savedScrollY = window.scrollY;
+        document.body.style.top = `-${savedScrollY}px`;
+      }
       activeSource = sourceId;
       document.body.classList.add('overlay-open');
 
@@ -1341,89 +1469,96 @@
             </div>`
           : '');
 
-      if (mode === 'short') {
-        // Short card: image, title, dates, one-line description, expand prompt
-        const shortDesc = src.description.split('. ').slice(0, 2).join('. ') + '.';
-        document.getElementById('overlay-container').innerHTML = `
-          <div class="overlay-backdrop" onclick="if(event.target===this)closeSourceOverlay()">
-            <div class="overlay-card overlay-card-short">
-              <button class="overlay-close" onclick="closeSourceOverlay()" aria-label="Close">&times;</button>
-              ${src.image ? `<img src="${DATA.meta.image_dir}${src.image}" alt="${src.title}" style="max-height:150px">` : ''}
-              <h3 class="source-title">${src.title}</h3>
-              <div class="source-meta">${meta.map(m => `<span>${m}</span>`).join('')}</div>
-              ${practHTML}
-              <div class="source-description">${shortDesc}</div>
-              <button class="expand-btn" onclick="showSourceOverlay('${sourceId}','full')">Full details</button>
-            </div>
-          </div>`;
-      } else {
-        // Full card: everything
-        let passageHTML = '';
-        if (src.passage_japanese || src.passage_translation) {
-          passageHTML = `
-            <div class="source-passage">
-              ${src.passage_japanese ? `<div class="japanese-text jp-text">${src.passage_japanese}</div>` : ''}
-              ${src.passage_translation ? `<div class="translation-text">${src.passage_translation}</div>` : ''}
-              ${src.translator ? `<div class="translator-credit">— ${src.translator}</div>` : ''}
-            </div>`;
-        }
-
-        const techniquesHTML = (src.techniques_shown || []).map(t =>
-          `<span class="tag technique-tag">${t.replace(/_/g, ' ')}</span>`
-        ).join('');
-
-        const termsHTML = (src.terms || []).map(t => {
-          const lex = DATA.lexicon.find(l => l.id === t);
-          return lex ? `<a class="tag term-tag" onclick="navigateToLexicon('${t}')">${lex.japanese} ${lex.romaji}</a>` : '';
-        }).join('');
-
-        const evidenceHTML = src.evidence ? `
-          <div class="evidence-block">
-            <h4>Evidentiary value</h4>
-            <div><strong style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.04em">Proves:</strong>
-              <ul>${src.evidence.proves.map(p => `<li class="proves">${p}</li>`).join('')}</ul></div>
-            <div><strong style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--fg-muted)">Cannot prove:</strong>
-              <ul>${src.evidence.cannot_prove.map(p => `<li class="cannot-prove">${p}</li>`).join('')}</ul></div>
-            <div class="reliability">${src.evidence.reliability}</div>
-          </div>` : '';
-
-        const sourceURLHTML = src.source_url
-          ? `<a href="${src.source_url}" target="_blank" rel="noopener" class="source-link-ext">View primary source text &#8599;</a>` : '';
-
-        document.getElementById('overlay-container').innerHTML = `
-          <div class="overlay-backdrop" onclick="if(event.target===this)closeSourceOverlay()">
-            <div class="overlay-card">
-              <button class="overlay-close" onclick="closeSourceOverlay()" aria-label="Close">&times;</button>
-              ${src.image ? `<img src="${DATA.meta.image_dir}${src.image}" alt="${src.title}">` : ''}
-              <h3 class="source-title">${src.title}</h3>
-              <div class="source-meta">${meta.map(m => `<span>${m}</span>`).join('')}</div>
-              ${practHTML}
-              <div class="source-description">${src.description}</div>
-              ${passageHTML}
-              ${techniquesHTML || termsHTML ? `
-                <div style="margin-bottom:var(--sm)">
-                  ${techniquesHTML ? `<div class="tag-row">${techniquesHTML}</div>` : ''}
-                  ${termsHTML ? `<div class="tag-row">${termsHTML}</div>` : ''}
-                </div>` : ''}
-              ${sourceURLHTML}
-              ${evidenceHTML}
-            </div>
+      let passageHTML = '';
+      if (src.passage_japanese || src.passage_translation) {
+        passageHTML = `
+          <div class="source-passage">
+            ${src.passage_japanese ? `<div class="japanese-text jp-text">${src.passage_japanese}</div>` : ''}
+            ${src.passage_translation ? `<div class="translation-text">${src.passage_translation}</div>` : ''}
+            ${src.translator ? `<div class="translator-credit">— ${src.translator}</div>` : ''}
           </div>`;
       }
+
+      const techniquesHTML = (src.techniques_shown || []).map(t =>
+        `<span class="tag technique-tag">${t.replace(/_/g, ' ')}</span>`
+      ).join('');
+
+      const termsHTML = (src.terms || []).map(t => {
+        const lex = DATA.lexicon.find(l => l.id === t);
+        return lex ? `<a class="tag term-tag" onclick="navigateToLexicon('${t}')">${lex.japanese} ${lex.romaji}</a>` : '';
+      }).join('');
+
+      const evidenceHTML = src.evidence ? `
+        <div class="evidence-block">
+          <h4>Evidentiary value</h4>
+          <div><strong style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.04em">Proves:</strong>
+            <ul>${src.evidence.proves.map(p => `<li class="proves">${p}</li>`).join('')}</ul></div>
+          <div><strong style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--fg-muted)">Cannot prove:</strong>
+            <ul>${src.evidence.cannot_prove.map(p => `<li class="cannot-prove">${p}</li>`).join('')}</ul></div>
+          <div class="reliability">${src.evidence.reliability}</div>
+        </div>` : '';
+
+      const sourceURLHTML = src.source_url
+        ? `<a href="${src.source_url}" target="_blank" rel="noopener" class="source-link-ext">View primary source text &#8599;</a>` : '';
+
+      document.getElementById('overlay-container').innerHTML = `
+        <div class="overlay-backdrop" onclick="if(event.target===this)closeSourceOverlay()">
+          <div class="overlay-card">
+            <button class="overlay-close" onclick="closeSourceOverlay()" aria-label="Close">&times;</button>
+            ${src.image ? `<img src="${DATA.meta.image_dir}${src.image}" alt="${src.title}">` : ''}
+            <h3 class="source-title">${src.title}</h3>
+            <div class="source-meta">${meta.map(m => `<span>${m}</span>`).join('')}</div>
+            ${practHTML}
+            <div class="source-description">${src.description}</div>
+            ${passageHTML}
+            ${techniquesHTML || termsHTML ? `
+              <div style="margin-bottom:var(--sm)">
+                ${techniquesHTML ? `<div class="tag-row">${techniquesHTML}</div>` : ''}
+                ${termsHTML ? `<div class="tag-row">${termsHTML}</div>` : ''}
+              </div>` : ''}
+            ${sourceURLHTML}
+            ${evidenceHTML}
+          </div>
+        </div>`;
+    }
+
+    function showFlagOverlay(sp) {
+      if (!activeSource) {
+        savedScrollY = window.scrollY;
+        document.body.style.top = `-${savedScrollY}px`;
+      }
+      activeSource = '_flag_' + sp.flag;
+      document.body.classList.add('overlay-open');
+
+      // Find the linked person for a "navigate to" link
+      const person = DATA.sources.find(s => s.id === sp.person);
+      const personLink = person
+        ? `<div style="margin-top:var(--sm)"><a class="tag term-tag" onclick="closeSourceOverlay();setTimeout(()=>{showInfluenceLines('${sp.person}');showSourceOverlay('${sp.person}')},100)" style="cursor:pointer">${person.name_japanese || ''} ${person.title.split('—')[0].trim()}</a></div>`
+        : '';
+
+      document.getElementById('overlay-container').innerHTML = `
+        <div class="overlay-backdrop" onclick="if(event.target===this)closeSourceOverlay()">
+          <div class="overlay-card">
+            <button class="overlay-close" onclick="closeSourceOverlay()" aria-label="Close">&times;</button>
+            <h3 class="source-title" style="font-size:1.3rem">${sp.flag} ${sp.country}</h3>
+            <div class="source-meta"><span>${sp.date}</span><span>${sp.label}</span></div>
+            <div class="source-description" style="margin-top:var(--sm)">${sp.description || ''}</div>
+            ${personLink}
+          </div>
+        </div>`;
     }
 
     function closeSourceOverlay() {
       activeSource = null;
       document.getElementById('overlay-container').innerHTML = '';
+      const scrollY = savedScrollY;
+      savedScrollY = null;
+      document.body.style.cssText = '';
       document.body.classList.remove('overlay-open');
+      if (scrollY !== null) window.scrollTo({ top: scrollY, behavior: 'instant' });
       document.querySelectorAll('.node-group').forEach(g => g.classList.remove('active'));
       document.querySelectorAll('.spine-dot').forEach(d => { d.classList.remove('active'); d.setAttribute('r', 5); });
       document.querySelectorAll('.bone').forEach(b => b.classList.remove('active'));
-      // Restore scroll position
-      if (savedScrollY !== null) {
-        requestAnimationFrame(() => window.scrollTo(0, savedScrollY));
-        savedScrollY = null;
-      }
     }
 
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && activeSource) closeSourceOverlay(); });
@@ -1636,9 +1771,9 @@
         if (window._showInfluenceLines) window._showInfluenceLines(sourceId);
 
         // Open the overlay after a brief scroll delay
-        setTimeout(() => showSourceOverlay(sourceId, 'full'), 400);
+        setTimeout(() => showSourceOverlay(sourceId), 400);
       } else {
-        showSourceOverlay(sourceId, 'full');
+        showSourceOverlay(sourceId);
       }
     }
 
