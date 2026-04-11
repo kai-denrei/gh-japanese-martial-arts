@@ -255,6 +255,21 @@
         "from": "pancrase",
         "to": "sakuraba_kazushi",
         "label": "Pancrase competition"
+      },
+      {
+        "from": "kodokan_founding",
+        "to": "kimura_masahiko",
+        "label": "Kodokan judo (4× All-Japan champion)"
+      },
+      {
+        "from": "kimura_masahiko",
+        "to": "gotch_japan",
+        "label": "training partner (awarded Gotch honorary black belt)"
+      },
+      {
+        "from": "kimura_masahiko",
+        "to": "kimura_gracie_1951",
+        "label": "gyaku-ude-garami → 'the Kimura'"
       }
     ],
     "international_spread": [
@@ -264,7 +279,7 @@
         "country": "Brazil",
         "date": 1914,
         "label": "Maeda settles in Belém",
-        "description": "Mitsuyo Maeda (1878–1941) arrived in Brazil around 1914 after a decade of challenge matches across the Americas and Europe. Settling in Belém, he taught Kodokan judo to Carlos Gracie beginning in 1917. What Maeda transmitted was already hybrid — Kodokan throws, Fusen-ryū ground technique, and catch wrestling absorbed during his travels. Carlos and his brother Hélio adapted this into what became Brazilian Jiu-Jitsu, emphasizing ground fighting for smaller practitioners. The Gracie challenge-match tradition directly mirrored the Kodokan's own history of challenge matches in Japan. BJJ would later return to Japan through Pride FC in the 1990s, completing a full circle."
+        "description": "Mitsuyo Maeda (1878–1941) arrived in Brazil around 1914 after a decade of challenge matches across the Americas and Europe. Settling in Belém, he taught Kodokan judo to Carlos Gracie beginning in 1917. What Maeda transmitted was already hybrid — Kodokan throws, Fusen-ryū ground technique, and catch wrestling absorbed during his travels. Carlos and his brother Hélio adapted this into what became Brazilian Jiu-Jitsu. On October 23, 1951, the cycle came full circle: Kimura Masahiko — the greatest Kodokan judoka — defeated Hélio Gracie at Maracanã Stadium via gyaku-ude-garami (reverse arm entanglement), breaking Hélio's arm when he refused to tap. Brazilian sportswriters named the technique 'the Kimura' — a Japanese lock, renamed by Brazilians, after a Japanese judoka, in a fight against a Brazilian practitioner of a Japanese art. BJJ would later return to Japan again through Pride FC in the 1990s."
       },
       {
         "person": "koizumi_gunji",
@@ -3064,6 +3079,94 @@
         ],
         "reliability": "Well-documented through Soviet sports committee records. International Sambo Federation archives."
       }
+    },
+    {
+      "id": "kimura_masahiko",
+      "type": "documentary",
+      "subtype": "biographical",
+      "lane": "person",
+      "name_japanese": "木村政彦",
+      "title": "Kimura Masahiko — The Greatest Judoka",
+      "date": 1917,
+      "date_display": "1917–1993",
+      "origin": "Kumamoto, Japan",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": null,
+      "passage_translation": null,
+      "translator": null,
+      "description": "Kimura Masahiko (1917–1993) is widely considered the greatest competitive judoka in history. He won the All-Japan Judo Championships four times (1937, 1938, 1939, 1949) and was undefeated from 1937 to 1950 — a 13-year run. At 18, he became the youngest ever 5th dan after defeating eight consecutive opponents at the Kodokan. His rank was frozen at 7th dan for the rest of his life after he entered pro wrestling and issued unauthorized dan promotions in Brazil — he watched juniors he had defeated surpass him for 40 years. He trained with Karl Gotch, awarding him an honorary black belt after Gotch submitted several of Kimura's students. His student Otsubo became Gotch's gym assistant and helped train Antonio Inoki — a direct lineage link between Kimura's judo and Gotch's catch wrestling ecosystem. He taught at Takushoku University from 1960 until his death, producing Olympic medalists.",
+      "techniques_shown": [
+        "nage_waza",
+        "ne_waza",
+        "kansetsu_waza"
+      ],
+      "terms": [
+        "judo",
+        "ne_waza",
+        "kansetsu_waza",
+        "randori"
+      ],
+      "key_event": {
+        "date": 1951,
+        "label": "defeats Hélio Gracie in Brazil"
+      },
+      "evidence": {
+        "proves": [
+          "Kodokan judo at its highest competitive level could defeat the Gracie adaptation",
+          "The Kodokan-to-Gotch pipeline ran through Kimura's students",
+          "Institutional politics (rank freezing) could not erase competitive legacy"
+        ],
+        "cannot_prove": [
+          "Whether Kimura's training methods were typical of Kodokan or idiosyncratic"
+        ],
+        "reliability": "All-Japan Championship records, match footage, autobiography ('My Judo'), and Brazilian newspaper coverage. Well-documented."
+      }
+    },
+    {
+      "id": "kimura_gracie_1951",
+      "type": "documentary",
+      "subtype": "competition",
+      "lane": "competition",
+      "name_japanese": "木村 対 エリオ",
+      "title": "Kimura vs. Hélio Gracie — The Match That Named a Lock",
+      "date": 1951,
+      "date_display": "October 23, 1951",
+      "origin": "Maracanã Stadium, Rio de Janeiro, Brazil",
+      "author": null,
+      "museum": null,
+      "accession": null,
+      "image": null,
+      "source_url": null,
+      "passage_japanese": "逆腕緘",
+      "passage_translation": "Gyaku-ude-garami (reverse arm entanglement) — the technique that became known worldwide as 'the Kimura lock' after this match.",
+      "translator": null,
+      "description": "On October 23, 1951, Kimura Masahiko faced Hélio Gracie at Maracanã Stadium in Rio de Janeiro before thousands of spectators. The match lasted approximately 13 minutes. Kimura dominated with throws and sustained top control (kuzure-kami-shiho-gatame), then attacked with gyaku-ude-garami — a figure-four shoulder lock. Hélio refused to tap. Kimura rotated the arm until it broke. Only when the Gracie corner threw in the towel was the fight stopped — Hélio himself never submitted. Brazilian sportswriters named the technique 'Kimuriana,' later shortened to 'the Kimura.' This naming convention spread globally through BJJ and MMA. The match represents the moment when Kodokan judo — exported by Maeda, adapted by the Gracies — returned to face its source tradition directly. The technique Kimura used was not new; what was new was that it would forever carry the name of the man who broke an arm with it in Brazil.",
+      "techniques_shown": [
+        "kansetsu_waza",
+        "ne_waza",
+        "nage_waza"
+      ],
+      "terms": [
+        "judo",
+        "kansetsu_waza",
+        "ne_waza",
+        "randori"
+      ],
+      "evidence": {
+        "proves": [
+          "Top-level Kodokan judo could defeat the Gracie adaptation of Maeda's judo",
+          "A Japanese technique was renamed by Brazilians after a Japanese judoka — cultural feedback loop",
+          "Challenge matches between judo lineages were still happening in 1951"
+        ],
+        "cannot_prove": [
+          "Whether the result would have been different with different rules or a younger Hélio"
+        ],
+        "reliability": "Newspaper coverage, radio broadcast, multiple eyewitness accounts. The broken arm and corner stoppage are undisputed."
+      }
     }
   ],
   "lexicon": [
@@ -3150,7 +3253,9 @@
         "budokwai_london",
         "yamashita_yoshiaki",
         "oshchepkov_vasili",
-        "sambo_founding"
+        "sambo_founding",
+        "kimura_masahiko",
+        "kimura_gracie_1951"
       ],
       "modern_parallel": "Olympic Judo"
     },
@@ -3211,7 +3316,9 @@
         "lebell_gene",
         "yamashita_yoshiaki",
         "oshchepkov_vasili",
-        "sambo_founding"
+        "sambo_founding",
+        "kimura_masahiko",
+        "kimura_gracie_1951"
       ],
       "modern_parallel": "Sparring, rolling (BJJ), live rounds (wrestling)"
     },
@@ -3274,7 +3381,9 @@
         "kosen_judo",
         "jsdf_toshu_kakuto",
         "ufc_japan_1997",
-        "lebell_gene"
+        "lebell_gene",
+        "kimura_masahiko",
+        "kimura_gracie_1951"
       ],
       "modern_parallel": "Ground game in BJJ, MMA"
     },
@@ -3352,7 +3461,9 @@
         "hontai_yoshin_ryu",
         "kosen_judo",
         "jsdf_toshu_kakuto",
-        "ufc_japan_1997"
+        "ufc_japan_1997",
+        "kimura_masahiko",
+        "kimura_gracie_1951"
       ],
       "modern_parallel": "Joint locks, submissions in BJJ/MMA"
     },

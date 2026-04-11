@@ -41,7 +41,7 @@
       --type-photographic: #3d7c47;
     }
 
-    html { font-size: 100%; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    html { font-size: 100%; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
     body {
       font-family: var(--font-body);
       font-size: var(--body-size);
@@ -158,10 +158,12 @@
 
     .overlay-close {
       position: sticky; top: 0; float: right;
-      width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--rule);
-      background: var(--bg); color: var(--fg-muted); font-size: 1rem;
+      width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--rule);
+      background: var(--bg); color: var(--fg-muted); font-size: 1.2rem;
       cursor: pointer; display: flex; align-items: center; justify-content: center;
       z-index: 2; transition: all 0.15s; box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      -webkit-tap-highlight-color: transparent;
+      min-width: 44px; min-height: 44px;
     }
     .overlay-close:hover { background: var(--bg-panel); color: var(--fg); border-color: var(--fg-muted); }
 
@@ -211,7 +213,8 @@
     }
     .source-link-ext:hover { text-decoration: underline; }
 
-    body.overlay-open { position: fixed; width: 100%; overflow-y: scroll; }
+    body.overlay-open { position: fixed; left: 0; right: 0; overflow-y: scroll; }
+    html.overlay-open { overflow: hidden; }
 
     /* ── Evidence Index ─────────────────────────────── */
     .evidence-index { border-top: 2px solid var(--rule-heavy); padding-top: var(--lg); margin-top: var(--xl); }
@@ -918,7 +921,7 @@
         });
         // Band click: full view + connections
         rect.addEventListener('click', (e) => {
-          if (window._spineDotClicked) return;
+          if (window._spineDotClicked || touchMoved) return;
           e.stopPropagation();
           showInfluenceLines(p.src.id);
           showSourceOverlay(p.src.id);
@@ -998,6 +1001,22 @@
       }
       function hideTooltip() { tooltip.classList.remove('visible'); }
 
+      // Touch-vs-scroll tracking: only fire tap if finger didn't move
+      let touchStartX = 0, touchStartY = 0, touchMoved = false;
+      svg.addEventListener('touchstart', (e) => {
+        const t = e.touches[0];
+        touchStartX = t.clientX;
+        touchStartY = t.clientY;
+        touchMoved = false;
+      }, { passive: true });
+      svg.addEventListener('touchmove', (e) => {
+        const t = e.touches[0];
+        const dx = t.clientX - touchStartX, dy = t.clientY - touchStartY;
+        if (Math.abs(dx) > 8 || Math.abs(dy) > 8) touchMoved = true;
+      }, { passive: true });
+
+      const deferredItemDots = [];
+
       positioned.forEach(p => {
         const { src, y, right, angle, boneLen } = p;
         const color = LANE_COLORS[src.lane] || TYPE_COLORS[src.type] || 'var(--fg-muted)';
@@ -1053,11 +1072,25 @@
 
         // Spine dot: click = connections only (no modal)
         dotEl.addEventListener('click', (e) => {
+          if (touchMoved) return;
           e.stopPropagation();
           window._spineDotClicked = true;
           setTimeout(() => { window._spineDotClicked = false; }, 50);
           showInfluenceLines(src.id);
         });
+        // Invisible touch target for spine dot (44px per Apple HIG)
+        const spineTouchTarget = svgEl('circle', {
+          cx: SPINE_X, cy: y, r: 18,
+          fill: 'transparent', style: 'cursor:pointer'
+        });
+        spineTouchTarget.addEventListener('click', (e) => {
+          if (touchMoved) return;
+          e.stopPropagation();
+          window._spineDotClicked = true;
+          setTimeout(() => { window._spineDotClicked = false; }, 50);
+          showInfluenceLines(src.id);
+        });
+        svg.appendChild(spineTouchTarget);
 
 
         // Hover date label on spine marker
@@ -1084,22 +1117,18 @@
         const hasThumb = !!src.image;
         const anchor = right ? 'start' : 'end';
 
-        // Helper: create an item dot (connections only on click, no overlay)
-        function makeItemDot(cx, cy, fillColor, fillOpacity) {
-          const d = svgEl('circle', { cx, cy, r: 5, fill: fillColor, opacity: fillOpacity, style: 'cursor:pointer' });
-          d.addEventListener('click', (e) => {
-            e.stopPropagation();
-            window._spineDotClicked = true;
-            setTimeout(() => { window._spineDotClicked = false; }, 50);
-            showInfluenceLines(src.id);
-          });
-          return d;
+        // Item dots are collected and rendered AFTER all g groups (SVG z-order)
+        // so they sit on top and capture touches before the g group does.
+        function queueItemDot(cx, cy, fillColor, fillOpacity) {
+          deferredItemDots.push({ cx, cy, fill: fillColor, opacity: fillOpacity, srcId: src.id });
+          // Still add a visual-only circle inside g for non-interactive rendering
+          g.appendChild(svgEl('circle', { cx, cy, r: 5, fill: fillColor, opacity: fillOpacity, style: 'pointer-events:none' }));
         }
 
         if (isPerson) {
           // ── PERSON: always green dot at bone end, text next to it ──
           const dotX = right ? endX + 10 : endX - 10;
-          g.appendChild(makeItemDot(dotX, endY, color, 0.8));
+          queueItemDot(dotX, endY, color, 0.8);
 
           if (hasThumb) {
             // Thumbnail between dot and text, not on spine
@@ -1149,7 +1178,7 @@
         } else if (hasThumb) {
           // ── NON-PERSON with thumbnail: thumbnail at bone end ──
           const dotX = right ? endX + 10 : endX - 10;
-          g.appendChild(makeItemDot(dotX, endY, color, 0.6));
+          queueItemDot(dotX, endY, color, 0.6);
           const thumbX = right ? dotX + 10 : dotX - 10 - THUMB_SIZE;
           const thumbY = endY - THUMB_SIZE / 2;
           const clipId = 'vc-' + src.id.replace(/[^a-z0-9]/g, '');
@@ -1179,7 +1208,7 @@
         } else {
           // ── NO THUMBNAIL: colored dot + text ──
           const dotX = right ? endX + 10 : endX - 10;
-          g.appendChild(makeItemDot(dotX, endY, color, 0.6));
+          queueItemDot(dotX, endY, color, 0.6);
           const labelX = right ? dotX + 10 : dotX - 10;
           if (jpName) {
             const jt = svgEl('text', { x: labelX, y: endY + 4, 'text-anchor': anchor, class: 'node-label-jp' });
@@ -1200,13 +1229,31 @@
         g.addEventListener('mousemove', (e) => showTooltip(src, e.clientX, e.clientY));
         g.addEventListener('mouseleave', () => hideTooltip());
         g.addEventListener('click', (e) => {
-          if (window._spineDotClicked) return;
+          if (window._spineDotClicked || touchMoved) return;
           e.stopPropagation();
           hideTooltip();
           showInfluenceLines(src.id);
           showSourceOverlay(src.id);
         });
         svg.appendChild(g);
+      });
+
+      // ── Render item dots on top of everything (SVG z-order) ──
+      // Large invisible touch targets (22px radius ≈ 44px diameter, Apple HIG minimum)
+      deferredItemDots.forEach(dot => {
+        // Invisible touch target
+        const touchTarget = svgEl('circle', {
+          cx: dot.cx, cy: dot.cy, r: 22,
+          fill: 'transparent', style: 'cursor:pointer'
+        });
+        touchTarget.addEventListener('click', (e) => {
+          if (touchMoved) return;
+          e.stopPropagation();
+          window._spineDotClicked = true;
+          setTimeout(() => { window._spineDotClicked = false; }, 50);
+          showInfluenceLines(dot.srcId);
+        });
+        svg.appendChild(touchTarget);
       });
 
       // ── International Spread Flags ──────────
@@ -1240,27 +1287,29 @@
 
           // Clickable flag group
           const flagG = svgEl('g', { style: 'cursor:pointer' });
+          const flagAnchor = personPos.right ? 'end' : 'start';
 
           // Flag emoji
           const flagEmoji = svgEl('text', {
             x: flagX, y: flagY + 6,
-            'text-anchor': 'middle',
-            style: 'font-size:18px'
+            'text-anchor': flagAnchor,
+            style: 'font-size:16px'
           });
           flagEmoji.textContent = sp.flag;
           flagG.appendChild(flagEmoji);
 
           // Country label below flag
           const flagLabel = svgEl('text', {
-            x: flagX, y: flagY + 20,
-            'text-anchor': 'middle',
-            style: 'font-size:7px;fill:var(--fg-muted);font-family:var(--font-ui)'
+            x: flagX, y: flagY + 19,
+            'text-anchor': flagAnchor,
+            style: 'font-size:6.5px;fill:var(--fg-muted);font-family:var(--font-ui)'
           });
           flagLabel.textContent = sp.country + ' ' + sp.date;
           flagG.appendChild(flagLabel);
 
           // Click: show overlay with the exchange description
           flagG.addEventListener('click', (e) => {
+            if (touchMoved) return;
             e.stopPropagation();
             showFlagOverlay(sp);
           });
@@ -1447,7 +1496,7 @@
         document.body.style.top = `-${savedScrollY}px`;
       }
       activeSource = sourceId;
-      document.body.classList.add('overlay-open');
+      document.body.classList.add('overlay-open'); document.documentElement.classList.add('overlay-open');
 
       document.querySelectorAll('.node-group').forEach(g => g.classList.toggle('active', g.dataset.id === sourceId));
       document.querySelectorAll('.spine-dot').forEach(d => {
@@ -1528,7 +1577,7 @@
         document.body.style.top = `-${savedScrollY}px`;
       }
       activeSource = '_flag_' + sp.flag;
-      document.body.classList.add('overlay-open');
+      document.body.classList.add('overlay-open'); document.documentElement.classList.add('overlay-open');
 
       // Find the linked person for a "navigate to" link
       const person = DATA.sources.find(s => s.id === sp.person);
@@ -1554,7 +1603,7 @@
       const scrollY = savedScrollY;
       savedScrollY = null;
       document.body.style.cssText = '';
-      document.body.classList.remove('overlay-open');
+      document.body.classList.remove('overlay-open'); document.documentElement.classList.remove('overlay-open');
       if (scrollY !== null) window.scrollTo({ top: scrollY, behavior: 'instant' });
       document.querySelectorAll('.node-group').forEach(g => g.classList.remove('active'));
       document.querySelectorAll('.spine-dot').forEach(d => { d.classList.remove('active'); d.setAttribute('r', 5); });
